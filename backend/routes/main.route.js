@@ -1,5 +1,7 @@
 const router =require('express').Router();
+/*
 const controllerApolice = require('../controllers/Apolice.controller.js');
+
 const controllerCliente = require('../controllers/Cliente.controller.js');
 const controllerDaaa = require('../controllers/Daaa.controller.js');
 const controllerReboque = require('../controllers/Reboque.controller.js');
@@ -58,3 +60,4 @@ router.get('/vehicle/:id', controllerVeiculo.readID);
 router.post('/vehicle/', controllerVeiculo.save);
 router.put('/vehicle/:id', controllerVeiculo.update);
 router.delete('/vehicle/:id', controllerVeiculo.deleteID);
+*/
