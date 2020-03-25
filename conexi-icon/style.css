@@ -72,9 +72,15 @@
 .conexi-icon-phone-call:before {
   content: "\e90a";
 }
+
 .conexi-icon-clock:before {
   content: "\e90d";
 }
-.conexi-icon-small-calendar:before {
-  content: "\e90e";
+
+
+.conexi-icon-small-calendar {
+    align-items: center;
+}
+input[type=time] {
+    padding: 70px;
 }
