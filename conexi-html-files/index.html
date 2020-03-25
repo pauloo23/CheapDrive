@@ -1,13 +1,13 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 
-<!-- larapice --> <!--fefwowfo-->
+
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- testyju57u6u5u56u6ju6jue -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home One || Conexi || Responsive HTML 5 Template</title>
+    <title>Página inicial || CheapDrive </title>
     <link rel="apple-touch-icon" sizes="57x57" href="images/favicon//apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="images/favicon//apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="images/favicon//apple-icon-72x72.png">
@@ -28,28 +28,31 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
 </head>
-<!--petaro-->
+
+
 <body>
     <div class="preloader"></div><!-- /.preloader -->
     <div class="page-wrapper">
         <header class="site-header header-one">
-            <div class="top-bar">
+    <!--    <div class="top-bar">
                 <div class="container">
                     <div class="left-block">
                         <a href="#"><i class="fa fa-user-circle"></i> Log-In</a>
                         <a href="mailto:cdhelp@gmail.com"><i class="fa fa-envelope"></i> cdhelp@gmail.com</a>
                     </div><!-- /.left-block -->
-                    <div class="logo-block">
-                        <a href="index.html"><img src="https://i.imgur.com/QHFvx14.png" alt="Awesome Image" /></a>
+     <!--           <div class="logo-block">
+                        <a href="index.html"><img src="images/index/logo.png" alt="Awesome Image" /></a>
                     </div><!-- /.logo-block -->
-                    <div class="social-block">
+    <!--            <div class="social-block">
                         <a href="#"><i class="fa fa-twitter"></i></a>
                         <a href="#"><i class="fa fa-facebook-f"></i></a>
                         <a href="#"><i class="fa fa-youtube-play"></i></a>
                         <a href="#"><i class="fa fa-google-plus"></i></a>
-                    </div><!-- /.social-block -->
-                </div><!-- /.container -->
-            </div><!-- /.top-bar -->
+    <!--            </div><!-- /.social-block -->
+    <!--        </div><!-- /.container -->
+     <!--   </div><!-- /.top-bar -->
+   <br />
+
             <nav class="navbar navbar-expand-lg navbar-light header-navigation stricky">
                 <div class="container clearfix" style="width: 875px;">
                     <!-- Brand and toggle get grouped for better mobile display -->
@@ -143,10 +146,10 @@
                         <div class="content-block">
                             <div class="block-title mb-0">
                                 <div class="dot-line"></div><!-- /.dot-line -->
-                                <p class="light">Looking for taxi?</p>
-                                <h2 class="light">Make your <br> booking</h2>
+                                <p class="light">À procura de transporte?</p>
+                                <h2 class="light">Faz aqui <br> a tua reserva</h2>
                             </div><!-- /.block-title -->
-                            <p>Our taxis commit to make your trips unique <br> by best answering your needs.</p>
+                            <p>Garante a melhor oferta <br> aqui encontras tudo o que precisas.</p>
                         </div><!-- /.content-block -->
                     </div><!-- /.col-lg-4 -->
                     <div class="col-lg-8">
@@ -154,50 +157,60 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="input-holder">
-                                        <input type="text" name="name" placeholder="Your name">
+                                        <input type="text" name="name" placeholder="Primeiro nome" required>
                                     </div><!-- /.input-holder -->
                                 </div><!-- /.col-lg-6 -->
                                 <div class="col-lg-6">
                                     <div class="input-holder">
-                                        <input type="text" name="name" placeholder="Email address">
+                                        <input type="text" name="name" placeholder="Último nome" required>
                                     </div><!-- /.input-holder -->
                                 </div><!-- /.col-lg-6 -->
                                 <div class="col-lg-6">
                                     <div class="input-holder">
-                                        <input type="text" name="name" placeholder="Passengers #">
+                                        <input type="text" name="name" placeholder="Endereço de e-mail" required>
                                     </div><!-- /.input-holder -->
                                 </div><!-- /.col-lg-6 -->
                                 <div class="col-lg-6">
                                     <div class="input-holder">
-                                        <input type="text" name="name" placeholder="Pick up address">
+                                        <input type="text" name="name" placeholder="Local de origem" required>
                                     </div><!-- /.input-holder -->
                                 </div><!-- /.col-lg-6 -->
                                 <div class="col-lg-6">
                                     <div class="input-holder">
-                                        <input type="text" name="name" placeholder="Drop off address">
+                                        <input type="text" name="name" placeholder="Local de destino" required>
                                     </div><!-- /.input-holder -->
                                 </div><!-- /.col-lg-6 -->
                                 <div class="col-lg-6">
                                     <div class="input-holder">
-                                        <input type="text" name="name" placeholder="Select date">
-                                        <i class="conexi-icon-small-calendar"></i>
+                                       
+                                        <input id="datefield" name="name" type="date" value="<?php echo date('Y-m-d'); ?>" required>
+                                        <script> //funcao para declarar a data minima a data do dia em questao
+                                            var today = new Date();
+                                            var dd = today.getDate();
+                                            var mm = today.getMonth() + 1;
+                                            var yyyy = today.getFullYear();
+                                            if (dd < 10) {
+                                                dd = '0' + dd
+                                            }
+                                            if (mm < 10) {
+                                                mm = '0' + mm
+                                            }
+
+                                            today = yyyy + '-' + mm + '-' + dd;
+                                            document.getElementById("datefield").setAttribute("min", today);
+                                        </script>
+                                       <i class="conexi-icon-small-calendar"></i>    
                                     </div><!-- /.input-holder -->
                                 </div><!-- /.col-lg-6 -->
                                 <div class="col-lg-6">
                                     <div class="input-holder">
-                                        <select class="selectpicker">
-                                            <option>Select Time</option>
-                                            <option>10AM-10.59AM</option>
-                                            <option>12PM-12.59PM</option>
-                                            <option>1PM-1.59PM</option>
-                                            <option>2PM-2.59PM</option>
-                                        </select>
+                                       <input class="space" type="time" required />
                                         <i class="conexi-icon-clock"></i>
                                     </div><!-- /.input-holder -->
                                 </div><!-- /.col-lg-6 -->
                                 <div class="col-lg-6">
                                     <div class="input-holder">
-                                        <button type="submit">Book Now</button>
+                                        <button type="submit">Reservar Agora</button>
                                     </div><!-- /.input-holder -->
                                 </div><!-- /.col-lg-6 -->
                             </div><!-- /.row -->
@@ -241,7 +254,7 @@
                                         <i class="conexi-icon-phone-call"></i>
                                     </div><!-- /.icon-block -->
                                     <div class="content-block">
-                                        <p>Call us now and make <br>your booking</p>
+                                        <p>Contacte nos <br>Temos apoio 24h</p>
                                     </div><!-- /.content-block -->
                                 </div><!-- /.left-block -->
                                 <div class="right-block">
@@ -257,36 +270,36 @@
             <div class="container">
                 <div class="block-title text-center">
                     <div class="dot-line"></div><!-- /.dot-line -->
-                    <p>Our fun facts</p>
-                    <h2>Numbers speak</h2>
+                    <p>Factos engraçados</p>
+                    <h2>Números que falam por si!</h2>
                 </div><!-- /.block-title text-center -->
                 <div class="row">
                     <div class="col-lg-3 col-md-6 col-sm-12">
                         <div class="single-funfact-one hvr-float-shadow">
-                            <i class="conexi-icon-meter"></i>
-                            <h3 class="counter">8700</h3>
-                            <p>KM Driven</p>
+                            <img src="images/index/partener.png" />
+                            <h3 class="counter">10</h3>
+                            <p>Parceiros</p>
                         </div><!-- /.single-funfact-one -->
                     </div><!-- /.col-lg-3 -->
                     <div class="col-lg-3 col-md-6 col-sm-12">
                         <div class="single-funfact-one hvr-float-shadow">
                             <i class="conexi-icon-team"></i>
                             <h3 class="counter">4978</h3>
-                            <p>People Dropped</p>
+                            <p>Utilizadores</p>
                         </div><!-- /.single-funfact-one -->
                     </div><!-- /.col-lg-3 -->
                     <div class="col-lg-3 col-md-6 col-sm-12">
                         <div class="single-funfact-one hvr-float-shadow">
                             <i class="conexi-icon-taxi"></i>
                             <h3 class="counter">800</h3>
-                            <p>Taxis & Drivers</p>
+                            <p>Condutores</p>
                         </div><!-- /.single-funfact-one -->
                     </div><!-- /.col-lg-3 -->
                     <div class="col-lg-3 col-md-6 col-sm-12">
                         <div class="single-funfact-one hvr-float-shadow">
                             <i class="conexi-icon-happy"></i>
                             <h3 class="counter">2480</h3>
-                            <p>Happy People</p>
+                            <p>Clientes satisfeitos</p>
                         </div><!-- /.single-funfact-one -->
                     </div><!-- /.col-lg-3 -->
                 </div><!-- /.row -->
@@ -1015,6 +1028,7 @@
     <script src="js/jquery.counterup.min.js"></script>
     <script src="js/jquery.bxslider.min.js"></script>
     <script src="js/theme.js"></script>
+    <script src="js/calendar.js"></script>
 </body>
 
 </html>
