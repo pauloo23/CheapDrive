@@ -1,0 +1,9 @@
+{
+    "MySQL": {
+        "username": "webitclo_B401",
+        "password": "PW1819#B401272",
+        "database": "webitclo_B401",
+        "host": "webitcloud.net",
+        "dialect": "mysql"
+    }
+}
