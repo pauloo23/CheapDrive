@@ -382,10 +382,13 @@ hr.style-one {
   top: 0%;
   right: 0px;
 }
-.header-navigation .main-navigation {
-  float: left;
-  text-align: left;
-}
+    .header-navigation .main-navigation {
+        
+    
+       
+        justify-content: center
+    }
+    }
 @media (min-width: 1200px) {
   .header-navigation .main-navigation {
     display: block !important;
@@ -393,9 +396,10 @@ hr.style-one {
 }
 
 .header-navigation ul.navigation-box {
-  margin: 0;
+  margin: auto;
   padding: 0;
   list-style: none;
+
 }
 .header-navigation ul.navigation-box li a .sub-nav-toggler {
   display: none;
