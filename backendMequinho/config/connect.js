@@ -12,9 +12,9 @@ database: 'db_isi_203'
 var mysql = require('mysql')
 var con = mysql.createConnection({
     host: 'remotemysql.com',
-    user: '7SYqEUFk1K',
-    password: 'LHqa8UhmN2',
-    database: '7SYqEUFk1K'
+    user: 'merPpxv9vl',
+    password: 'ehty9VG9ki',
+    database: 'merPpxv9vl'
 })
 
 con.connect(function (err) {
