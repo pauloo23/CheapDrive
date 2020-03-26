@@ -1,3 +1,6 @@
+/*
+
+
 //definição de constantes
 const saltRounds = 10;
 const connect = require('../config/connect');
@@ -153,3 +156,5 @@ module.exports = {
     update: update,
     deleteID: deleteID
 };
+
+*/
