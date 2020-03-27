@@ -35,10 +35,11 @@
     <div class="preloader"></div><!-- /.preloader -->
     <div class="page-wrapper">
         <header class="site-header header-one">
-      <div class="top-bar">
+   
+        <div class="top-bar">
                 <div class="container">
                     <div class="left-block">
-                           <button type='button' style="color:#4ECCA3;" class="btn btn-outline-white2  px-1 py-2" data-toggle="modal" data-target="#popUpWindow">Login</button>
+                         
                         
 
 
@@ -48,48 +49,8 @@
                     </div><!-- /.left-block -->
 
                     
-                     
 
 
-    <div class="modal fade" id="popUpWindow">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <!-- header -->
-
-          <div class="modal-header">
-            <h12 style="color:#4ECCA3;" data-aos="fade-up" data-aos-delay="500">Entre na sua conta</h12>
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-          </div>
-          <!-- body -->
-          <div class="modal-header">
-            <form  role="form" action="/signin" method="post">
-              <div class="form-group">
-                <input align="center" type="email" aria-invalid="true" class="required form-control" id="email" placeholder="Email" size="50" />
-                  <br />
-                <input type="password" class="form-control" id="password" placeholder="Password" />
-              </div>
-            </form>
-          </div>
-          <!-- footer -->
-          <div class="modal-footer">
-              <button type="submit" class="btn btn-success" id="btnLog">Log In</button>
-              <button type="submit" class="btn btn-danger" id="btnLog" onclick="hide()">Cancelar</button>
-              <script>
-                  function hide() { //funcao para esconder popup
-                      document.getElementById('popUpWindow').style.display = 'none';
-                  }
-
-              </script>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-
-              <div class="logo-block">
-                        <a href="index.html"><img src="images/index/logo.png" alt="Awesome Image" /></a>
-                    </div><!-- /.logo-block -->
               <div class="social-block">
                         <a href="#"><i class="fa fa-twitter"></i></a>
                         <a href="#"><i class="fa fa-facebook-f"></i></a>
@@ -110,31 +71,65 @@
                     </div><!-- /.logo-box -->
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="main-navigation" id="main-nav-bar">
-                        
+
                         <ul class="navigation-box">
                             <li class=" current ">
                                 <a href="index.html">Home</a>
                                 <ul class="sub-menu">
-                                   
-                                        <ul class="sub-menu">
-                                          
-                                        </ul><!-- /.sub-menu -->
-                                    </li>
-                                </ul><!-- /.sub-menu -->
+
+                                    <ul class="sub-menu">
+                                    </ul><!-- /.sub-menu -->
                             </li>
-                            <li><a href="about.html">Sobre</a></li>
-                            <li>
-                                <a href="#">Produtos</a>
-                                <ul class="sub-menu">
-                                    <li><a href="driver.html">Dados dos Veiculos</a></li>
-                                    <li><a href="taxi.html">Dados dos Condutores</a></li>                                
-                                </ul><!-- /.sub-menu -->
-                            </li>
-                            <li><a href="book-ride.html">Pedir Viagem</a></li>
-                           
-                           
+                        </ul><!-- /.sub-menu -->
+                        </li>
+                        <li><a href="about.html">Sobre</a></li>
+                        <li>
+                            <a href="#">Produtos</a>
+                            <ul class="sub-menu">
+                                <li><a href="driver.html">Dados dos Veiculos</a></li>
+                                <li><a href="taxi.html">Dados dos Condutores</a></li>
+                            </ul><!-- /.sub-menu -->
+                        </li>
+                        <li><a class="input-holder" data-toggle="modal" data-target="#popUpWindow">Login</a></li>
+                        <div class="modal fade" id="popUpWindow">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <!-- header -->
+
+                                    <div class="modal-header">
+                                        <h12 style="color:#D76A29;" data-aos="fade-up" data-aos-delay="500">Entre na sua conta</h12>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+                                    <!-- body -->
+                                    <div class="modal-header">
+                                        <form role="form" action="/signin" method="post">
+                                            <div class="form-group">
+                                                <input align="center" type="email" aria-invalid="true" class="required form-control" id="email" placeholder="Email" size="50" />
+                                                <br />
+                                                <input type="password" class="form-control" id="password" placeholder="Password" />
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <!-- footer -->
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-danger" id="btnLog" onclick="hide()" required>Cancelar</button>
+                                        <button type="submit" class="btn btn-success" id="btnLog" required>Log In</button>
+
+                                        <script>
+                                            function hide() { //funcao para esconder popup
+                                                document.getElementById('popUpWindow').style.display = 'none';
+                                            }
+
+                                        </script>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
                         </ul>
-                            
+
                     </div><!-- /.navbar-collapse -->
                     <div class="right-side-box">
                         <a href="callto:917805414" class="contact-btn-block">
@@ -144,7 +139,7 @@
                             <span class="text-block">
                                 917805414
                                 <span class="tag-line">Linha Apoio</span>
-                            </span>
+                            </span> 
                         </a>
                     </div><!-- /.right-side-box -->
                 </div>

@@ -5139,3 +5139,7 @@ hr.style-one {
         .sidebar .author-widget .social-block a:hover {
             color: #D76A29;
         }
+
+.btn btn-outline-white2 px-1 py-2 {
+    padding-left: 30px;
+}
