@@ -46,7 +46,7 @@ qs: { access_token: '' + moloni_access_token },
     reference: req.body.reference
     }
 };
-
+ var data={};
 request(options, function(error, response, body) {
   if (error) throw new Error(error);
    //res.status(200).send(body);
@@ -54,14 +54,21 @@ request(options, function(error, response, body) {
     for (var i = 0; i < packages_data.length; i++) {
     packages.push(packages_data[i].package_id);
     }
-    console.log(packages_data);
-    console.log(packages);
-    //converte para string para aparecer no postman
-    res.end(JSON.stringify(packages_data));
+    /*
+       console.log(packages_data);
+       console.log(packages);
+       //converte para string para aparecer no postman
+       res.end(JSON.stringify(packages_data));
+    */
 
+         data.packages = {};
+         data.packages = packages_data;
+         res.end(JSON.stringify(data));
+         console.log(data);
+         console.log(packages_data);
     });
 
-console.log(packages);
+
 
 
 }
