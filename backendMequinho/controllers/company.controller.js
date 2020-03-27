@@ -4,8 +4,8 @@ var moloni_client_secret = '125463ae6755e5308d9f6b86728022805d1582ec';
 var request = require('request');
 var express = require('express');
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-var packages = [];
-var packages_data;
+var companies = [];
+var company_data;
 
 
 function getToken() {
@@ -24,7 +24,7 @@ console.log("moloni_access_token: " + moloni_access_token + "   moloni_refresh_t
 
 }
 
-function getPackages(req, res) {
+function getCompany(req, res) {
 
 getToken();
 console.log("Getting acess_token");
@@ -32,7 +32,7 @@ console.log("Getting acess_token");
  var options = {
 
 method: 'POST',
-url: 'https://api.moloni.pt/v1/products/getAll/',
+url: 'https://api.moloni.pt/v1/companies/getAll/',
 qs: { access_token: '' + moloni_access_token },
   headers: {
    'cache-control': 'no-cache',
@@ -40,40 +40,28 @@ qs: { access_token: '' + moloni_access_token },
    },
 
     form: {
-    company_id: '127896',
-    category_id: '2183110',
-    name: req.body.name,
-    reference: req.body.reference
+    company_id: req.body.company_id
+
     }
 };
- var data={};
+
 request(options, function(error, response, body) {
   if (error) throw new Error(error);
    //res.status(200).send(body);
-    var packages_data = JSON.parse(response.body);
-    for (var i = 0; i < packages_data.length; i++) {
-    packages.push(packages_data[i].package_id);
+    var company_data = JSON.parse(response.body);
+    for (var i = 0; i < company_data.length; i++) {
+    companies.push(company_data[i].company_id);
     }
-    /*
-       console.log(packages_data);
-       console.log(packages);
-       //converte para string para aparecer no postman
-       res.end(JSON.stringify(packages_data));
-    */
+    console.log(company_data);
+    console.log(companies);
 
-         data.packages = {};
-         data.packages = packages_data;
-         res.end(JSON.stringify(data));
-         console.log(data);
-         console.log(packages_data);
     });
 
-
-
+console.log(companies);
 
 }
 
 //exportar as funções
 module.exports = {
-    getPackages: getPackages
+    getCompany: getCompany
    };
