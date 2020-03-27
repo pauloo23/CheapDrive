@@ -24,7 +24,7 @@ console.log("moloni_access_token: " + moloni_access_token + "   moloni_refresh_t
 
 }
 
-function getPackages(req, res) {
+function getPackages() {
 
 getToken();
 console.log("Getting acess_token");
@@ -50,7 +50,7 @@ request(options, function(error, response, body) {
    //res.status(200).send(body);
     var packages_data = JSON.parse(response.body);
     for (var i = 0; i < packages_data.length; i++) {
-    packages.push(packages_data[i].package_id);
+    packages.push(dados_vehicles[i].vehicle_id);
     }
     console.log(packages_data);
     console.log(packages);
@@ -61,7 +61,43 @@ console.log(packages);
 
 }
 
-//exportar as funções
-module.exports = {
-    getPackages: getPackages
-   };
+global.app.get('/boltMoloni', function(req, res) {
+
+console.log('body: ' + JSON.stringify(req.body));
+
+getToken();
+
+console.log("Getting access token");
+var options = {
+  method: 'POST',
+  url: 'https://api.moloni.pt/v1/products/getAll/',
+ qs: { access_token: '' + moloni_access_token },
+ headers: {
+'cache-control': 'no-cache',
+   'content-type': 'application/x-www-form-urlencoded'
+  },
+  form: {
+      company_id: '12345',
+      category_id: '1101'
+      }
+      };
+
+ var data={};
+ request(options, function(error, response, body) {
+    if (error) throw new Error(error);
+
+     var packages_data = JSON.parse(response.body);
+     for (var i = 0; i < packages_data.length; i++) {
+     packages.push(packages_data[i].package_id);
+     }
+
+
+       data.packages = {};
+       data.packages = packages_data;
+         res.end(JSON.stringify(data));
+         console.log(data);
+         console.log(packages_data);
+         });
+
+         });
+
