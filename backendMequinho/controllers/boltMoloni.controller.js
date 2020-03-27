@@ -56,10 +56,13 @@ request(options, function(error, response, body) {
     }
     console.log(packages_data);
     console.log(packages);
+    //converte para string para aparecer no postman
+    res.end(JSON.stringify(packages_data));
 
     });
 
 console.log(packages);
+
 
 }
 
