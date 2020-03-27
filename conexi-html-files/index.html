@@ -62,16 +62,24 @@
           </div>
           <!-- body -->
           <div class="modal-header">
-            <form role="form" action="/signin" method="post">
+            <form  role="form" action="/signin" method="post">
               <div class="form-group">
-                <input align="center" type="email" aria-invalid="true" class="required form-control" id="email" placeholder="Email" />
+                <input align="center" type="email" aria-invalid="true" class="required form-control" id="email" placeholder="Email" size="50" />
+                  <br />
                 <input type="password" class="form-control" id="password" placeholder="Password" />
               </div>
             </form>
           </div>
           <!-- footer -->
           <div class="modal-footer">
-            <button type="submit" class="btn btn-primary btn-block" id="btnLog">Log In</button>
+              <button type="submit" class="btn btn-success" id="btnLog">Log In</button>
+              <button type="submit" class="btn btn-danger" id="btnLog" onclick="hide()">Cancelar</button>
+              <script>
+                  function hide() { //funcao para esconder popup
+                      document.getElementById('popUpWindow').style.display = 'none';
+                  }
+
+              </script>
           </div>
 
         </div>
@@ -315,7 +323,7 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-6 col-sm-12">
                         <div class="single-funfact-one hvr-float-shadow">
-                            <img src="images/index/partener.png" />
+                            <img src="images/index/partener1.png" />
                             <h3 class="counter">10</h3>
                             <p>Parceiros</p>
                         </div><!-- /.single-funfact-one -->
