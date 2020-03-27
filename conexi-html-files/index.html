@@ -1061,7 +1061,8 @@
    <script>
        
        const btnLogin = document.getElementById("btnLog")
-       
+       $('popUpWindow').modal('hide');   
+       $(".modal-backdrop").remove();
        btnLogin.addEventListener('click', function () {
            var data = {};
            data.email = document.getElementById("email").value;
