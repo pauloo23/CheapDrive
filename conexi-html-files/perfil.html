@@ -81,8 +81,8 @@
                 <li>
                     <a href="#">Produtos</a>
                     <ul class="sub-menu">
-                        <li><a href="driver.html">Dados dos Veiculos</a></li>
-                        <li><a href="taxi.html">Dados dos Condutores</a></li>
+                        <li><a href="driver.html">Dados dos Condutores</a></li>
+                        <li><a href="taxi.html">Dados dos Veiculos</a></li>
                     </ul><!-- /.sub-menu -->
                 </li>
                 <li><a href="contact.html">Contactos</a></li>
@@ -157,10 +157,10 @@
                     <div class="content-block" style="bottom: 50px;">
                         <div class="block-title mb-0">
                             <div class="dot-line"></div><!-- /.dot-line -->
-                            <p class="light">Procura transporte?</p>
-                            <h2 class="light">Faz aqui <br> o teu registo</h2>
+                        
+                            <h2 class="light">Meu<br>Perfil</h2>
                         </div><!-- /.block-title -->
-                        <p>Garante a melhor oferta. <br> Aqui encontras tudo o que precisas.</p>
+                        
                     </div><!-- /.content-block -->
                 </div><!-- /.col-lg-4 -->
                 <div class="col-lg-8">
@@ -168,17 +168,17 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="input-holder">
-                                    <input type="text" name="name" placeholder="Primeiro nome" required>
+                                    <input type="text" name="name" placeholder="Primeiro nome" readonly>
                                 </div><!-- /.input-holder -->
                             </div><!-- /.col-lg-6 -->
                             <div class="col-lg-6">
                                 <div class="input-holder">
-                                    <input type="text" name="name" placeholder="Ultimo nome" required>
+                                    <input type="text" name="name" placeholder="Ultimo nome" readonly>
                                 </div><!-- /.input-holder -->
                             </div><!-- /.col-lg-6 -->
                             <div class="col-lg-6">
                                 <div class="input-holder">
-                                    <input type="email" name="name" placeholder="E-mail" required>
+                                    <input type="email" name="name" placeholder="E-mail" readonly>
                                 </div><!-- /.input-holder -->
                             </div><!-- /.col-lg-6 -->
                             <div class="col-lg-6">
@@ -188,14 +188,13 @@
                             </div><!-- /.col-lg-6 -->
                             <div class="col-lg-6">
                                 <div class="input-holder">
-                                    <input type="password" id="passwordedit" name="name" placeholder="Password" required>
-                                    
-                                   
+                                    <input type="password" id="password" name="name" placeholder="Password" required>
+
                                 </div><!-- /.input-holder -->
                             </div><!-- /.col-lg-6 -->
                             <div class="col-lg-6">
                                 <div class="input-holder">
-                                    <input placeholder="Data de Nascimento" id="datefield" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" required />
+                                    <input placeholder="Data de Nascimento" id="datefield" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" readonly />
                                    
                                     <script>
                                         //funcao para declarar a data minima a data do dia em questao
@@ -218,26 +217,25 @@
                             </div><!-- /.col-lg-6 -->
                             <div class="col-lg-6">
                                   <div class="input-holder">
-                                    <input type="password" id="confirm_passwordedit" name="name" placeholder="Repetir Password" required>
-                                      <script>
-                                          var password = document.getElementById("passwordedit")
-                                              , confirm_password = document.getElementById("confirm_passwordedit");
+                                    <input type="password" id="confirm_password" name="name" placeholder="Repetir Password" required>
+                                       <script>var password = document.getElementById("password")
+                                               , confirm_password = document.getElementById("confirm_password");
 
-                                          function validatePassword() {
-                                              if (password.value != confirm_password.value) {
-                                                  confirm_password.setCustomValidity("Passwords não correspondem");
-                                              } else {
-                                                  confirm_password.setCustomValidity('');
-                                              }
-                                          }
+                                           function validatePassword() {
+                                               if (password.value != confirm_password.value) {
+                                                   confirm_password.setCustomValidity("Passwords não correspondem");
+                                               } else {
+                                                   confirm_password.setCustomValidity('');
+                                               }
+                                           }
 
-                                          password.onchange = validatePassword;
-                                          confirm_password.onkeyup = validatePassword;</script>
+                                           password.onchange = validatePassword;
+                                           confirm_password.onkeyup = validatePassword;</script>
                                 </div><!-- /.input-holder -->
                             </div><!-- /.col-lg-6 -->
                             <div class="col-lg-6">
                                 <div class="input-holder">
-                                    <button type="submit">Registar</button>
+                                    <button type="submit">Confirmar</button>
                                 </div><!-- /.input-holder -->
                             </div><!-- /.col-lg-6 -->
                         </div><!-- /.row -->
