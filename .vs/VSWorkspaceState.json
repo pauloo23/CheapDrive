@@ -2,9 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\backendMequinho",
+    "\\backendMequinho\\controllers",
     "\\conexi-html-files",
     "\\conexi-html-files\\css"
   ],
-  "SelectedNode": "\\conexi-html-files\\about.html",
+  "SelectedNode": "\\backendMequinho\\controllers\\boltMoloni.controller.js",
   "PreviewInSolutionExplorer": false
 }
