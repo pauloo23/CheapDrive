@@ -453,7 +453,7 @@
             data.email = document.getElementById("email").value;
             data.password = document.getElementById("password").value;
 
-            fetch('https://b401-back-webitcloud.c9users.io/signin', {
+            fetch('http://localhost:8080/signin', {
                 headers: { 'Content-Type': 'application/json' },
                 method: 'POST',
                 body: JSON.stringify(data)
@@ -464,22 +464,22 @@
                 return response.json();
             }).then(result => {
                 console.log(result);
-                switch (result.tipo) {
-                    case "Administrador":
-                        window.location.replace("../Painel/ADMIN.html");
+                alert("login efetuado com sucesso");
+
+                      switch (result.tipo) {
+                      case "Administrador":
+                        window.location.replace("../conexi-html-files/about.html");
+
                         break;
-                    case "Voluntário":
-                        window.location.replace("../Painel/voluntarioADMIN.html");
-                        break;
-                    case "Associado":
-                        window.location.replace("../Painel/SocioADMIN.html");
-                        break;
-                    case "Empresa":
-                        window.location.replace("../Painel/empresaADMIN.html");
-                        break;
+
+
+
                     default:
                         alert("Tipo de utilizador inválido");
                 }
+                      window.location.replace("../conexi-html-files/about.html");
+                      break;
+
             }).catch(error => {
                 swal({ title: `${result.value.err_message}` })
             }).catch(error => {
@@ -487,8 +487,11 @@
             });
         });
     </script>
-  
 
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
@@ -496,6 +499,7 @@
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/waypoints.min.js"></script>
     <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/main.js"></script>
     <script src="js/jquery.bxslider.min.js"></script>
     <script src="js/theme.js"></script>
     <script src="js/calendar.js"></script>
