@@ -1,7 +1,7 @@
 var request = require('request');
 var token_jasmin;
 var pacotes = [];
-var dados_vehicles;
+var dados_pacotes;
 
 
 
@@ -24,17 +24,17 @@ function getTokenJasmin() {
 
     });
     console.log("AQUI VAI O TOKEN:");
-    console.log(token_jasmin);
+   // console.log(token_jasmin);
 };
 
 
 
-function getPacotes() {
+function getPacotes(req, res) {
     getTokenJasmin();
     setTimeout(function () {
         var options = {
             method: 'GET',
-            url: 'https://my.jasminsoftware.com/api/233762/233762-001/materialscore/materialsItems',
+            url: 'https://my.jasminsoftware.com/api/233762/233762-0001/materialsCore/materialsItems',
             headers: {
                 'content-type': 'application/json',
                 'Authorization': 'bearer ' + token_jasmin
@@ -45,16 +45,39 @@ function getPacotes() {
         console.log("1--------------------------------------");
         console.log(token_jasmin);
 
-        request(options, function (error, response, body) {
-            if (error) throw new Error(error);
+        var data = {};
 
-            var dados_pacotes = JSON.parse(response.body);
-            for (var i = 0; i < dados_pacotes.length; i++) {
-                pacotes.push(dados_pacotes[i].itemKey);
-            }
-            console.log(dados_pacotes);
-            console.log(pacotes);
-        });
+
+            request(options, function (error, response, body) {
+                if (error) throw new Error(error);
+                var dados_pacotes = JSON.parse(response.body);
+                for (var i = 0; i < dados_pacotes.length; i++) {
+                    pacotes.push(dados_pacotes[i].itemKey);
+                }
+                console.log(dados_pacotes);
+                console.log(pacotes);
+               /* var ola = JSON.parse(response.body);
+                console.log(ola);
+                var dados = ola;
+                var barCode = [];
+                var itemKey = [];
+                for (var i = 0; i < dados.length; i++) {
+                    itemKey.push(dados[i].itemKey);
+                    console.log(itemKey);
+                    barCode.push(dados[i].barcode);
+                }
+                var data = {};
+                data.itemKey = itemKey;
+                data.barCode = barCode;*/
+                data.pacotes = {};
+                data.pacotes = dados_pacotes;
+                res.end(JSON.stringify(data));
+                console.log(data);
+                console.log(dados_pacotes);
+
+               // res.end(JSON.stringify(data));
+                //console.log(data);
+            });
     }, 2000);
 }
 
@@ -62,4 +85,3 @@ function getPacotes() {
 module.exports = {
     getPacotes: getPacotes
 };
-
