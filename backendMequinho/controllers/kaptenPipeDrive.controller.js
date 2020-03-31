@@ -1,16 +1,22 @@
 var request = require('request');
-global.app.get('/lista_utilizadores_pipedrive', function(req, res) {
 
-     console.log('body: ' + JSON.stringify(req.body));
+function getPackages(req, res) {
+
+console.log("Init getPackages function...")
+
+
 
          var options = {
              method: 'GET',
-             url:'',
+             url:'https://api.pipedrive.com/v1/products?start=0&api_token=e5552dfcf767e06f352894293743f6fbecf170cb',
+
 
         headers:
      { 'content-type': 'application/json' },
 
         };
+var data = {};
+
 
      request(options, function (error, response, body) {
          if (error) throw new Error(error);
@@ -20,21 +26,28 @@ global.app.get('/lista_utilizadores_pipedrive', function(req, res) {
 
          var dados = oi.data;
          var nomes = [];
-         var email = [];
-         var telemovel = [];
+         var code = [];
+
+
          for (var i = 0; i < dados.length; i++) {
                 nomes.push(dados[i].name);
-                email.push(dados[i].email[0].value);
-                telemovel.push(dados[i].phone[0].value);
+                code.push(dados[i].code);
+
+
                 console.log(nomes);
+                console.log(code);
     }
     var oi = {};
             oi.nome= nomes;
-            oi.email=email;
-            oi.phone=telemovel;
-            res.send(oi);
+            oi.code= code;
+
 
      });
 
 
-});
+}
+
+//exportar as funções
+module.exports = {
+    getPackages: getPackages
+};

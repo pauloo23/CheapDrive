@@ -272,7 +272,7 @@
             </div><!-- /.row -->
         </div><!-- /.container -->
     </section><!-- /.book-ride-one -->
-    <section class="about-style-one " style="padding-bottom: 40px;>
+    <section class="about-style-one " style="padding-bottom: 40px;">
         <div class="container">
             <div class="block-title text-center">
                 <div class="dot-line"></div><!-- /.dot-line -->
@@ -445,10 +445,12 @@
     <!-- /.scroll-to-top -->
     <script>
 
+
         const btnLogin = document.getElementById("btnLog")
         $('popUpWindow').modal('hide');
         $(".modal-backdrop").remove();
         btnLogin.addEventListener('click', function () {
+            console.log("...");
             var data = {};
             data.email = document.getElementById("email").value;
             data.password = document.getElementById("password").value;
@@ -488,7 +490,7 @@
     </script>
 
 
-    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.js"></script>
     <script src="js/jquery-migrate-3.0.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/jquery.js"></script>
