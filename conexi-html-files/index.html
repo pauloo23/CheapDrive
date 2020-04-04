@@ -32,7 +32,7 @@
 <!--petaro-->
 
 <body>
-
+    <script src="js/jquery.js"></script>
     <div class="preloader"></div><!-- /.preloader -->
     <div class="page-wrapper">
         <header class="site-header header-one">
@@ -136,7 +136,7 @@
 
                                
                                 <button type="submit" class="btn btn" id="btnCanc" onclick="hide()" required style="background-color:#D76A29;">Cancelar</button>
-                                <button type="submit" class="btn btn" id="btnLog" required style="background-color:#D76A29;">Log In</button>
+                                <button type="button" class="btn btn" id="btnLog" required style="background-color:#D76A29;">Log In</button>
 
                                 <script>
                                     function hide() { //funcao para esconder popup
@@ -445,11 +445,11 @@
     <!-- /.scroll-to-top -->
     <script>
 
+        console.log("Script");
 
         const btnLogin = document.getElementById("btnLog")
-        $('popUpWindow').modal('hide');
         $(".modal-backdrop").remove();
-        btnLogin.addEventListener('click', function () {
+        $( "#btnLog" ).on( "click", function() {
             console.log("...");
             var data = {};
             data.email = document.getElementById("email").value;
@@ -467,20 +467,17 @@
             }).then(result => {
                 console.log(result);
                 alert("login efetuado com sucesso");
-
-                      switch (result.tipo) {
-                      case "Administrador":
-                      window.location.replace("../conexi-html-files/about.html");
-                      break;
-
-
-
+                switch (result.tipo) {
+                    case "Administrador":
+                        window.location.replace("../conexi-html-files/about.html");
+                        break;
+                    case "Utilizador":
+                        window.location.replace("../conexi-html-files/about.html");
+                        break;
                     default:
                         alert("Tipo de utilizador inválido");
                 }
-                      window.location.replace("../conexi-html-files/about.html");
-                      break;
-
+                     
             }).catch(error => {
                 swal({ title: `${result.value.err_message}` })
             }).catch(error => {
@@ -489,21 +486,14 @@
         });
     </script>
 
-
-    <script src="js/jquery.js"></script>
-    <script src="js/jquery-migrate-3.0.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/jquery.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/bootstrap-select.min.js"></script>
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/waypoints.min.js"></script>
     <script src="js/jquery.counterup.min.js"></script>
-    <script src="js/main.js"></script>
     <script src="js/jquery.bxslider.min.js"></script>
     <script src="js/theme.js"></script>
-    <script src="js/calendar.js"></script>
 </body>
 
 </html>
