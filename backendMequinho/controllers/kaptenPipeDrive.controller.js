@@ -38,7 +38,7 @@ var data = {};
                 console.log(code);
     }
     var oi = {};
-            oi.nome= nomes;
+            oi.nomes= nomes;
             oi.code= code;
 
 
