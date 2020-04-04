@@ -178,7 +178,7 @@
                             </div><!-- /.col-lg-6 -->
                             <div class="col-lg-6">
                                 <div class="input-holder">
-                                    <input type="email" name="email" id="email" placeholder="E-mail" required>
+                                    <input type="email" name="email" id="emailReg" placeholder="E-mail" required>
                                 </div><!-- /.input-holder -->
                             </div><!-- /.col-lg-6 -->
                             <div class="col-lg-6">
@@ -215,7 +215,7 @@
                             </div><!-- /.col-lg-6 -->
                             <div class="col-lg-6">
                                 <div class="input-holder">
-                                    <button type="submit" name="submit" id="submit">Registar</button>
+                                    <button type="submit" name="submit" id="btnReg">Registar</button>
                                 </div><!-- /.input-holder -->
                             </div><!-- /.col-lg-6 -->
                         </div><!-- /.row -->
@@ -305,17 +305,20 @@
     <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
     <!-- /.scroll-to-top -->
     <script>
-    const btnRegisto = document.getElementById("submit")
+    const btnRegisto = document.getElementById("btnReg")
+
     btnRegisto.addEventListener('click', function(){
     var data = {};
-    data.email = document.getElementById("email").value;
+    data.email = document.getElementById("emailReg").value;
     data.password = document.getElementById("password_Registo").value;
     data.firstname = document.getElementById("first_name").value;
     data.lastname = document.getElementById("last_name").value;
     data.tipo = "Utilizador";
     data.username = document.getElementById("morada").value;
     console.log(data); //debugging para ver os dados que foram enviados
+
     //chamada fetch para envio dos dados para o servior via POST
+
     fetch('http://localhost:8080/signup', {
     headers: { 'Content-Type': 'application/json' },
     method: 'POST',
