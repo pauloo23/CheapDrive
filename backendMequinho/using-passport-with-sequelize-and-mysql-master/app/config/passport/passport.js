@@ -57,7 +57,9 @@
         password:userPassword,
         firstname: req.body.firstname,
         lastname: req.body.lastname,
-        tipo: req.body.tipo
+        tipo: req.body.tipo,
+        username: req.body.username
+
         };
 
 

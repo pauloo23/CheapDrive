@@ -40,7 +40,9 @@ module.exports = function(passport, user) {
                         password: userPassword,
                         nome: req.body.firstname,
                         apelido: req.body.lastname,
-                        tipo: req.body.tipo
+                        tipo: req.body.tipo,
+                        username: req.body.username
+
                     };
                     User.create(data).then(function(newUser, created) {
                         if (!newUser) {
