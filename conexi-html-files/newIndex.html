@@ -1,0 +1,528 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Página inicial || CheapDrive </title>
+    <link rel="apple-touch-icon" sizes="57x57" href="images/favicon//apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/favicon//apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon//apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/favicon//apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon//apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/favicon//apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/favicon//apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/favicon//apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon//apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/favicon//android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon//favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon//favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon//favicon-16x16.png">
+    <link rel="manifest" href="images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<!--petaro-->
+
+<body>
+    <script src="js/jquery.js"></script>
+    <div class="preloader"></div><!-- /.preloader -->
+    <div class="page-wrapper">
+        <header class="site-header header-one">
+            <!--
+                 <div class="top-bar">
+                         <div class="container">
+                             <div class="left-block">
+
+
+
+
+
+
+                                 <a href="mailto:cdhelp@gmail.com"><i class="fa fa-envelope"></i> cdhelp@gmail.com</a>
+                             </div><!-- /.left-block -->
+
+
+<!--
+
+            <div class="social-block">
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-facebook-f"></i></a>
+                <a href="#"><i class="fa fa-youtube-play"></i></a>
+                <a href="#"><i class="fa fa-google-plus"></i></a>
+            </div><!-- /.social-block -->
+    
+        <br />
+    <nav class="navbar navbar-expand-lg navbar-light header-navigation stricky">
+        <div class="container clearfix" style="width: 875px;">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="logo-box clearfix">
+                <button class="menu-toggler" data-target="#main-nav-bar">
+                    <span class="fa fa-bars"></span>
+                </button>
+            </div><!-- /.logo-box -->
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="main-navigation" id="main-nav-bar">
+
+                <ul class="navigation-box">
+                    <li class=" current ">
+                        <a href="index.html">Home</a>
+                    <!-- /.sub-menu -->
+                </li>
+                <li><a href="about.html">Sobre</a></li>
+                <li>
+                    <a href="#">Produtos</a>
+                    <ul class="sub-menu">
+                   <li><a href="driver.html">Dados dos Condutores</a></li>
+                        <li><a href="taxi.html">Dados dos Veiculos</a></li>
+                    </ul><!-- /.sub-menu -->
+                </li>
+                <li><a href="contact.html">Contactos</a></li>
+            
+
+    
+
+            </div><!-- /.navbar-collapse -->
+
+            <div class="right-side-box">
+              <a buttom onclick="appear()" class="contact-btn-block" data-toggle="modal" data-target="#popUpWindow" style="text-align:center; padding-bottom: 36px;padding-right: 65px; color:#D76A29; font-size:150%;"> 
+                   &nbsp;     &nbsp; Login
+                   
+                    <span class="text-block">
+                        
+                        <span class="tag-line"></span>
+                    </span>
+                </a>
+            </div><!-- /.right-side-box -->
+
+             
+
+        </div>
+       
+
+        <!-- /.container -->
+    </nav>
+    </header><!-- /.site-header header-one -->
+            <div class="modal fade" id="popUpWindow">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <!-- header -->
+
+                            <div class="modal-header">
+                                <h12 style="color:#D76A29;" data-aos="fade-up" data-aos-delay="500">Entre na sua conta</h12>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <!-- body -->
+                            <div class="modal-header">
+                                <form role="form" action="/signin" method="post">
+                                    <div class="form-group">
+                                        <input align="center" type="email" aria-invalid="true" class="required form-control" id="email" placeholder="Email" size="50" />
+                                        <br />
+                                        <input type="password" class="form-control" id="password" placeholder="Password" />
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- footer -->
+                            <div class="modal-footer">
+                                
+              <a href="book-ride.html"> <button class="btn btn" id="btnReg" style="margin-right: 180px; background-color:#D76A29;">Registar</button></a>
+
+                               
+                                <button type="submit" class="btn btn" id="btnCanc" onclick="hide()" required style="background-color:#D76A29;">Cancelar</button>
+                                <button type="button" class="btn btn" id="btnLog" required style="background-color:#D76A29;">Log In</button>
+
+                                <script>
+                                    function hide() { //funcao para esconder popup
+                                        document.getElementById('popUpWindow').style.display = 'none';
+                                    }
+
+                                </script>
+                                <script>
+                                    function appear() { //funcao para esconder popup
+                                        document.getElementById('popUpWindow').style.display = 'flex';
+                                    }
+                            </script>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+    <div class="main-banner-wrapper">
+        <section class="banner-style-one owl-theme owl-carousel no-dots">
+            <div class="slide slide-one" style="background-image: url(https://cdn.discordapp.com/attachments/692374962798985248/693211435362287646/fundo.png);">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 text-center">
+                            <h3 class="banner-title">A melhor viagem <br> ao melhor preço</h3>
+                            <p>Junta-te a nós<br>e viaja com conforto</p>
+                            <div class="btn-block">
+                                <a href="about.html" class="banner-btn">Sabe Mais</a>
+                            </div><!-- /.btn-block -->
+                        </div><!-- /.col-lg-12 -->
+                    </div><!-- /.row -->
+                </div><!-- /.container -->
+            </div><!-- /.slide -->
+            <div class="slide slide-two" style="background-image: url(https://i.imgur.com/pvPl3k7.jpg);">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 text-center">
+                            <h3 class="banner-title">A melhor viagem <br> ao melhor preço</h3>
+                            <p></p>
+                            >Enjoy your comfortable trip with <br> conexi company taxi</p>
+                            <div class="btn-block">
+                                <a href="#" class="banner-btn">Sabe Mais</a>
+                            </div><!-- /.btn-block -->
+                        </div><!-- /.col-lg-12 -->
+                    </div><!-- /.row -->
+                </div><!-- /.container -->
+            </div><!-- /.slide -->
+        </section><!-- /.banner-style-one -->
+        <div class="carousel-btn-block banner-carousel-btn">
+            <span class="carousel-btn left-btn"><i class="conexi-icon-left"></i></span>
+            <span class="carousel-btn right-btn"><i class="conexi-icon-right"></i></span>
+        </div><!-- /.carousel-btn-block banner-carousel-btn -->
+    </div><!-- /.main-banner-wrapper -->
+    <section class="book-ride-one">
+        <img src="images/index/booking-bg-1-1.png" class="footer-bg" alt="Awesome Image" />
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="content-block">
+                        <div class="block-title mb-0">
+                            <div class="dot-line"></div><!-- /.dot-line -->
+                            <p class="light">À procura de transporte?</p>
+                            <h2 class="light">Faz aqui <br> a tua reserva</h2>
+                        </div><!-- /.block-title -->
+                        <p>Garante a melhor oferta <br> aqui encontras tudo o que precisas.</p>
+                    </div><!-- /.content-block -->
+                </div><!-- /.col-lg-4 -->
+                <div class="col-lg-8">
+                    <form action="#" class="booking-form-one">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="input-holder">
+                                    <input type="text" name="name" placeholder="Primeiro nome" required>
+                                </div><!-- /.input-holder -->
+                            </div><!-- /.col-lg-6 -->
+                            <div class="col-lg-6">
+                                <div class="input-holder">
+                                    <input type="text" name="name" placeholder="Último nome" required>
+                                </div><!-- /.input-holder -->
+                            </div><!-- /.col-lg-6 -->
+                            <div class="col-lg-6">
+                                <div class="input-holder">
+                                    <input type="text" name="name" placeholder="Endereço de e-mail" required>
+                                </div><!-- /.input-holder -->
+                            </div><!-- /.col-lg-6 -->
+                            <div class="col-lg-6">
+                                <div class="input-holder">
+                                    <input type="text" name="name" placeholder="Local de origem" required>
+                                </div><!-- /.input-holder -->
+                            </div><!-- /.col-lg-6 -->
+                            <div class="col-lg-6">
+                                <div class="input-holder">
+                                    <input type="text" name="name" placeholder="Local de destino" required>
+                                </div><!-- /.input-holder -->
+                            </div><!-- /.col-lg-6 -->
+                            <div class="col-lg-6">
+                                <div class="input-holder">
+
+                                    <input id="datefield" name="name" type="date" value="<?php echo date('Y-m-d'); ?>" required>
+                                    <script>
+    //funcao para declarar a data minima a data do dia em questao
+                                        var today = new Date();
+                                        var dd = today.getDate();
+                                        var mm = today.getMonth() + 1;
+                                        var yyyy = today.getFullYear();
+                                        if (dd < 10) {
+                                            dd = '0' + dd
+                                        }
+                                        if (mm < 10) {
+                                            mm = '0' + mm
+                                        }
+
+                                        today = yyyy + '-' + mm + '-' + dd;
+                                        document.getElementById("datefield").setAttribute("min", today);
+                                    </script>
+                                    <i class="conexi-icon-small-calendar"></i>
+                                </div><!-- /.input-holder -->
+                            </div><!-- /.col-lg-6 -->
+                            <div class="col-lg-6">
+                                <div class="input-holder">
+                                    <input class="space" type="time" required />
+                                    <i class="conexi-icon-clock"></i>
+                                </div><!-- /.input-holder -->
+                            </div><!-- /.col-lg-6 -->
+                            <div class="col-lg-6">
+                                <div class="input-holder">
+                                    <button type="submit">Reservar Agora</button>
+                                </div><!-- /.input-holder -->
+                            </div><!-- /.col-lg-6 -->
+                        </div><!-- /.row -->
+                    </form><!-- /.booking-form-one -->
+                </div><!-- /.col-lg-8 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.book-ride-one -->
+    <section class="about-style-one " style="padding-bottom: 40px;">
+        <div class="container">
+            <div class="block-title text-center">
+                <div class="dot-line"></div><!-- /.dot-line -->
+               
+                <h2>Garantimos sempre o melhor preço <br> para viajares para qualquer sitio </h2>
+            </div><!-- /.block-title -->
+            
+        </div><!-- /.container -->
+    </section><!-- /.about-style-one -->
+   
+   
+    
+    <hr class="style-one">
+    
+   
+    <section class="taxi-fare-one">
+        <div class="container">
+            <div class="block-title text-center">
+                <div class="dot-line"></div><!-- /.dot-line -->
+                <p>Our all taxi rates</p>
+                <h2>Check taxi fares</h2>
+            </div><!-- /.block-title -->
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="single-taxi-fare-one thm-base-bg hvr-float-shadow">
+                        <div class="top-block">
+                            <div class="icon-block">
+                                <i class="conexi-icon-taxi"></i>
+                            </div><!-- /.icon-block -->
+                            <div class="text-block">
+                                <h3>BOLT</h3>
+                                <p>Taxa de Viagem na companhia Bolt.</p>
+                            </div><!-- /.text-block -->
+                        </div><!-- /.top-block -->
+                        <ul class="features-list">
+                            <li>
+                                <div class="name-line">Preço base:</div><!-- /.name-line -->
+                                <div class="price-line">1.3€</div><!-- /.price-line -->
+                            </li>
+                            <li>
+                                <div class="name-line">Kilometro adicional</div><!-- /.name-line -->
+                                <div class="price-line">0.70€ KM + 0.1€ Min</div><!-- /.price-line -->
+                            </li>
+                            <li>
+                                <div class="name-line">Minimo</div><!-- /.name-line -->
+                                <div class="price-line">3.00€</div><!-- /.price-line -->
+                            </li>
+                        </ul><!-- /.features-list -->
+                        <div class="button-block">
+                            <a href="#" class="fare-btn">Reservar Viagem</a>
+                        </div><!-- /.button-block -->
+                    </div><!-- /.single-taxi-fare-one -->
+                </div><!-- /.col-lg-6 -->
+                 <div class="col-lg-6">
+                    <div style="" class="single-taxi-fare-one thm-base-bg hvr-float-shadow">
+                        <div class="top-block">
+                            <div class="icon-block">
+                                <i class="conexi-icon-taxi"></i>
+                            </div><!-- /.icon-block -->
+                            <div class="text-block">
+                                <h3>UBER</h3>
+                                <p>Taxa de Viagem na companhia UBER.</p>
+                            </div><!-- /.text-block -->
+                        </div><!-- /.top-block -->
+                        <ul class="features-list">
+                            <li>
+                                <div class="name-line">Preço base:</div><!-- /.name-line -->
+                                <div class="price-line">1,77€</div><!-- /.price-line -->
+                            </li>
+                            <li>
+                                <div class="name-line">Kilometro adicional</div><!-- /.name-line -->
+                                <div class="price-line">0.98€ KM + 0.14€ Min</div><!-- /.price-line -->
+                            </li>
+                            <li>
+                                <div class="name-line">Minimo</div><!-- /.name-line -->
+                                <div class="price-line">3.60€</div><!-- /.price-line -->
+                            </li>
+                        </ul><!-- /.features-list -->
+                        <div class="button-block">
+                            <a href="#" class="fare-btn">Reservar Viagem</a>
+                        </div><!-- /.button-block -->
+                    </div><!-- /.single-taxi-fare-one -->
+                </div><!-- /.col-lg-6 -->
+                <div class="col-lg-6" style=" margin-right: auto; margin-left: auto;">
+                    <div class="single-taxi-fare-one thm-base-bg hvr-float-shadow">
+                        <div class="top-block">
+                            <div class="icon-block">
+                                <i class="conexi-icon-taxi"></i>
+                            </div><!-- /.icon-block -->
+                            <div class="text-block">
+                                <h3>KAPTEN</h3>
+                                <p>Taxa de Viagem na Kapten.</p>
+                            </div><!-- /.text-block -->
+                        </div><!-- /.top-block -->
+                        <ul class="features-list">
+                            <li>
+                                <div class="name-line">Preço base</div><!-- /.name-line -->
+                                <div class="price-line">0.84€</div><!-- /.price-line -->
+                            </li>
+                            <li>
+                                <div class="name-line">Kilometro adicional</div><!-- /.name-line -->
+                                <div class="price-line">0.55€ KM + 0.08€ Min</div><!-- /.price-line -->
+                            </li>
+                            <li>
+                                <div class="name-line">Minimo</div><!-- /.name-line -->
+                                <div class="price-line">2.50€</div><!-- /.price-line -->
+                            </li>
+                        </ul><!-- /.features-list -->
+                        <div class="button-block">
+                            <a href="#" class="fare-btn">Reservar Viagem</a>
+                        </div><!-- /.button-block -->
+                    </div><!-- /.single-taxi-fare-one -->
+                </div><!-- /.col-lg-6 -->
+            </div><!-- /.row -->
+           
+        </div><!-- /.container -->
+    </section><!-- /.taxi-fare-one -->
+   
+   
+    <footer class="site-footer">
+       
+        <div class="upper-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="footer-widget about-widget">
+                            <div class="widget-title">
+                                <h3>Sobre</h3>
+                            </div><!-- /.widget-title -->
+                            <p>Garantimos sempre o melhor preço para viajares para qualquer sitio</p>
+                            <div class="social-block">
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-facebook-f"></i></a>
+                                <a href="#"><i class="fa fa-youtube-play"></i></a>
+                                <a href="#"><i class="fa fa-google-plus"></i></a>
+                            </div><!-- /.social-block -->
+                        </div><!-- /.footer-widget about-widget -->
+                    </div><!-- /.col-lg-3 -->
+                    <div class="col-lg-2">
+                        <div class="footer-widget">
+                            <div class="widget-title">
+                                <h3>Links</h3>
+                            </div><!-- /.widget-title -->
+                            <ul class="link-lists">
+                                <li><a href="about.html">Sobre</a></li>
+                                <li><a href="driver.html">Condutores</a></li>
+                                <li><a href="taxi.html">Veiculos</a></li>
+                                <li><a href="contact.html">Contactos</a></li>
+                               
+                            </ul>
+                        </div><!-- /.footer-widget -->
+                    </div><!-- /.col-lg-2 -->
+                    <div class="col-lg-3">
+                        <div class="footer-widget">
+                            <div class="widget-title">
+                                <h3>Contacto</h3>
+                            </div><!-- /.widget-title -->
+                            <p>Universidade do Minho <br>Guimarães, Portugal</p>
+                            <ul class="contact-infos">
+                                <li><i class="fa fa-envelope"></i> cdhelp@gmail.com</li>
+                                <li><i class="fa fa-phone-square"></i> 917805414</li>
+                            </ul><!-- /.contact-infos -->
+                        </div><!-- /.footer-widget -->
+                    </div><!-- /.col-lg-3 -->
+                    <div class="col-lg-4">
+                        <div class="footer-widget">
+                            <div class="widget-title">
+                                <h3>Noticias</h3>
+                            </div><!-- /.widget-title -->
+                            <p>Subscreva já o nosso serviço de noticias <br> para receber novidades do CheapDrive.</p>
+                            <form action="#" class="subscribe-form">
+                                <input type="text" name="email" placeholder="Insira o seu Email">
+                                <button type="submit">Ir</button>
+                            </form>
+                        </div><!-- /.footer-widget -->
+                    </div><!-- /.col-lg-4 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </div><!-- /.upper-footer -->
+        <div class="bottom-footer">
+            <div class="container">
+                <div class="inner-container">
+                    <div class="left-block">
+                        <a href="index.html" class="footer-logo"><img src="images/index/logo.png" alt="Awesome Image" /></a>
+                    </div><!-- /.left-block -->
+                    <div class="right-block">
+                        <ul class="link-lists">
+                            <li><a href="#">Terms of Use</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div><!-- /.right-block -->
+                </div><!-- /.inner-container -->
+            </div><!-- /.container -->
+        </div><!-- /.bottom-footer -->
+    </footer><!-- /.site-footer -->
+    </div><!-- /.page-wrapper -->
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+    <!-- /.scroll-to-top -->
+    <script>
+
+        console.log("Script");
+
+        const btnLogin = document.getElementById("btnLog")
+        $(".modal-backdrop").remove();
+        $( "#btnLog" ).on( "click", function() {
+            console.log("...");
+            var data = {};
+            data.email = document.getElementById("email").value;
+            data.password = document.getElementById("password").value;
+
+            fetch('http://localhost:8080/signin', {
+                headers: { 'Content-Type': 'application/json' },
+                method: 'POST',
+                body: JSON.stringify(data)
+            }).then(response => {
+                if (!response.ok) {
+                    throw new Error(response.statusText);
+                }
+                return response.json();
+            }).then(result => {
+                console.log(result);
+                alert("login efetuado com sucesso");
+                switch (result.tipo) {
+                    case "Administrador":
+                        window.location.replace("../conexi-html-files/about.html");
+                        break;
+                    case "Utilizador":
+                        window.location.replace("../conexi-html-files/about.html");
+                        break;
+                    default:
+                        alert("Tipo de utilizador inválido");
+                }
+                     
+            }).catch(error => {
+                swal({ title: `${result.value.err_message}` })
+            }).catch(error => {
+                alert("Erro ao fazer login!");
+            });
+        });
+    </script>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/bootstrap-select.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/jquery.bxslider.min.js"></script>
+    <script src="js/theme.js"></script>
+</body>
+
+</html>
