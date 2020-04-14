@@ -132,12 +132,10 @@
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
+
                                 <th scope="col">Nome</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Morada</th>
-								<th scope="col">Data Nascimento</th>
-                                <th scope="col">Contacto</th>
+                                <th scope="col">Código</th>
+
 
 
                             </tr>
@@ -151,7 +149,9 @@
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
                     <script>
                         window.onload = function() {
-                            fetch('https://b401-back-webitcloud.c9users.io/companies/', {
+
+                            fetch('http://localhost:8080/kapten/', {
+
                                 headers: { 'Content-Type': 'application/json' },
                                 method: 'GET',
                             }).then(response => {
@@ -160,21 +160,18 @@
                                 }
                                 return response.json();
                             }).then(result => {
+
                                 const tabela = $(".table-striped tbody");
                                 for (row in result) {
                                     const valor = result[row];
-                                    if (valor.estado != "inativo") {
+
                                         $(tabela).append("<tr>" +
-                                            "<td>" + valor.idEmpresa + "</td>" +
-                                            "<td>" + valor.nome + "</td>" +
-                                            "<td>" + valor.tipo_empresa + "</td>" +
-                                            "<td>" + valor.email + "</td>" +
-                                            "<td>" + valor.site + "</td>" +
-                                            "<td>" + valor.localizacao + "</td>" +
-                                            "<td>" + valor.contacto + "</td>" +
-                                            "<td>" + valor.doacao + "</td>" +
+
+                                            "<td>" + valor.nomes + "</td>" +
+                                            "<td>" + valor.code + "</td>" +
+
                                             "<tr>");
-                                    }
+
                                 }
                             }).catch(error => {
                                 swal({ title: `${result.value.err_message}` })
