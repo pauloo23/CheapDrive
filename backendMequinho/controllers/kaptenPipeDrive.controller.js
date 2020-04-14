@@ -1,14 +1,14 @@
 var request = require('request');
 
 function getPackages(req, res) {
-//teste
+
 console.log("Init getPackages function...")
 
 
 
          var options = {
              method: 'GET',
-             url:'https://api.pipedrive.com/v1/products?start=0&api_token=e5552dfcf767e06f352894293743f6fbecf170cb',
+             url:'https://api.pipedrive.com/v1/products?start=0&api_token=1342c3a366d4a54c321ea28bad40b488699c658c',
 
 
         headers:
