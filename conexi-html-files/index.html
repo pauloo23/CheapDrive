@@ -199,7 +199,7 @@
                         <div class="block-title mb-0">
                             <div class="dot-line"></div><!-- /.dot-line -->
                             <p class="light">À procura de transporte?</p>
-                            <h2 class="light">Faz aqui <br> a tua reserva</h2>
+                            <h2 class="light">Diz-nos para onde <br> queres ir!</h2>
                         </div><!-- /.block-title -->
                         <p>Garante a melhor oferta <br> aqui encontras tudo o que precisas.</p>
                     </div><!-- /.content-block -->
@@ -207,21 +207,7 @@
                 <div class="col-lg-8">
                     <form action="#" class="booking-form-one">
                         <div class="row">
-                            <div class="col-lg-6">
-                                <div class="input-holder">
-                                    <input type="text" name="name" placeholder="Primeiro nome" required>
-                                </div><!-- /.input-holder -->
-                            </div><!-- /.col-lg-6 -->
-                            <div class="col-lg-6">
-                                <div class="input-holder">
-                                    <input type="text" name="name" placeholder="Último nome" required>
-                                </div><!-- /.input-holder -->
-                            </div><!-- /.col-lg-6 -->
-                            <div class="col-lg-6">
-                                <div class="input-holder">
-                                    <input type="text" name="name" placeholder="Endereço de e-mail" required>
-                                </div><!-- /.input-holder -->
-                            </div><!-- /.col-lg-6 -->
+
                             <div class="col-lg-6">
                                 <div class="input-holder">
                                     <input type="text" name="name" placeholder="Local de origem" required>
@@ -232,40 +218,12 @@
                                     <input type="text" name="name" placeholder="Local de destino" required>
                                 </div><!-- /.input-holder -->
                             </div><!-- /.col-lg-6 -->
-                            <div class="col-lg-6">
-                                <div class="input-holder">
+                            <button type="submit"  class="btn btn" id="btn_oferta" required style="margin-center: 500px; background-color:#D76A29;">Procurar ofertas</button>
 
-                                    <input id="datefield" name="name" type="date" value="<?php echo date('Y-m-d'); ?>" required>
-                                    <script>
-    //funcao para declarar a data minima a data do dia em questao
-                                        var today = new Date();
-                                        var dd = today.getDate();
-                                        var mm = today.getMonth() + 1;
-                                        var yyyy = today.getFullYear();
-                                        if (dd < 10) {
-                                            dd = '0' + dd
-                                        }
-                                        if (mm < 10) {
-                                            mm = '0' + mm
-                                        }
 
-                                        today = yyyy + '-' + mm + '-' + dd;
-                                        document.getElementById("datefield").setAttribute("min", today);
-                                    </script>
-                                    <i class="conexi-icon-small-calendar"></i>
-                                </div><!-- /.input-holder -->
-                            </div><!-- /.col-lg-6 -->
-                            <div class="col-lg-6">
-                                <div class="input-holder">
-                                    <input class="space" type="time" required />
-                                    <i class="conexi-icon-clock"></i>
-                                </div><!-- /.input-holder -->
-                            </div><!-- /.col-lg-6 -->
-                            <div class="col-lg-6">
-                                <div class="input-holder">
-                                    <button type="submit">Reservar Agora</button>
-                                </div><!-- /.input-holder -->
-                            </div><!-- /.col-lg-6 -->
+
+
+
                         </div><!-- /.row -->
                     </form><!-- /.booking-form-one -->
                 </div><!-- /.col-lg-8 -->
@@ -292,8 +250,8 @@
         <div class="container">
             <div class="block-title text-center">
                 <div class="dot-line"></div><!-- /.dot-line -->
-                <p>Our all taxi rates</p>
-                <h2>Check taxi fares</h2>
+                <p>Agora é contigo!</p>
+                <h2>Aqui tens as melhores ofertas</h2>
             </div><!-- /.block-title -->
             <div class="row">
                 <div class="col-lg-6">
@@ -309,16 +267,24 @@
                         </div><!-- /.top-block -->
                         <ul class="features-list">
                             <li>
-                                <div class="name-line">Preço base:</div><!-- /.name-line -->
-                                <div class="price-line">1.3€</div><!-- /.price-line -->
+                                <div class="name-line">Condutor:</div><!-- /.name-line -->
+                                <div class="price-line">João Oliveira</div><!-- /.price-line -->
                             </li>
                             <li>
-                                <div class="name-line">Kilometro adicional</div><!-- /.name-line -->
-                                <div class="price-line">0.70€ KM + 0.1€ Min</div><!-- /.price-line -->
+                                <div class="name-line">Marca:</div><!-- /.name-line -->
+                                <div class="price-line">Mercedes</div><!-- /.price-line -->
                             </li>
                             <li>
-                                <div class="name-line">Minimo</div><!-- /.name-line -->
-                                <div class="price-line">3.00€</div><!-- /.price-line -->
+                                <div class="name-line">Modelo:</div><!-- /.name-line -->
+                                <div class="price-line">AMG</div><!-- /.price-line -->
+                            </li>
+                            <li>
+                                <div class="name-line">Preço:</div><!-- /.name-line -->
+                                <div class="price-line">4€</div><!-- /.price-line -->
+                            </li>
+                            <li>
+                                <div class="name-line">Distância:</div><!-- /.name-line -->
+                                <div class="price-line">5 km</div><!-- /.price-line -->
                             </li>
                         </ul><!-- /.features-list -->
                         <div class="button-block">
@@ -339,16 +305,24 @@
                         </div><!-- /.top-block -->
                         <ul class="features-list">
                             <li>
-                                <div class="name-line">Preço base:</div><!-- /.name-line -->
-                                <div class="price-line">1,77€</div><!-- /.price-line -->
+                                <div class="name-line">Condutor:</div><!-- /.name-line -->
+                                <div class="price-line">António Torres</div><!-- /.price-line -->
                             </li>
                             <li>
-                                <div class="name-line">Kilometro adicional</div><!-- /.name-line -->
-                                <div class="price-line">0.98€ KM + 0.14€ Min</div><!-- /.price-line -->
+                                <div class="name-line">Marca:</div><!-- /.name-line -->
+                                <div class="price-line">Opel</div><!-- /.price-line -->
                             </li>
                             <li>
-                                <div class="name-line">Minimo</div><!-- /.name-line -->
-                                <div class="price-line">3.60€</div><!-- /.price-line -->
+                                <div class="name-line">Modelo:</div><!-- /.name-line -->
+                                <div class="price-line">Corsa</div><!-- /.price-line -->
+                            </li>
+                            <li>
+                                <div class="name-line">Preço:</div><!-- /.name-line -->
+                                <div class="price-line">3€</div><!-- /.price-line -->
+                            </li>
+                            <li>
+                                <div class="name-line">Distância:</div><!-- /.name-line -->
+                                <div class="price-line">4 km</div><!-- /.price-line -->
                             </li>
                         </ul><!-- /.features-list -->
                         <div class="button-block">
@@ -369,16 +343,24 @@
                         </div><!-- /.top-block -->
                         <ul class="features-list">
                             <li>
-                                <div class="name-line">Preço base</div><!-- /.name-line -->
-                                <div class="price-line">0.84€</div><!-- /.price-line -->
+                                <div class="name-line">Condutor:</div><!-- /.name-line -->
+                                <div class="price-line">Rui Oliveira</div><!-- /.price-line -->
                             </li>
                             <li>
-                                <div class="name-line">Kilometro adicional</div><!-- /.name-line -->
-                                <div class="price-line">0.55€ KM + 0.08€ Min</div><!-- /.price-line -->
+                                <div class="name-line">Marca:</div><!-- /.name-line -->
+                                <div class="price-line">Opel</div><!-- /.price-line -->
                             </li>
                             <li>
-                                <div class="name-line">Minimo</div><!-- /.name-line -->
-                                <div class="price-line">2.50€</div><!-- /.price-line -->
+                                <div class="name-line">Modelo:</div><!-- /.name-line -->
+                                <div class="price-line">Astra</div><!-- /.price-line -->
+                            </li>
+                            <li>
+                                <div class="name-line">Preço:</div><!-- /.name-line -->
+                                <div class="price-line">5€</div><!-- /.price-line -->
+                            </li>
+                            <li>
+                                <div class="name-line">Distância:</div><!-- /.name-line -->
+                                <div class="price-line">5,5 km</div><!-- /.price-line -->
                             </li>
                         </ul><!-- /.features-list -->
                         <div class="button-block">
