@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registo de Produto</title>
+    
+     <link rel="icon" type="image/png" sizes="16x16" href="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Future_Gadget_Lab_logo.png/499px-Future_Gadget_Lab_logo.png">
+  <link rel="manifest" href="/manifest.json">
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="Forms/fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="Forms/vendor/nouislider/nouislider.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="cssform/style.css">
+</head> 
+<body>
+
+    <div class="main">
+
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-img">
+                    <img src="images/form-img.jpg" alt="">
+                    <div class="signup-img-content">
+                        <h2>Registe o seu produto!</h2>
+                       
+                    </div>
+                </div>
+                <div class="signup-form">
+                    <form  class="register-form" name="register-form" id="register-form" action="">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <div class="form-input">
+                                    <label for="first_name" class="required">Nome Produto</label>
+                                    <input type="text" name="first_name" id="first_name" />
+                                </div>
+                               
+                                <div class="form-input">
+                                    <label for="last_name" class="required">Contacto</label>
+                                    <input type="number" name="last_name" id="last_name" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="company" class="required">Email</label>
+                                    <input type="email" name="company" id="company" />
+                                </div>
+                                
+                            
+                               
+                            </div>
+                            <div class="form-group">
+                                
+                                    
+                          <div class="form-input">
+                                    <label for="text" >Localidade</label>
+                                    <input type="text" name="local" id="local" />
+                                </div>
+                            
+                            
+                            <div class="form-input">
+                                    <label for="text" >Preço Produto</label>
+                                    <input type="text" name="preco" id="preco" />
+                                </div>
+                            </div>
+                         </div>
+                      
+                      
+
+                            
+                        <div >
+                            
+                          <input type="submit" value="Submeter" class="submit" id="submit" name="submit"/> 
+                          
+                        </div>
+                     
+                     
+                     <BR>
+                        
+                         <div>
+                          <a href="empresaADMIN.html" color="red">
+                         <input type="button" value="Voltar" class="submit" id="submit" name="submit"/> 
+                          </a> 
+                        </div>
+                        
+                
+                    </form>
+                    
+                    <div id="result">
+</div>
+               
+            </div>
+        </div>
+ </div>
+    
+
+<div> * - Campos de preenchimento obrigatório</div> 
+ <script>
+    const btnLogin = document.getElementById("submit")
+    btnLogin.addEventListener('click', function(){
+      var data = {};
+    data.email = document.getElementById("company").value;
+    data.designacao = document.getElementById("first_name").value;
+    data.localidade = document.getElementById("local").value;
+    data.contacto = document.getElementById("last_name").value;
+    data.preco = document.getElementById("preco").value;
+    
+    console.log(data); //debugging para ver os dados que foram enviados
+    //chamada fetch para envio dos dados para o servior via POST
+    fetch('https://b401-back-webitcloud.c9users.io/products', {
+        headers: { 'Content-Type': 'application/json' },
+        method: 'POST',
+        body: JSON.stringify(data)
+    }).then(response => {
+        if (!response.ok) {
+            throw new Error(response.statusText);
+        }
+        return response.json();
+    }).catch(error => {
+        swal({title: `${result.value.err_message}`})
+    }); 
+    alert("Formulário submetido com sucesso!");
+  });
+    </script>
+    <!-- JS -->
+    <script src="Alterar Dados/vendor/jquery/jquery.min.js"></script>
+    <script src="Alterar Dados/vendor/nouislider/nouislider.min.js"></script>
+    <script src="Alterar Dados/vendor/wnumb/wNumb.js"></script>
+    <script src="Alterar Dados/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="Alterar Dados/vendor/jquery-validation/dist/additional-methods.min.js"></script>
+    <script src="Alterar Dados/js/mainform.js"></script>
+   
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
