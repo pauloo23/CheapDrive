@@ -1,7 +1,7 @@
 var request = require('request');
 
 function getPackages(req, res) {
-
+//teste
 console.log("Init getPackages function...")
 
 
