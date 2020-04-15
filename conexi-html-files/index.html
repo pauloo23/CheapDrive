@@ -254,7 +254,7 @@
                 <h2>Aqui tens as melhores ofertas</h2>
             </div><!-- /.block-title -->
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-6 bolt">
                     <div class="single-taxi-fare-one thm-base-bg hvr-float-shadow">
                         <div class="top-block">
                             <div class="icon-block">
@@ -268,31 +268,31 @@
                         <ul class="features-list">
                             <li>
                                 <div class="name-line">Condutor:</div><!-- /.name-line -->
-                                <div class="price-line">João Oliveira</div><!-- /.price-line -->
+                                <div class="price-line name condutor"></div><!-- /.price-line -->
                             </li>
                             <li>
                                 <div class="name-line">Marca:</div><!-- /.name-line -->
-                                <div class="price-line">Mercedes</div><!-- /.price-line -->
+                                <div class="price-line marca"></div><!-- /.price-line -->
                             </li>
                             <li>
                                 <div class="name-line">Modelo:</div><!-- /.name-line -->
-                                <div class="price-line">AMG</div><!-- /.price-line -->
+                                <div class="price-line modelo"></div><!-- /.price-line -->
+                            </li>
+                            <li>
+                                <div class="name-line">Matrícula:</div><!-- /.name-line -->
+                                <div class="price-line matricula"></div><!-- /.price-line -->
                             </li>
                             <li>
                                 <div class="name-line">Preço:</div><!-- /.name-line -->
-                                <div class="price-line">4€</div><!-- /.price-line -->
-                            </li>
-                            <li>
-                                <div class="name-line">Distância:</div><!-- /.name-line -->
-                                <div class="price-line">5 km</div><!-- /.price-line -->
+                                <div class="price-line preco"></div><!-- /.price-line -->
                             </li>
                         </ul><!-- /.features-list -->
                         <div class="button-block">
                             <a href="#" class="fare-btn">Reservar Viagem</a>
                         </div><!-- /.button-block -->
                     </div><!-- /.single-taxi-fare-one -->
-                </div><!-- /.col-lg-6 -->
-                 <div class="col-lg-6">
+                </div>
+                 <div class="col-lg-6 uber">
                     <div style="" class="single-taxi-fare-one thm-base-bg hvr-float-shadow">
                         <div class="top-block">
                             <div class="icon-block">
@@ -306,31 +306,31 @@
                         <ul class="features-list">
                             <li>
                                 <div class="name-line">Condutor:</div><!-- /.name-line -->
-                                <div class="price-line">António Torres</div><!-- /.price-line -->
+                                <div class="price-line condutor"></div><!-- /.price-line -->
                             </li>
                             <li>
                                 <div class="name-line">Marca:</div><!-- /.name-line -->
-                                <div class="price-line">Opel</div><!-- /.price-line -->
+                                <div class="price-line marca"></div><!-- /.price-line -->
                             </li>
                             <li>
                                 <div class="name-line">Modelo:</div><!-- /.name-line -->
-                                <div class="price-line">Corsa</div><!-- /.price-line -->
+                                <div class="price-line modelo"></div><!-- /.price-line -->
                             </li>
                             <li>
-                                <div class="name-line">Preço:</div><!-- /.name-line -->
-                                <div class="price-line">3€</div><!-- /.price-line -->
+                                <div class="name-line">Matrícula:</div><!-- /.name-line -->
+                                <div class="price-line matricula"></div><!-- /.price-line -->
                             </li>
                             <li>
                                 <div class="name-line">Distância:</div><!-- /.name-line -->
-                                <div class="price-line">4 km</div><!-- /.price-line -->
+                                <div class="price-line preco"></div><!-- /.price-line -->
                             </li>
                         </ul><!-- /.features-list -->
                         <div class="button-block">
                             <a href="#" class="fare-btn">Reservar Viagem</a>
                         </div><!-- /.button-block -->
                     </div><!-- /.single-taxi-fare-one -->
-                </div><!-- /.col-lg-6 -->
-                <div class="col-lg-6" style=" margin-right: auto; margin-left: auto;">
+                </div>
+                <div class="col-lg-6 kapten" style=" margin-right: auto; margin-left: auto;">
                     <div class="single-taxi-fare-one thm-base-bg hvr-float-shadow">
                         <div class="top-block">
                             <div class="icon-block">
@@ -344,23 +344,23 @@
                         <ul class="features-list">
                             <li>
                                 <div class="name-line">Condutor:</div><!-- /.name-line -->
-                                <div class="price-line">Rui Oliveira</div><!-- /.price-line -->
+                                <div class="price-line condutor"></div><!-- /.price-line -->
                             </li>
                             <li>
                                 <div class="name-line">Marca:</div><!-- /.name-line -->
-                                <div class="price-line">Opel</div><!-- /.price-line -->
+                                <div class="price-line marca"></div><!-- /.price-line -->
                             </li>
                             <li>
                                 <div class="name-line">Modelo:</div><!-- /.name-line -->
-                                <div class="price-line">Astra</div><!-- /.price-line -->
+                                <div class="price-line modelo"></div><!-- /.price-line -->
+                            </li>
+                            <li>
+                                <div class="name-line">Matrícula:</div><!-- /.name-line -->
+                                <div class="price-line matricula"></div><!-- /.price-line -->
                             </li>
                             <li>
                                 <div class="name-line">Preço:</div><!-- /.name-line -->
-                                <div class="price-line">5€</div><!-- /.price-line -->
-                            </li>
-                            <li>
-                                <div class="name-line">Distância:</div><!-- /.name-line -->
-                                <div class="price-line">5,5 km</div><!-- /.price-line -->
+                                <div class="price-line preco"></div><!-- /.price-line -->
                             </li>
                         </ul><!-- /.features-list -->
                         <div class="button-block">
@@ -494,7 +494,78 @@
                 alert("Erro ao fazer login!");
             });
         });
-    </script>
+
+        // Pedir dados ao Kapten
+        fetch('http://localhost:8080/kapten', {
+                headers: { 'Content-Type': 'application/json' },
+                method: 'GET',
+            }).then(response => {
+                if (!response.ok) {
+                    throw new Error(response.statusText);
+                }
+                return response.json();
+            }).then(result => {
+                $(".kapten .condutor").html(result.data[0].name);
+                $(".kapten .marca").html(result.data[0].description);
+                $(".kapten .modelo").html(result.data[0].unit);
+                $(".kapten .matricula").html(result.data[0].code);
+                $(".kapten .preco").html(result.data[0].prices[0].price + "€");
+            }).catch(error => {
+                swal({ title: `${result.value.err_message}` })
+            }).catch(error => {
+                alert("Erro a pedir dados do Kapten!");
+            });
+    
+
+        // Pedir dados ao uber
+            fetch('http://localhost:8080/uber', {
+                    headers: { 'Content-Type': 'application/json' },
+                    method: 'GET',
+                }).then(response => {
+                    if (!response.ok) {
+                        throw new Error(response.statusText);
+                    }
+                    return response.json();
+                }).then(result => {
+                    $(".uber .condutor").html(result.pacotes[0].itemKey);
+                    $(".uber .marca").html(result.pacotes[0].brand);
+                    $(".uber .modelo").html(result.pacotes[0].brandModel);
+                    $(".uber .matricula").html(result.pacotes[0].barcode);
+                    $(".uber .preco").html(result.pacotes[0].description + "€");
+                    
+                }).catch(error => {
+                    swal({ title: `${result.value.err_message}` })
+                }).catch(error => {
+                    alert("Erro a pedir dados do uber!");
+                });
+
+
+                // Pedir dados ao bolt
+            fetch('http://localhost:8080/bolt', {
+                    headers: { 'Content-Type': 'application/json' },
+                    method: 'GET',
+                }).then(response => {
+                    if (!response.ok) {
+                        throw new Error(response.statusText);
+                    }
+                    return response.json();
+                }).then(result => {
+                console.log(result);
+                    $(".bolt .condutor").html(result.packages[0].name);
+                    $(".bolt .marca").html(result.packages[0].reference);
+                    $(".bolt .modelo").html(result.packages[0].ean);
+                    $(".bolt .matricula").html(result.packages[0].summary);
+                    $(".bolt .preco").html(result.packages[0].price + "€");
+                    
+                }).catch(error => {
+                    swal({ title: `${result.value.err_message}` })
+                }).catch(error => {
+                    alert("Erro a pedir dados do Bolt!");
+                });
+
+
+       
+        </script>
 
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
