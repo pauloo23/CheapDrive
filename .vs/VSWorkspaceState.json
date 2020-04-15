@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\conexi-html-files\\css"
+    "\\backendMequinho",
+    "\\backendMequinho\\controllers",
+    "\\conexi-html-files"
   ],
+  "SelectedNode": "\\conexi-html-files\\index.html",
   "PreviewInSolutionExplorer": false
 }
