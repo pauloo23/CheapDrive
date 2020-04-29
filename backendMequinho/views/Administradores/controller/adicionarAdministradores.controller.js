@@ -1,0 +1,93 @@
+//FUNCAO ONLOAD --------------------------
+
+//quando inicia a página faz
+window.onload = function () {
+//chama a função para atualizar os users
+refreshAdmins(); //adicionar função de validação ao formulário
+validator();
+document.getElementById("signup-form").onsubmit = function (e) {
+//validação do formulário ao submeter
+validator();
+};
+
+
+//FUNCAO DE VALIDACAO -------------------------
+
+//função de validação
+function validator() {
+let validator = new Validator(document.querySelector('form[name="signup-form"]'), function
+
+(err, res) {
+//se validador for válido, res=true e executa o saveAdmins()
+
+if (res) {
+saveAdmins();
+}
+}, {//cria novas regras, verificase o valor do campo que valida é igual ao campo pwd
+
+rules: {
+password: function (value) {
+return (value === document.getElementById("password").value);
+}
+},
+messages: {
+en: {
+password: {
+incorrect: "Password didn't match"
+}
+}
+}
+});
+
+}
+
+
+//FUNCAO DE GRAVACAO --------------------------------------
+
+function saveAdmins() {
+var data = {};
+data.email = document.getElementById("email").value;
+data.pass = document.getElementById("password").value;
+console.log(data); //debugging para ver os dados que foram enviados
+//chamada fetch para envio dos dados para o servior via POST
+fetch('https://b401-back-webitcloud.c9users.io/signup', {
+headers: {'Content-Type': 'application/json'},
+method: 'POST',
+body: JSON.stringify(data)
+}).then(function (response) {
+if (!response.ok) {
+console.log(response.status); //=> number 100–599
+console.log(response.statusText); //=> String
+console.log(response.headers); //=> Headers
+console.log(response.url); //=> String
+if (response.status === 409) {
+alert("Duplicated Email");
+} else {
+throw Error(response.statusText);
+}
+} else {
+document.getElementById("signup-form").reset(); //limpeza dos dados do registo admin
+alert("submitted with success");
+refreshAdmins();
+}
+}).then(function (result) {console.log(result);
+}).catch(function (err) {alert("Submission error"); console.error(err);
+});
+}
+
+
+//FUNCAO DE LEITURA ---------------------------
+
+
+function refreshAdmins() {
+async function fetchAsync() {
+const renderAdmins = document.getElementById("result");
+let txt = "";
+const response = await fetch('https://b401-back-webitcloud.c9users.io/signup');
+const admins = await response.json();
+}
+//chama a função fetchAsync()
+fetchAsync().then(data => console.log("ok")).catch(reason => console.log(reason.message));
+}
+};
+

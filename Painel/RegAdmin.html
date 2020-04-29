@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registo de Administrador</title>
+  <meta name="description" content="Sufee Admin - HTML5 Admin Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" type="image/png" sizes="16x16" href="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Future_Gadget_Lab_logo.png/499px-Future_Gadget_Lab_logo.png">
+  <link rel="manifest" href="/manifest.json">
+
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/flag-icon.min.css">
+    <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="Forms/css/style.css">
+</head>
+<body>
+
+    <div class="main">
+
+        <section class="signup">
+            <!-- <img src="images/signup-bg.jpg" alt=""> -->
+            <div class="container">
+                <div class="signup-content">
+                    <form  id="signup-form" name="signup-form" class="signup-form" action="">
+                        <h2 class="form-title">Registar Administrador</h2>
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="name" id="name" placeholder="Nome" required/>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="apelido" id="apelido" placeholder="Apelido" required/>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-input" name="email" id="email" placeholder="Email" required/>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-input" name="password" id="password" placeholder="Password" required/>
+                            <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-input" name="re_password" id="re_password" placeholder="Repetir a password" required/>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="submit" name="submit" id="submit" class="form-submit" value="Registar"/>
+                        </div>
+                        
+                       <div class="row">
+                            
+                        <div class="col-md-12" align="center">
+                            
+                           <a href="ADMIN.html" class="btn btn--radius-2 btn--red" role="button">Voltar</a>
+                          
+                        </div>
+                        
+                        
+                        
+                     
+                        
+                     
+                        
+                    </form>
+                    
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+    const btnLogin = document.getElementById("submit")
+    btnLogin.addEventListener('click', function(){
+      var data = {};
+    data.email = document.getElementById("email").value;
+    data.password = document.getElementById("password").value;
+    data.firstname = document.getElementById("name").value;
+    data.lastname = document.getElementById("apelido").value;
+    data.tipo = "Administrador";
+    console.log(data); //debugging para ver os dados que foram enviados
+    //chamada fetch para envio dos dados para o servior via POST
+    fetch('http://localhost:8080/signup', {
+        headers: { 'Content-Type': 'application/json' },
+        method: 'POST',
+        body: JSON.stringify(data)
+    }).then(response => {
+        if (!response.ok) {
+            throw new Error(response.statusText);
+        }
+        return response.json();
+    })
+    .catch(error => {
+        swal({title: `${result.value.err_message}`})
+    }); 
+    alert("Registo efetuado  com sucesso!");
+  });
+    </script>
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

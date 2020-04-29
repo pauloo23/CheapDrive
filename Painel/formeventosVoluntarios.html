@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Formulário de Adesão APGT</title>
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Future_Gadget_Lab_logo.png/499px-Future_Gadget_Lab_logo.png">
+  <link rel="manifest" href="/manifest.json">
+
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="vendor/nouislider/nouislider.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="cssform/style.css">
+</head> 
+<body>
+
+    <div class="main">
+
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-img">
+                    <img src="images/form-img.jpg" alt="">
+                    <div class="signup-img-content">
+                        <h2>Participe nos nossos eventos!</h2>
+                       
+                    </div>
+                </div>
+                <div class="signup-form">
+                    <form  class="register-form" id="register-form" action="">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <div class="form-input">
+                                    <label for="first_name" class="required">Nome</label>
+                                    <input type="text" name="first_name" id="first_name" />
+                                </div>
+                               
+                                <div class="form-input">
+                                    <label for="last_name" class="required">Contacto</label>
+                                    <input type="number" name="last_name" id="last_name" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="company" class="required">Email</label>
+                                    <input type="email" name="company" id="company" />
+                                </div>
+                                
+                               
+                            </div>
+                            <div class="form-group">
+                                
+                                    
+                          <div class="form-input">
+                                    <label for="text" >Localidade</label>
+                                    <input type="text" name="loc" id="loc" />
+                                </div>
+                            </div>
+                            </div>
+                         <br>
+                   <div>     
+                       <div >
+                            
+                          <input type="submit" value="Submeter" class="submit" id="submit" name="submit"/> 
+                          
+                        </div>
+                     
+                     
+                     <BR>
+                        
+                         <div>
+                          <a href="voluntarioADMIN.html" color="red">
+                         <input type="button" value="Voltar" class="submit" id="submit" name="submit"/> 
+                          </a> 
+                        </div>
+                        
+                       </div> 
+                        
+                    </form>
+                     
+                
+            </div>
+        </div>
+ 
+    </div>
+
+<div> * - Campos de preenchimento obrigatório</div> 
+<script>
+    const btnLogin = document.getElementById("submit")
+    btnLogin.addEventListener('click', function(){
+      var data = {};
+    data.email = document.getElementById("company").value;
+    data.nome = document.getElementById("first_name").value;
+    data.localidade = document.getElementById("loc").value;
+    data.contacto = document.getElementById("last_name").value;
+    
+    console.log(data); //debugging para ver os dados que foram enviados
+    //chamada fetch para envio dos dados para o servior via POST
+    fetch('https://b401-back-webitcloud.c9users.io/insVolunteers', {
+        headers: { 'Content-Type': 'application/json' },
+        method: 'POST',
+        body: JSON.stringify(data)
+    }).then(response => {
+        if (!response.ok) {
+            throw new Error(response.statusText);
+        }
+        return response.json();
+    }).catch(error => {
+        swal({title: `${result.value.err_message}`})
+    }); 
+    alert("Formulário submetido com sucesso!");
+  });
+    </script>
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/nouislider/nouislider.min.js"></script>
+    <script src="vendor/wnumb/wNumb.js"></script>
+    <script src="vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="vendor/jquery-validation/dist/additional-methods.min.js"></script>
+    <script src="js/mainform.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
