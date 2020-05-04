@@ -101,10 +101,12 @@ function initMap() {
     document.getElementById('end').addEventListener('change', onChangeHandler);
 
     function calculate() {
+       
 
     }
-
+    
     function computeTotalDistance(result) {
+        var x = document.getElementById("precos");
         var myroute = result.routes[0];
         var duration, start, end;
         for (var i = 0; i < myroute.legs.length; i++) {
@@ -122,9 +124,11 @@ function initMap() {
         var oldDateObj = new Date();
         var chegada = new Date();
         chegada.setTime(oldDateObj.getTime() + (duration * 60 * 1000));
+        duration = Math.round(duration);
    
         
         document.getElementById('total').innerHTML = "<h3> <i class='fa fa-play'></i> Origem <br>" + start + "</h3> <h3><i class='fa fa-stop'></i> Destino <br>" + end + "</h3> <h3><i class='fa fa-clipboard-check'></i> Distância Total <br>" + total + ' Km </h3>' + "<h3><i class='fa fa-clock'></i> Tempo estimado da viagem <br>" + duration + " Minutos</h3>" + "<h3><i class='fa fa-clock'></i> Chegada Prevista <br>" + chegada;
+        x.style.display = "block";
     }
 
     function calculateAndDisplayRoute(directionsDisplay, directionsService,
