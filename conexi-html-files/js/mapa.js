@@ -43,7 +43,7 @@ function initMap() {
                     setAddressToInputField(address.results[0].formatted_address)
                 }
             };
-            xhttp.open("GET", "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + long + "&key=AIzaSyDtocoEyhuPCkk3fl_qySX4OdYAqwGRZ-g", true);
+            xhttp.open("GET", "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + long + "&key=AIzaSyAF6fZGfZH5FXd4wmN7T-spVRF9kI1_LGA", true);
             xhttp.send();
         }
 
@@ -127,7 +127,7 @@ function initMap() {
         duration = Math.round(duration);
    
         
-        document.getElementById('total').innerHTML = "<h3> <i class='fa fa-play'></i> Origem <br>" + start + "</h3> <h3><i class='fa fa-stop'></i> Destino <br>" + end + "</h3> <h3><i class='fa fa-clipboard-check'></i> Distância Total <br>" + total + ' Km </h3>' + "<h3><i class='fa fa-clock'></i> Tempo estimado da viagem <br>" + duration + " Minutos</h3>" + "<h3><i class='fa fa-clock'></i> Chegada Prevista <br>" + chegada;
+        document.getElementById('total').innerHTML = "<h3> <i class='fa fa-play'></i> Origem: <br>" + start + "</h3> <h3><i class='fa fa-stop'></i> Destino: <br>" + end + "</h3> <h3><i class='fa fa-clipboard-check'></i> Distancia Total: <br>" + total + ' Km </h3>' + "<h3><i class='fa fa-clock'></i> Tempo estimado da viagem: <br>" + duration + " Minutos</h3>" + "<h3><i class='fa fa-clock'></i> Chegada Prevista: <br>" + chegada;
         x.style.display = "block";
     }
 
