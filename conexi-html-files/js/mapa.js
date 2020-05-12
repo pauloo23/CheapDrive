@@ -129,6 +129,7 @@ function initMap() {
         
         document.getElementById('total').innerHTML = "<h3> <i class='fa fa-play'></i> Origem: <br>" + start + "</h3> <h3><i class='fa fa-stop'></i> Destino: <br>" + end + "</h3> <h3><i class='fa fa-clipboard-check'></i> Distancia Total: <br>" + total + ' Km </h3>' + "<h3><i class='fa fa-clock'></i> Tempo estimado da viagem: <br>" + duration + " Minutos</h3>" + "<h3><i class='fa fa-clock'></i> Chegada Prevista: <br>" + chegada;
         x.style.display = "block";
+
     }
 
     function calculateAndDisplayRoute(directionsDisplay, directionsService,
@@ -180,5 +181,9 @@ function initMap() {
         });
     }
 
+
  
 }
+
+
+

@@ -12,8 +12,8 @@ function getTokenJasmin() {
         "Accept": "application/json"
     };
     var form = {
-        "client_id": "CHAVEAPP",
-        "client_secret": "efbcbc31-5e82-4630-bb14-351e3d67d52c",
+        "client_id": "CHAVE123456",
+        "client_secret": "a230a832-d574-44c3-89a0-695b298098c7",
         "grant_type": "client_credentials",
         "scope": "application",
     };
@@ -34,7 +34,7 @@ function getPacotes(req, res) {
     setTimeout(function () {
         var options = {
             method: 'GET',
-            url: 'https://my.jasminsoftware.com/api/233762/233762-0001/materialsCore/materialsItems',
+            url: 'https://my.jasminsoftware.com/api/235684/235684-0001/materialsCore/materialsItems',
             headers: {
                 'content-type': 'application/json',
                 'Authorization': 'bearer ' + token_jasmin
@@ -42,7 +42,7 @@ function getPacotes(req, res) {
             form: {}
         };
 
-        console.log("1--------------------------------------");
+        console.log("2--------------------------------------");
         console.log(token_jasmin);
 
         var data = {};
