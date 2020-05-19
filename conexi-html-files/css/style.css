@@ -1227,7 +1227,7 @@ hr.style-one {
 /*
 * 4. slider styles
 */
-.main-banner-wrapper {
+.main-banner-wrapper :after {
     position: relative;
 }
 
@@ -1284,11 +1284,11 @@ hr.style-one {
     background-size: cover;
 }
 
-.banner-style-one .owl-nav {
+.banner-style-one .owl-nav  {
     display: none;
 }
 
-.banner-style-one .owl-dots {
+.banner-style-one .owl-dots  {
     display: none;
 }
 
@@ -1297,14 +1297,14 @@ hr.style-one {
     margin: 0;
 }
 
-.banner-style-one .banner-title {
+.banner-style-one .banner-title  {
     margin: 0;
     color: #FFFFFF;
     font-size: 90px;
     line-height: 100px;
     font-weight: 700;
     letter-spacing: -0.02em;
-    -webkit-text-stroke: 2px ;
+    -webkit-text-stroke: 2px;
     opacity: 0;
     -webkit-transform: translateY(-100px);
     transform: translateY(-100px);

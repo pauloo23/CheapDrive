@@ -1,3 +1,4 @@
+
 var lit;
 var model_info = [];
 var _distance;
@@ -11,65 +12,66 @@ var _price = 38.10;
 
 
 
+
 function initMap() {
-    
-        var locatorSection = document.getElementById("locator-input-section")
-        var input = document.getElementById("start");
-        var inputdest = document.getElementById("end");
 
-        function init() {
-            var locatorButton = document.getElementById("locator-button");
-            locatorButton.addEventListener("click", locatorButtonPressed)
+    var locatorSection = document.getElementById("locator-input-section")
+    var input = document.getElementById("start");
+    var inputdest = document.getElementById("end");
 
-        }
+    function init() {
+        var locatorButton = document.getElementById("locator-button");
+        locatorButton.addEventListener("click", locatorButtonPressed)
 
-        function locatorButtonPressed() {
-            locatorSection.classList.add("loading")
+    }
 
-            navigator.geolocation.getCurrentPosition(function (position) {
-                getUserAddressBy(position.coords.latitude, position.coords.longitude)
-            },
-                function (error) {
-                    locatorSection.classList.remove("loading")
-                    alert("The Locator was denied :( Please add your address manually")
-                })
-        }
+    function locatorButtonPressed() {
+        locatorSection.classList.add("loading")
 
-        function getUserAddressBy(lat, long) {
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function () {
-                if (this.readyState == 4 && this.status == 200) {
-                    var address = JSON.parse(this.responseText)
-                    setAddressToInputField(address.results[0].formatted_address)
-                }
-            };
-            xhttp.open("GET", "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + long + "&key=AIzaSyDtocoEyhuPCkk3fl_qySX4OdYAqwGRZ-g", true);
-            xhttp.send();
-        }
+        navigator.geolocation.getCurrentPosition(function (position) {
+            getUserAddressBy(position.coords.latitude, position.coords.longitude)
+        },
+            function (error) {
+                locatorSection.classList.remove("loading")
+                alert("The Locator was denied :( Please add your address manually")
+            })
+    }
 
-        function setAddressToInputField(address) {
-
-            input.value = address
-            locatorSection.classList.remove("loading")
-        }
-
-        var defaultBounds = new google.maps.LatLngBounds(
-            new google.maps.LatLng(39.592748, -8.296308),
-        );
-
-        var options = {
-            bounds: defaultBounds
+    function getUserAddressBy(lat, long) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var address = JSON.parse(this.responseText)
+                setAddressToInputField(address.results[0].formatted_address)
+            }
         };
+        xhttp.open("GET", "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + long + "&key=AIzaSyAF6fZGfZH5FXd4wmN7T-spVRF9kI1_LGA", true);
+        xhttp.send();
+    }
+
+    function setAddressToInputField(address) {
+
+        input.value = address
+        locatorSection.classList.remove("loading")
+    }
+
+    var defaultBounds = new google.maps.LatLngBounds(
+        new google.maps.LatLng(39.592748, -8.296308),
+    );
+
+    var options = {
+        bounds: defaultBounds
+    };
     var start = new google.maps.places.Autocomplete(input, options);
     var end = new google.maps.places.Autocomplete(inputdest, options);
 
 
-        init()
+    init()
 
     var service = new google.maps.DistanceMatrixService();
     var directionsService = new google.maps.DirectionsService();
 
-    var abeokuta = { lat: 39.592748, lng: -8.296308};
+    var abeokuta = { lat: 39.592748, lng: -8.296308 };
 
     // Create a map and center it on Mauritius.
     var map = new google.maps.Map(document.getElementById('map'), {
@@ -102,9 +104,11 @@ function initMap() {
 
     function calculate() {
 
+
     }
 
     function computeTotalDistance(result) {
+        var x = document.getElementById("precos");
         var myroute = result.routes[0];
         var duration, start, end;
         for (var i = 0; i < myroute.legs.length; i++) {
@@ -122,9 +126,12 @@ function initMap() {
         var oldDateObj = new Date();
         var chegada = new Date();
         chegada.setTime(oldDateObj.getTime() + (duration * 60 * 1000));
-   
-        
-        document.getElementById('total').innerHTML = "<h3> <i class='fa fa-play'></i> Origem <br>" + start + "</h3> <h3><i class='fa fa-stop'></i> Destino <br>" + end + "</h3> <h3><i class='fa fa-clipboard-check'></i> Distância Total <br>" + total + ' Km </h3>' + "<h3><i class='fa fa-clock'></i> Tempo estimado da viagem <br>" + duration + " Minutos</h3>" + "<h3><i class='fa fa-clock'></i> Chegada Prevista <br>" + chegada;
+        duration = Math.round(duration);
+
+
+        document.getElementById('total').innerHTML = "<h3> <i class='fa fa-play'></i> Origem: <br>" + start + "</h3> <h3><i class='fa fa-stop'></i> Destino: <br>" + end + "</h3> <h3><i class='fa fa-clipboard-check'></i> Distancia Total: <br>" + total + ' Km </h3>' + "<h3><i class='fa fa-clock'></i> Tempo estimado da viagem: <br>" + duration + " Minutos</h3>" + "<h3><i class='fa fa-clock'></i> Chegada Prevista: <br>" + chegada;
+        x.style.display = "block";
+
     }
 
     function calculateAndDisplayRoute(directionsDisplay, directionsService,
@@ -176,5 +183,6 @@ function initMap() {
         });
     }
 
- 
+
+
 }
