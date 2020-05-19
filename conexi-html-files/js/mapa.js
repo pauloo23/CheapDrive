@@ -11,6 +11,7 @@ var _price = 38.10;
 
 
 
+
 function initMap() {
     
         var locatorSection = document.getElementById("locator-input-section")
