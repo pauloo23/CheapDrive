@@ -2,6 +2,9 @@ var request = require('request');
 var token_jasmin;
 var pacotes = [];
 var dados_pacotes;
+var preco;
+var description;
+
 
 //Tou a testar o IntelliJ com o git
 
@@ -12,8 +15,8 @@ function getTokenJasmin() {
         "Accept": "application/json"
     };
     var form = {
-        "client_id": "CHAVEAPP",
-        "client_secret": "efbcbc31-5e82-4630-bb14-351e3d67d52c",
+        "client_id": "CHAVE123456",
+        "client_secret": "a230a832-d574-44c3-89a0-695b298098c7",
         "grant_type": "client_credentials",
         "scope": "application",
     };
@@ -34,7 +37,7 @@ function getPacotes(req, res) {
     setTimeout(function () {
         var options = {
             method: 'GET',
-            url: 'https://my.jasminsoftware.com/api/233762/233762-0001/materialsCore/materialsItems',
+            url: 'https://my.jasminsoftware.com/api/235684/235684-0001/materialsCore/materialsItems',
             headers: {
                 'content-type': 'application/json',
                 'Authorization': 'bearer ' + token_jasmin
@@ -42,7 +45,7 @@ function getPacotes(req, res) {
             form: {}
         };
 
-        console.log("1--------------------------------------");
+        console.log("2--------------------------------------");
         console.log(token_jasmin);
 
         var data = {};
@@ -54,27 +57,34 @@ function getPacotes(req, res) {
                 for (var i = 0; i < dados_pacotes.length; i++) {
                     pacotes.push(dados_pacotes[i].itemKey);
                 }
+                console.log("ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ");
                 console.log(dados_pacotes);
                 console.log(pacotes);
-               /* var ola = JSON.parse(response.body);
+                var ola = JSON.parse(response.body);
                 console.log(ola);
                 var dados = ola;
                 var barCode = [];
                 var itemKey = [];
+                var description = [];
                 for (var i = 0; i < dados.length; i++) {
                     itemKey.push(dados[i].itemKey);
                     console.log(itemKey);
                     barCode.push(dados[i].barcode);
+                    description.push(dados[i].description);
+
+
                 }
                 var data = {};
                 data.itemKey = itemKey;
-                data.barCode = barCode;*/
+                data.description = description;
+                data.barCode = barCode;
                 data.pacotes = {};
                 data.pacotes = dados_pacotes;
                 res.end(JSON.stringify(data));
                 console.log(data);
                 console.log(dados_pacotes);
-
+                console.log(description);
+console.log("YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY");
                // res.end(JSON.stringify(data));
                 //console.log(data);
             });
