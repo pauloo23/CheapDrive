@@ -228,8 +228,8 @@
                                                     </li>
                                                 </ul><!-- /.features-list -->
                                                 <div class="button-block">
-                                                    <form action="/pay" method="post">
-                                                        <input class="fare-btn" value="Reservar Viagem" type="submit">
+                                                    <form action="" method="">
+                                                        <input class="fare-btn" value="Reservar Viagem" type="submit" id="submit">
                                                     </form>
 
                                                 </div><!-- /.button-block -->
@@ -532,7 +532,31 @@
 
 
     </script>
+    <script>
+    const btnPagamento = document.getElementById("submit")
+    btnPagamento.addEventListener('click', function(){
 
+
+    fetch('http://localhost:8080/paypal', {
+        headers: { 'Content-Type': 'application/json' },
+        method: 'POST',
+
+    }).then(response => {
+        if (!response.ok) {
+            throw new Error(response.statusText);
+        }
+        return response.json();
+    }).then(result => {
+
+            console.log(result);
+            result.redirect(payment.links[i].href);
+
+    }).catch(error => {
+        swal({title: `${result.value.err_message}`})
+    });
+
+  });
+    </script>
 
 
     <script src="js/jquery.js"></script>
