@@ -19,7 +19,7 @@ router.get('/uber/', controllerUber.getPacotes);
 router.get('/kapten/', controllerKapten.getPackages);
 
 //Paypal payment
-router.get('/paypal/', controllerPaypal.getPaypal);
+router.get('/success/', controllerPaypal.getPaypal);
 router.post('/paypal/', controllerPaypal.postPaypal);
 
 

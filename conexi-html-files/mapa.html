@@ -226,10 +226,14 @@
                                                         <div class="name-line">Preço:</div><!-- /.name-line -->
                                                         <div class="price-line preco"></div><!-- /.price-line -->
                                                     </li>
+                                                    <li>
+                                                        <div class="name-line">Preço Final:</div><!-- /.name-line -->
+                                                        <div class="price-line precof"></div><!-- /.price-line -->
+                                                    </li>
                                                 </ul><!-- /.features-list -->
                                                 <div class="button-block">
                                                     <form action="" method="">
-                                                        <input class="fare-btn" value="Reservar Viagem" type="submit" id="submit">
+                                                        <input class="fare-btn" value="Reservar Viagem" type="submit" id="submitReser">
                                                     </form>
 
                                                 </div><!-- /.button-block -->
@@ -264,8 +268,12 @@
                                                         <div class="price-line matricula"></div><!-- /.price-line -->
                                                     </li>
                                                     <li>
-                                                        <div class="name-line">Distância:</div><!-- /.name-line -->
+                                                        <div class="name-line">Preço:</div><!-- /.name-line -->
                                                         <div class="price-line preco"></div><!-- /.price-line -->
+                                                    </li>
+                                                    <li>
+                                                        <div class="name-line">Preço Final:</div><!-- /.name-line -->
+                                                        <div class="price-line precof"></div><!-- /.price-line -->
                                                     </li>
                                                 </ul><!-- /.features-list -->
                                                 <div class="button-block">
@@ -304,6 +312,10 @@
                                                     <li>
                                                         <div class="name-line">Preço:</div><!-- /.name-line -->
                                                         <div class="price-line preco"></div><!-- /.price-line -->
+                                                    </li>
+                                                    <li>
+                                                        <div class="name-line">Preço Final:</div><!-- /.name-line -->
+                                                        <div class="price-line precof"></div><!-- /.price-line -->
                                                     </li>
                                                 </ul><!-- /.features-list -->
                                                 <div class="button-block">
@@ -422,7 +434,7 @@
     <script>
 
         console.log("Script");
-
+        var y = parseInt(localStorage.getItem("total"));
         const btnLogin = document.getElementById("btnLog")
         $(".modal-backdrop").remove();
         $("#btnLog").on("click", function () {
@@ -476,6 +488,7 @@
             $(".kapten .modelo").html(result.data[0].unit);
             $(".kapten .matricula").html(result.data[0].code);
             $(".kapten .preco").html(result.data[0].prices[0].price + "€");
+            $(".kapten .precof").html(result.data[0].prices[0].price * y + "€" );
         }).catch(error => {
             swal({ title: `${result.value.err_message}` })
         }).catch(error => {
@@ -498,6 +511,7 @@
             $(".uber .modelo").html(result.pacotes[0].brandModel);
             $(".uber .matricula").html(result.pacotes[0].barcode);
             $(".uber .preco").html(result.pacotes[0].description + "€");
+            $(".uber .precof").html(result.pacotes[0].description * y + "€" );
 
         }).catch(error => {
             swal({ title: `${result.value.err_message}` })
@@ -522,7 +536,7 @@
             $(".bolt .modelo").html(result.packages[0].ean);
             $(".bolt .matricula").html(result.packages[0].summary);
             $(".bolt .preco").html(result.packages[0].price + "€");
-
+            $(".bolt .precof").html(result.packages[0].price * y + "€" );
         }).catch(error => {
             swal({ title: `${result.value.err_message}` })
         }).catch(error => {
@@ -533,13 +547,13 @@
 
     </script>
     <script>
-    const btnPagamento = document.getElementById("submit")
+    const btnPagamento = document.getElementById("submitReser")
     btnPagamento.addEventListener('click', function(){
 
 
-    fetch('http://localhost:8080/paypal', {
+    fetch('http://localhost:8080/success', {
         headers: { 'Content-Type': 'application/json' },
-        method: 'POST',
+        method: 'GET',
 
     }).then(response => {
         if (!response.ok) {

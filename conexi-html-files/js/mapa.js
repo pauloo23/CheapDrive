@@ -108,31 +108,31 @@ function initMap() {
     }
 
     function computeTotalDistance(result) {
-        var x = document.getElementById("precos");
-        var myroute = result.routes[0];
-        var duration, start, end;
-        for (var i = 0; i < myroute.legs.length; i++) {
-            total += myroute.legs[i].distance.value; //valor da distancia
-            duration = myroute.legs[i].duration.value;
-            start = myroute.legs[i].start_address;
-            end = myroute.legs[i].end_address;
-            document.getElementById("start").value = start;
-            document.getElementById("end").value = end;
+            var x = document.getElementById("precos");
+            var myroute = result.routes[0];
+            var duration, start, end;
+            for (var i = 0; i < myroute.legs.length; i++) {
+                total += myroute.legs[i].distance.value; //valor da distancia
+                duration = myroute.legs[i].duration.value;
+                start = myroute.legs[i].start_address;
+                end = myroute.legs[i].end_address;
+                document.getElementById("start").value = start;
+                document.getElementById("end").value = end;
+            }
+            total = total / 1000;
+            _distance = total;
+    var t = total.toString();
+            duration = duration / 60;
+            var oldDateObj = new Date();
+            var chegada = new Date();
+            chegada.setTime(oldDateObj.getTime() + (duration * 60 * 1000));
+            duration = Math.round(duration);
+            localStorage.setItem("total",t);
+
+            document.getElementById('total').innerHTML = "<h3> <i class='fa fa-play'></i> Origem: <br>" + start + "</h3> <h3><i class='fa fa-stop'></i> Destino: <br>" + end + "</h3> <h3><i class='fa fa-clipboard-check'></i> Distancia Total: <br>" + total + ' Km </h3>' + "<h3><i class='fa fa-clock'></i> Tempo estimado da viagem: <br>" + duration + " Minutos</h3>" + "<h3><i class='fa fa-clock'></i> Chegada Prevista: <br>" + chegada;
+            x.style.display = "block";
+
         }
-        total = total / 1000;
-        _distance = total;
-
-        duration = duration / 60;
-        var oldDateObj = new Date();
-        var chegada = new Date();
-        chegada.setTime(oldDateObj.getTime() + (duration * 60 * 1000));
-        duration = Math.round(duration);
-
-
-        document.getElementById('total').innerHTML = "<h3> <i class='fa fa-play'></i> Origem: <br>" + start + "</h3> <h3><i class='fa fa-stop'></i> Destino: <br>" + end + "</h3> <h3><i class='fa fa-clipboard-check'></i> Distancia Total: <br>" + total + ' Km </h3>' + "<h3><i class='fa fa-clock'></i> Tempo estimado da viagem: <br>" + duration + " Minutos</h3>" + "<h3><i class='fa fa-clock'></i> Chegada Prevista: <br>" + chegada;
-        x.style.display = "block";
-
-    }
 
     function calculateAndDisplayRoute(directionsDisplay, directionsService,
         markers, stepDisplay, map) {

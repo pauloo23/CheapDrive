@@ -1,5 +1,5 @@
-var request = require('request');
-var express = require('express');
+const request = require('request');
+const express = require('express');
 const paypal = require('paypal-rest-sdk');
 
 paypal.configure({
@@ -25,12 +25,12 @@ const create_payment_json = {
                     "name": "Viagem",
                     "sku": "001",
                     "price": "25.00", //depois usar o body parser para ir busar o valor do preço
-                    "currency": "USD",
+                    "currency": "EUR",
                     "quantity": 1
                 }]
             },
             "amount": {
-                "currency": "USD",
+                "currency": "EUR",
                 "total": "25.00"
             },
             "description": "Viagem mais barata"
@@ -60,7 +60,7 @@ function getPaypal(req, res) {
         "payer_id": payerId,
         "transactions": [{
             "amount": {
-                "currency": "USD",
+                "currency": "EUR",
                 "total": "25.00"
             }
         }]
