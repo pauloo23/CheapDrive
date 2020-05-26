@@ -518,7 +518,7 @@ hr.style-one {
     height: 100%;
     z-index: 9999;
     background-color: #fff;
-    background-image: url(../images/resources/preloader.gif);
+    background-image: url(../images/index/logo.png);
     background-repeat: no-repeat;
     background-position: center center;
 }
