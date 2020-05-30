@@ -1015,6 +1015,7 @@ hr.style-one {
     padding-right: 60px;
     position: relative;
     z-index: 99;
+    cursor: pointer;
 }
 
     .site-header.header-one .header-navigation .right-side-box .contact-btn-block .icon-block {

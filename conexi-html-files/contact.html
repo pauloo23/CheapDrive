@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Contact Page || Conexi || Responsive HTML 5 Template</title>
+    <title>Contacto</title>
     <link rel="apple-touch-icon" sizes="57x57" href="images/favicon//apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="images/favicon//apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="images/favicon//apple-icon-72x72.png">
@@ -78,6 +78,53 @@
         <!-- /.container -->
     </nav>
     </header><!-- /.site-header header-one -->
+       
+          <div class="modal fade" id="popUpWindow">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <!-- header -->
+
+                            <div class="modal-header">
+                                <h12 style="color:#D76A29;" data-aos="fade-up" data-aos-delay="500">Entre na sua conta</h12>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <!-- body -->
+                            <div class="modal-header">
+                                <form role="form" action="/signin" method="post">
+                                    <div class="form-group">
+                                        <input align="center" type="email" aria-invalid="true" class="required form-control" id="email" placeholder="Email" size="50" />
+                                        <br />
+                                        <input type="password" class="form-control" id="password" placeholder="Password" />
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- footer -->
+                            <div class="modal-footer">
+                                
+              <a href="book-ride.html"> <button class="btn btn" id="btnReg" style="margin-right: 180px; background-color:#D76A29;">Registar</button></a>
+
+                               
+                                <button type="submit" class="btn btn" id="btnCanc" onclick="hide()" required style="background-color:#D76A29;">Cancelar</button>
+                                <button type="button" class="btn btn" id="btnLog" required style="background-color:#D76A29;">Log In</button>
+
+                                <script>
+                                    function hide() { //funcao para esconder popup
+                                        document.getElementById('popUpWindow').style.display = 'none';
+                                    }
+
+                                </script>
+                                <script>
+                                    function appear() { //funcao para esconder popup
+                                        document.getElementById('popUpWindow').style.display = 'flex';
+                                    }
+                            </script>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+        
         <section class="inner-banner" style="background-image: url(https://cdn.discordapp.com/attachments/692369821454565396/714844327397949540/banner-contactos.png);">
             <div class="container">
                 <ul class="thm-breadcrumb">
