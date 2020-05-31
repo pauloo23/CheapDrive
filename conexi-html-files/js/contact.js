@@ -1,19 +1,7 @@
-var firebaseConfig = {
-    apiKey: "AIzaSyDJ3aem6_QfiasT1NLr4ZQhiHpBL6hmYIs",
-    authDomain: "cheapdrive-e23d8.firebaseapp.com",
-    databaseURL: "https://cheapdrive-e23d8.firebaseio.com",
-    projectId: "cheapdrive-e23d8",
-    storageBucket: "cheapdrive-e23d8.appspot.com",
-    messagingSenderId: "816831106715",
-   
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-
-
 
 // Reference messages collection
-var messagesRef = firebase.database().ref('messages');
+
+    var messagesRef = firebase.database().ref('messages');
 
 // Listen for form submit
 document.getElementById('contactForm').addEventListener('submit', submitForm);
