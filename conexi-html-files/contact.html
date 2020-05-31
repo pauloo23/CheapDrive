@@ -270,90 +270,86 @@
     <script src="js/map-helper.js"></script>
     <script src="js/validate.js"></script>
     <script src="js/theme.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
 
 
 
-   
-             <script defer src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
-
-    <script defer src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
-    <script defer src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
-
-        <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
-       
-
-        <script>
-            // Your web app's Firebase configuration
-            var firebaseConfig = {
-                apiKey: "AIzaSyDJ3aem6_QfiasT1NLr4ZQhiHpBL6hmYIs",
-                authDomain: "cheapdrive-e23d8.firebaseapp.com",
-                databaseURL: "https://cheapdrive-e23d8.firebaseio.com",
-                projectId: "cheapdrive-e23d8",
-                storageBucket: "cheapdrive-e23d8.appspot.com",
-                messagingSenderId: "816831106715",
-                appId: "1:816831106715:web:879056942248b0f2ec803e",
-                measurementId: "G-P636VZKVLD"
-            };
-            // Initialize Firebase
-            firebase.initializeApp(firebaseConfig);
-            firebase.analytics();
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyDJ3aem6_QfiasT1NLr4ZQhiHpBL6hmYIs",
+            authDomain: "cheapdrive-e23d8.firebaseapp.com",
+            databaseURL: "https://cheapdrive-e23d8.firebaseio.com/",
+            projectId: "cheapdrive-e23d8",
+            storageBucket: "cheapdrive-e23d8.appspot.com",
+            messagingSenderId: "816831106715",
+            appId: "1:816831106715:web:879056942248b0f2ec803e",
+            measurementId: "G-P636VZKVLD"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
 
 
-            // Reference messages collection
-        
-            var messagesRef = firebase.database().ref('messages');
+        // Reference messages collection
 
-            // Listen for form submit
-            document.getElementById('contactForm').addEventListener('submit', submitForm);
+        var messagesRef = firebase.database().ref('messages');
 
-            // Submit form
-            function submitForm(e) {
-                e.preventDefault();
+        // Listen for form submit
+        document.getElementById('contactForm').addEventListener('submit', submitForm);
 
-                // Get values
-                var name = getInputVal('name');
-                var subject = getInputVal('subject');
-                var mail = getInputVal('mail');
-                var phone = getInputVal('phone');
-                var message = getInputVal('message');
+        // Submit form
+        function submitForm(e) {
+            e.preventDefault();
 
-                // Save message
-                saveMessage(name, subject, mail, phone, message);
+            // Get values
+            var name = getInputVal('name');
+            var subject = getInputVal('subject');
+            var mail = getInputVal('mail');
+            var phone = getInputVal('phone');
+            var message = getInputVal('message');
 
-                // Show alert
-                document.querySelector('.alert').style.display = 'block';
+            // Save message
+            saveMessage(name, subject, mail, phone, message);
 
-                // Hide alert after 3 seconds
-                setTimeout(function () {
-                    document.querySelector('.alert').style.display = 'none';
-                }, 3000);
+            // Show alert
+            // document.querySelector('.alert').style.display = 'block';
 
-                // Clear form
-                document.getElementById('contactForm').reset();
-            }
+            // Hide alert after 3 seconds
+            //     setTimeout(function () {
+            //       document.querySelector('.alert').style.display = 'none';
+            // }, 3000);
+            Swal.fire(
+                'Obrigado pelo seu contacto!',
+                'Recebemos a sua mensagem e iremos responder em breve!',
+                'success'
+            )
+            // Clear form
+            document.getElementById('contactForm').reset();
+        }
 
-            // Function to get get form values
-            function getInputVal(id) {
-                return document.getElementById(id).value;
-            }
+        // Function to get get form values
+        function getInputVal(id) {
+            return document.getElementById(id).value;
+        }
 
-            // Save message to firebase
-            function saveMessage(name, subject, mail, phone, message) {
-                var newMessageRef = messagesRef.push();
-                newMessageRef.set({
+        // Save message to firebase
+        function saveMessage(name, subject, mail, phone, message) {
+            var newMessageRef = messagesRef.push();
+            newMessageRef.set({
 
-                    name: name,
-                    subject: subject,
-                    mail: mail,
-                    phone: phone,
-                    message: message
+                name: name,
+                subject: subject,
+                mail: mail,
+                phone: phone,
+                message: message
 
 
-                });
-            }
-        </script>
+            });
+        }
+    </script>
 
-    </body>
+</body>
 
     </html >
