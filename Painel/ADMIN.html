@@ -33,14 +33,15 @@
 
 <script src="https://www.gstatic.com/charts/loader.js"></script>
 <script>
-    google.charts.load('current', { packages: [ 'corechart' ] })
-    google.charts.setOnLoadCallback(drawChart)
+    google.charts.load('current', { packages: [ 'corechart', 'map' ] });
+    google.charts.setOnLoadCallback(drawChart);
+    google.charts.setOnLoadCallback(drawMap);
 
     function drawChart() {
        // const container = document.querySelector('#chart')
 
 
-
+//DATA
         const data = new google.visualization.arrayToDataTable([
             [ 'Trimestre', 'Número' ],
             [ 'Primeiro Trimestre', 10000 ],
@@ -48,7 +49,7 @@
             [ 'Terceiro Trimestre', 8000 ],
             [ 'Quarto Trimestre', 5000 ]
 
-        ])
+        ]);
 
 
         const data2 = new google.visualization.arrayToDataTable([
@@ -57,28 +58,74 @@
             [ 'Bolt', 9000 ],
             [ 'Kapten', 8000 ]
 
-        ])
+        ]);
+
+
+
+
+        //OPTIONS
 
         const options = {
             title: 'Número de Clientes por Trimestre',
             height: 400,
-            width: 720
-        }
+            width: 720,
+            colors: ['#1654e0', '#5152ec', '#84c4e6']
+        };
 
         const options2 = {
             title: 'Número Total de Cliques Por Empresa',
             height: 400,
-            width: 720
-        }
+            width: 720,
+            colors: ['#51b6e0']
+        };
+
+
+
+
+
 
         const chart = new google.visualization.LineChart(document.getElementById('chart_div'));
         // const chart = new google.visualization.BarChart(container)
         const chart2 = new google.visualization.ColumnChart(document.getElementById('chart_div2'));
         //const chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-        chart.draw(data, options)
-        chart2.draw(data2, options2)
+
+
+
+        chart.draw(data, options);
+        chart2.draw(data2, options2);
+
+
 
     }
+
+
+ /*   function drawMap() {
+        var dataL = google.visualization.arrayToDataTable([
+            ['Country', 'Population'],
+            ['China', 'China: 1,363,800,000'],
+            ['India', 'India: 1,242,620,000'],
+            ['US', 'US: 317,842,000'],
+            ['Indonesia', 'Indonesia: 247,424,598'],
+            ['Brazil', 'Brazil: 201,032,714'],
+            ['Pakistan', 'Pakistan: 186,134,000'],
+            ['Nigeria', 'Nigeria: 173,615,000'],
+            ['Bangladesh', 'Bangladesh: 152,518,015'],
+            ['Russia', 'Russia: 146,019,512'],
+            ['Japan', 'Japan: 127,120,000']
+        ]);
+
+        const options3 = {
+
+            showTooltip: true,
+            showInfoWindow: true
+
+        };
+
+        const map = new google.visualization.Map(document.getElementById('chart_div3'));
+        map.draw(dataL, options3);
+
+
+    };*/
 </script>
 
 
@@ -164,6 +211,10 @@
         </div>
         <div id="chart_div"></div>
         <div id="chart_div2"></div>
+        <div id="chart_div3"></div>
+
+
+
 
 
 

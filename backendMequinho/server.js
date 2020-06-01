@@ -38,6 +38,6 @@ require('./loader.js');
 
 //firebase
 
-var firebase = require('firebase/app');
-require('firebase/auth');
-require('firebase/database');
+//var firebase = require('firebase/app');
+//require('firebase/auth');
+//require('firebase/database');
