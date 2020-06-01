@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -31,199 +31,194 @@
 <body>
     <div class="preloader"></div><!-- /.preloader -->
     <div class="page-wrapper">
-       <header class="site-header header-one">
+        <header class="site-header header-one">
             <!--
-                 <div class="top-bar">
-                         <div class="container">
-                             <div class="left-block">
+             <div class="top-bar">
+                     <div class="container">
+                         <div class="left-block">
 
 
 
 
 
 
-                                 <a href="mailto:cdhelp@gmail.com"><i class="fa fa-envelope"></i> cdhelp@gmail.com</a>
-                             </div><!-- /.left-block -->
+                             <a href="mailto:cdhelp@gmail.com"><i class="fa fa-envelope"></i> cdhelp@gmail.com</a>
+                         </div><!-- /.left-block -->
+            <!--
+
+                    <div class="social-block">
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa fa-youtube-play"></i></a>
+                        <a href="#"><i class="fa fa-google-plus"></i></a>
+                    </div><!-- /.social-block -->
+
+            <br />
+            <nav class="navbar navbar-expand-lg navbar-light header-navigation stricky">
+                <div class="container clearfix" style="width: 875px;">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="logo-box clearfix">
+                        <button class="menu-toggler" data-target="#main-nav-bar">
+                            <span class="fa fa-bars"></span>
+                        </button>
+                    </div><!-- /.logo-box -->
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="main-navigation" id="main-nav-bar">
+
+                        <ul class="navigation-box" style="width: 590px;">
+                            <li class=" current ">
+                                <a href="index.html">Home</a>
+                                <!-- /.sub-menu -->
+                            </li>
+                            <li><a href="about.html">Sobre</a></li>
+
+                            <li><a href="contact.html">Contactos</a></li>
 
 
-<!--
-
-            <div class="social-block">
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-facebook-f"></i></a>
-                <a href="#"><i class="fa fa-youtube-play"></i></a>
-                <a href="#"><i class="fa fa-google-plus"></i></a>
-            </div><!-- /.social-block -->
-    
-        <br />
-    <nav class="navbar navbar-expand-lg navbar-light header-navigation stricky">
-        <div class="container clearfix" style="width: 875px;">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="logo-box clearfix">
-                <button class="menu-toggler" data-target="#main-nav-bar">
-                    <span class="fa fa-bars"></span>
-                </button>
-            </div><!-- /.logo-box -->
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="main-navigation" id="main-nav-bar">
-
-                <ul class="navigation-box">
-                    <li class=" current ">
-                        <a href="index.html">Home</a>
-                        <ul class="sub-menu">
-
-                            <ul class="sub-menu">
-                            </ul><!-- /.sub-menu -->
-                    </li>
-                </ul><!-- /.sub-menu -->
-                </li>
-                <li><a href="about.html">Sobre</a></li>
-                <li>
-                    <a href="#">Produtos</a>
-                    <ul class="sub-menu">
-                        <li><a href="driver.html">Dados dos Veiculos</a></li>
-                        <li><a href="taxi.html">Dados dos Condutores</a></li>
-                    </ul><!-- /.sub-menu -->
-                </li>
-                <li><a href="contact.html">Contactos</a></li>
-                <div class="modal fade" id="popUpWindow">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <!-- header -->
-
-                            <div class="modal-header">
-                                <h12 style="color:#D76A29;" data-aos="fade-up" data-aos-delay="500">Entre na sua conta</h12>
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            </div>
-                            <!-- body -->
-                            <div class="modal-header">
-                                <form role="form" action="/signin" method="post">
-                                    <div class="form-group">
-                                        <input align="center" type="email" aria-invalid="true" class="required form-control" id="email" placeholder="Email" size="50" />
-                                        <br />
-                                        <input type="password" class="form-control" id="password" placeholder="Password" />
-                                    </div>
-                                </form>
-                            </div>
-                            <!-- footer -->
-                            <div class="modal-footer">
-                                
-                <button type="submit" href="#Registar" class="btn btn" id="btnLog" required style="margin-right: 186px; background-color:#D76A29;">Registar</button>
-
-                               
-                                <button type="submit" class="btn btn" id="btnLog" onclick="hide()" required style="background-color:#D76A29;">Cancelar</button>
-                                <button type="submit" class="btn btn" id="btnLog" required style="background-color:#D76A29;">Log In</button>
-
-                                <script>
-                                    function hide() { //funcao para esconder popup
-                                        document.getElementById('popUpWindow').style.display = 'none';
-                                    }
-
-                                </script>
-                            </div>
 
 
-                        </div>
-                    </div>
+                    </div><!-- /.navbar-collapse -->
+
+                    <div class="right-side-box">
+                        <a buttom onclick="appear()" class="contact-btn-block" data-toggle="modal" data-target="#popUpWindow" style="text-align:center; padding-bottom: 36px;padding-right: 65px; color:#D76A29; font-size:150%;">
+                            &nbsp;     &nbsp; Login
+
+                            <span class="text-block">
+
+                                <span class="tag-line"></span>
+                            </span>
+                        </a>
+                    </div><!-- /.right-side-box -->
+
+
+
                 </div>
 
-    
 
-            </div><!-- /.navbar-collapse -->
-            <div class="right-side-box">
-                <a class="contact-btn-block" data-toggle="modal" data-target="#popUpWindow" style="text-align:center; padding-bottom: 36px;padding-right: 65px; color:#D76A29; font-size:150%;"> Login
-                   
-                    <span class="text-block">
-                        
-                        <span class="tag-line"></span>
-                    </span>
-                </a>
-            </div><!-- /.right-side-box -->
+                <!-- /.container -->
+            </nav>
+        </header><!-- /.site-header header-one -->
+        <div class="modal fade" id="popUpWindow">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- header -->
 
-             
+                    <div class="modal-header">
+                        <h12 style="color:#D76A29;" data-aos="fade-up" data-aos-delay="500">Entre na sua conta</h12>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <!-- body -->
+                    <div class="modal-header">
+                        <form role="form" action="/signin" method="post">
+                            <div class="form-group">
+                                <input align="center" type="email" aria-invalid="true" class="required form-control" id="email" placeholder="Email" size="50" />
+                                <br />
+                                <input type="password" class="form-control" id="password" placeholder="Password" />
+                            </div>
+                        </form>
+                    </div>
+                    <!-- footer -->
+                    <div class="modal-footer">
 
+                        <a href="book-ride.html"> <button class="btn btn" id="btnReg" style="margin-right: 180px; background-color:#D76A29;">Registar</button></a>
+
+
+                        <button type="submit" class="btn btn" id="btnCanc" onclick="hide()" required style="background-color:#D76A29;">Cancelar</button>
+                        <button type="button" class="btn btn" id="btnLog" required style="background-color:#D76A29;">Log In</button>
+
+                        <script>
+                            function hide() { //funcao para esconder popup
+                                document.getElementById('popUpWindow').style.display = 'none';
+                            }
+
+                        </script>
+                        <script>
+                            function appear() { //funcao para esconder popup
+                                document.getElementById('popUpWindow').style.display = 'flex';
+                            }
+                        </script>
+                    </div>
+
+
+                </div>
+            </div>
         </div>
-       
 
-        <!-- /.container -->
-    </nav>
-    </header><!-- /.site-header header-one -->
-       
-          <section class="book-ride-one" style="padding-top: 230px;">
-        <img src="images/index/booking-bg-1-1.png" class="footer-bg" alt="Awesome Image" />
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4" style="bottom: 50px;">
-                    <div class="content-block" style="bottom: 50px;">
-                        <div class="block-title mb-0">
-                            <div class="dot-line"></div><!-- /.dot-line -->
-                            <p class="light">Procura transporte?</p>
-                            <h2 class="light">Faz aqui <br> o teu registo</h2>
-                        </div><!-- /.block-title -->
-                        <p>Garante a melhor oferta. <br> Aqui encontras tudo o que precisas.</p>
-                    </div><!-- /.content-block -->
-                </div><!-- /.col-lg-4 -->
-                <div class="col-lg-8">
-                    <form action="" class="booking-form-one">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="input-holder">
-                                    <input type="text" name="first_name" id="first_name" placeholder="Primeiro nome" required>
-                                </div><!-- /.input-holder -->
-                            </div><!-- /.col-lg-6 -->
-                            <div class="col-lg-6">
-                                <div class="input-holder">
-                                    <input type="text" name="last_name" id="last_name" placeholder="Ultimo nome" required>
-                                </div><!-- /.input-holder -->
-                            </div><!-- /.col-lg-6 -->
-                            <div class="col-lg-6">
-                                <div class="input-holder">
-                                    <input type="email" name="email" id="emailReg" placeholder="E-mail" required>
-                                </div><!-- /.input-holder -->
-                            </div><!-- /.col-lg-6 -->
-                            <div class="col-lg-6">
-                                <div class="input-holder">
-                                    <input type="text" name="morada" id="morada" placeholder="Morada" required>
-                                </div><!-- /.input-holder -->
-                            </div><!-- /.col-lg-6 -->
-                            <div class="col-lg-6">
-                                <div class="input-holder">
-                                    <input type="password" id="password_Registo" name="password_Registo" placeholder="Password" required>
-                                    
-                                   
-                                </div><!-- /.input-holder -->
-                            </div><!-- /.col-lg-6 -->
+        <section class="book-ride-one" style="padding-top: 230px;">
+            <img src="images/index/booking-bg-1-1.png" class="footer-bg" alt="Awesome Image" />
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4" style="bottom: 50px;">
+                        <div class="content-block" style="bottom: 50px;">
+                            <div class="block-title mb-0">
+                                <div class="dot-line"></div><!-- /.dot-line -->
+                                <p class="light">Procura transporte?</p>
+                                <h2 class="light">Faz aqui <br> o teu registo</h2>
+                            </div><!-- /.block-title -->
+                            <p>Garante a melhor oferta. <br> Aqui encontras tudo o que precisas.</p>
+                        </div><!-- /.content-block -->
+                    </div><!-- /.col-lg-4 -->
+                    <div class="col-lg-8">
+                        <form action="" class="booking-form-one">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="input-holder">
+                                        <input type="text" name="first_name" id="first_name" placeholder="Primeiro nome" required>
+                                    </div><!-- /.input-holder -->
+                                </div><!-- /.col-lg-6 -->
+                                <div class="col-lg-6">
+                                    <div class="input-holder">
+                                        <input type="text" name="last_name" id="last_name" placeholder="Ultimo nome" required>
+                                    </div><!-- /.input-holder -->
+                                </div><!-- /.col-lg-6 -->
+                                <div class="col-lg-6">
+                                    <div class="input-holder">
+                                        <input type="email" name="email" id="emailReg" placeholder="E-mail" required>
+                                    </div><!-- /.input-holder -->
+                                </div><!-- /.col-lg-6 -->
+                                <div class="col-lg-6">
+                                    <div class="input-holder">
+                                        <input type="text" name="morada" id="morada" placeholder="Morada" required>
+                                    </div><!-- /.input-holder -->
+                                </div><!-- /.col-lg-6 -->
+                                <div class="col-lg-6">
+                                    <div class="input-holder">
+                                        <input type="password" id="password_Registo" name="password_Registo" placeholder="Password" required>
 
-                            <div class="col-lg-6">
-                                  <div class="input-holder">
-                                    <input type="password" id="re_password" name="re_password" placeholder="Repetir Password" required>
-                                      <script>
-                                          var password = document.getElementById("password_Registo")
-                                              , confirm_password = document.getElementById("re_password");
 
-                                          function validatePassword() {
-                                              if (password.value != confirm_password.value) {
-                                                  confirm_password.setCustomValidity("Passwords n�o correspondem");
-                                              } else {
-                                                  confirm_password.setCustomValidity('');
-                                              }
-                                          }
+                                    </div><!-- /.input-holder -->
+                                </div><!-- /.col-lg-6 -->
 
-                                          password.onchange = validatePassword;
-                                          confirm_password.onkeyup = validatePassword;</script>
-                                </div><!-- /.input-holder -->
-                            </div><!-- /.col-lg-6 -->
-                            <div class="col-lg-6">
-                                <div class="input-holder">
-                                    <button type="submit" name="submit" id="btnReg">Registar</button>
-                                </div><!-- /.input-holder -->
-                            </div><!-- /.col-lg-6 -->
-                        </div><!-- /.row -->
-                    </form><!-- /.booking-form-one -->
-                </div><!-- /.col-lg-8 -->
-            </div><!-- /.row -->
-        </div><!-- /.container -->
-    </section><!-- /.book-ride-one -->
+                                <div class="col-lg-6">
+                                    <div class="input-holder">
+                                        <input type="password" id="re_password" name="re_password" placeholder="Repetir Password" required>
+                                        <script>
+                                            var password = document.getElementById("password_Registo")
+                                                , confirm_password = document.getElementById("re_password");
+
+                                            function validatePassword() {
+                                                if (password.value != confirm_password.value) {
+                                                    confirm_password.setCustomValidity("Passwords n�o correspondem");
+                                                } else {
+                                                    confirm_password.setCustomValidity('');
+                                                }
+                                            }
+
+                                            password.onchange = validatePassword;
+                                            confirm_password.onkeyup = validatePassword;</script>
+                                    </div><!-- /.input-holder -->
+                                </div><!-- /.col-lg-6 -->
+                                <div class="col-lg-6">
+                                    <div class="input-holder">
+                                        <button type="submit" name="submit" id="btnReg">Registar</button>
+                                    </div><!-- /.input-holder -->
+                                </div><!-- /.col-lg-6 -->
+                            </div><!-- /.row -->
+                        </form><!-- /.booking-form-one -->
+                    </div><!-- /.col-lg-8 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /.book-ride-one -->
         <footer class="site-footer no-top-zigzag">
             <img src="images/background/footer-bg-1-1.png" class="footer-bg" alt="Awesome Image" />
             <div class="upper-footer">

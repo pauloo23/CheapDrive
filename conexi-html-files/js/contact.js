@@ -1,53 +1,73 @@
 
-// Reference messages collection
+        // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyDJ3aem6_QfiasT1NLr4ZQhiHpBL6hmYIs",
+            authDomain: "cheapdrive-e23d8.firebaseapp.com",
+            databaseURL: "https://cheapdrive-e23d8.firebaseio.com/",
+            projectId: "cheapdrive-e23d8",
+            storageBucket: "cheapdrive-e23d8.appspot.com",
+            messagingSenderId: "816831106715",
+            appId: "1:816831106715:web:879056942248b0f2ec803e",
+            measurementId: "G-P636VZKVLD"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
 
-    var messagesRef = firebase.database().ref('messages');
 
-// Listen for form submit
-document.getElementById('contactForm').addEventListener('submit', submitForm);
+        // Reference messages collection
 
-// Submit form
-function submitForm(e) {
-    e.preventDefault();
+        var messagesRef = firebase.database().ref('messages');
 
-    // Get values
-    var name = getInputVal('name');
-    var subject = getInputVal('subject');
-    var mail = getInputVal('mail');
-    var phone = getInputVal('phone');
-    var message = getInputVal('message');
+        // Listen for form submit
+        document.getElementById('contactForm').addEventListener('submit', submitForm);
 
-    // Save message
-    saveMessage(name, subject, mail, phone, message);
+        // Submit form
+        function submitForm(e) {
+        e.preventDefault();
 
-    // Show alert
-    document.querySelector('.alert').style.display = 'block';
+            // Get values
+            var name = getInputVal('name');
+            var subject = getInputVal('subject');
+            var mail = getInputVal('mail');
+            var phone = getInputVal('phone');
+            var message = getInputVal('message');
 
-    // Hide alert after 3 seconds
-    setTimeout(function () {
-        document.querySelector('.alert').style.display = 'none';
-    }, 3000);
+            // Save message
+            saveMessage(name, subject, mail, phone, message);
 
-    // Clear form
-    document.getElementById('contactForm').reset();
-}
+            // Show alert
+            // document.querySelector('.alert').style.display = 'block';
 
-// Function to get get form values
-function getInputVal(id) {
-    return document.getElementById(id).value;
-}
+            // Hide alert after 3 seconds
+            //     setTimeout(function () {
+        //       document.querySelector('.alert').style.display = 'none';
+        // }, 3000);
+        Swal.fire(
+            'Obrigado pelo seu contacto!',
+            'Recebemos a sua mensagem e iremos responder em breve!',
+            'success'
+        )
+            // Clear form
+            document.getElementById('contactForm').reset();
+        }
 
-// Save message to firebase
-function saveMessage(name, subject, mail, phone, message) {
-    var newMessageRef = messagesRef.push();
-    newMessageRef.set({
-        
-                name: name,
+        // Function to get get form values
+        function getInputVal(id) {
+            return document.getElementById(id).value;
+        }
+
+        // Save message to firebase
+        function saveMessage(name, subject, mail, phone, message) {
+            var newMessageRef = messagesRef.push();
+            newMessageRef.set({
+
+        name: name,
                 subject: subject,
                 mail: mail,
                 phone: phone,
                 message: message
-            
-        
-    });
-}
+
+
+            });
+        }
+  
