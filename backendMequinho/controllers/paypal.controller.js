@@ -1,4 +1,4 @@
-/*
+
 const paypal = require('paypal-rest-sdk');
 var request = require('request');
 
