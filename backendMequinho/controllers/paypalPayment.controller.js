@@ -71,12 +71,12 @@ const execute_payment_json = {
     } else {
 
     console.log(JSON.stringify(payment));
-    console.log('success');
+   res.send("success");
         }
 });
 }
 function getCancel(req, res) {
-console.log('cancelled');
+res.send("cancelled");
 
 }
 
