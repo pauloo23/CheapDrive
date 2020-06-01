@@ -538,29 +538,44 @@
 
     </script>
     <script>
-    const btnPagamento = document.getElementById("submitReser")
-    btnPagamento.addEventListener('click', function(){
-
-
-    fetch('http://localhost:8080/success', {
-        headers: { 'Content-Type': 'application/json' },
-        method: 'GET',
-
-    }).then(response => {
-        if (!response.ok) {
-            throw new Error(response.statusText);
-        }
-        return response.json();
-    }).then(result => {
-
-            console.log(result);
-            result.redirect(payment.links[i].href);
-
-    }).catch(error => {
-        swal({title: `${result.value.err_message}`})
+    paypal.Button.render({
+  env: 'production', // Optional: specify 'sandbox' environment
+  client: {
+    sandbox:    'AZ7R6f00m8OlcTmjYQOs8GqmlntIEcgALSossGO-q7UvuMFuZPiUcwtoWi9pCd5_cDapwIA28kAJcazl',
+    production: 'xxxxxxxxx'
+  },
+  commit: true, // Optional: show a 'Pay Now' button in the checkout flow
+  payment: function (data, actions) {
+    return actions.payment.create({
+      payment: {
+        transactions: [
+          {
+            amount: {
+              total: '25.00',
+              currency: 'EUR'
+            }
+          }
+        ]
+      }
     });
-
-  });
+  },
+  onAuthorize: function (data, actions) {
+    // Get the payment details
+    return actions.payment.get()
+      .then(function (paymentDetails) {
+        // Show a confirmation using the details from paymentDetails
+        // Then listen for a click on your confirm button
+        document.querySelector('#confirm-button')
+          .addEventListener('click', function () {
+            // Execute the payment
+            return actions.payment.execute()
+              .then(function () {
+                // Show a success page to the buyer
+              });
+          });
+      });
+  }
+}, '#paypal-button');
     </script>
 
     <script>
@@ -594,6 +609,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/12.1.5/js/smooth-scroll.min.js"></script>
     <script src="js\mapa.js"></script>
+
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
 
