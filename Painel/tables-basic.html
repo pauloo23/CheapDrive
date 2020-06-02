@@ -116,37 +116,30 @@
 
 
 
-
-
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
-                    <strong class="card-title">Utilizadores</strong>
+                    <strong class="card-title">Lista de Utilizadores</strong>
                 </div>
                 <div class="card-body">
                     <table class="table table-striped">
                         <thead>
-                            <tr>
-
-                                <th scope="col">Nome</th>
-                                <th scope="col">Código</th>
-
-
-
-                            </tr>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Apelido</th>
+                            <th scope="col">Tipo</th>
+                            <th scope="col">Email</th>
+                        </tr>
                         </thead>
                         <tbody>
-                            
-
                         </tbody>
                     </table>
 
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
                     <script>
                         window.onload = function() {
-
-                            fetch('http://localhost:8080/kapten/', {
-
+                            fetch('http://localhost:8080/users/', {
                                 headers: { 'Content-Type': 'application/json' },
                                 method: 'GET',
                             }).then(response => {
@@ -155,19 +148,20 @@
                                 }
                                 return response.json();
                             }).then(result => {
-
                                 const tabela = $(".table-striped tbody");
                                 for (row in result) {
                                     const valor = result[row];
 
                                         $(tabela).append("<tr>" +
-
-                                            "<td>" + valor.nomes + "</td>" +
-                                            "<td>" + valor.code + "</td>" +
+                                            "<td>" + valor.id + "</td>" +
+                                            "<td>" + valor.nome + "</td>" +
+                                            "<td>" + valor.apelido + "</td>" +
+                                            "<td>" + valor.tipo + "</td>" +
+                                            "<td>" + valor.email + "</td>" +
 
                                             "<tr>");
+                                    }
 
-                                }
                             }).catch(error => {
                                 swal({ title: `${result.value.err_message}` })
                             }).catch(error => {
@@ -179,13 +173,25 @@
             </div>
         </div>
 
-        <!-- Right Panel -->
 
 
-        <script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
-        <script src="assets/js/popper.min.js"></script>
-        <script src="assets/js/plugins.js"></script>
-        <script src="assets/js/main.js"></script>
+    </div>
+    </div>
+    <!-- .animated -->
+    </div>
+    <!-- .content -->
+
+
+    </div>
+    <!-- /#right-panel -->
+
+    <!-- Right Panel -->
+
+
+    <script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/plugins.js"></script>
+    <script src="assets/js/main.js"></script>
 
 
 </body>
