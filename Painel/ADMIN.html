@@ -99,33 +99,7 @@
     }
 
 
- /*   function drawMap() {
-        var dataL = google.visualization.arrayToDataTable([
-            ['Country', 'Population'],
-            ['China', 'China: 1,363,800,000'],
-            ['India', 'India: 1,242,620,000'],
-            ['US', 'US: 317,842,000'],
-            ['Indonesia', 'Indonesia: 247,424,598'],
-            ['Brazil', 'Brazil: 201,032,714'],
-            ['Pakistan', 'Pakistan: 186,134,000'],
-            ['Nigeria', 'Nigeria: 173,615,000'],
-            ['Bangladesh', 'Bangladesh: 152,518,015'],
-            ['Russia', 'Russia: 146,019,512'],
-            ['Japan', 'Japan: 127,120,000']
-        ]);
 
-        const options3 = {
-
-            showTooltip: true,
-            showInfoWindow: true
-
-        };
-
-        const map = new google.visualization.Map(document.getElementById('chart_div3'));
-        map.draw(dataL, options3);
-
-
-    };*/
 </script>
 
 
@@ -257,5 +231,59 @@
         } )( jQuery );
     </script>
 
+
+<script>
+
+let a = 0;
+let b = 0;
+let c = 0;
+let d = 0;
+let e = 0;
+let f = 0;
+let g = 0;
+let h = 0;
+let i = 0;
+let j = 0;
+let k = 0;
+let l = 0;
+let m = 0;
+
+
+
+
+
+
+
+
+    window.onload = function() {
+        fetch('http://localhost:8080/users/', {
+
+            headers: { 'Content-Type': 'application/json' },
+            method: 'GET',
+        }).then(response => {
+            if (!response.ok) {
+                throw new Error(response.statusText);
+
+            }
+            return response.json();
+        }).then(result => {
+
+            for (row in result) {
+                const valor = result[row];
+
+
+
+
+
+            }
+
+        }).catch(error => {
+            swal({ title: `${result.value.err_message}` })
+        }).catch(error => {
+            alert("Erro ao fazer carregar tabela!");
+        });
+    };
+
+</script>
 </body>
 </html>

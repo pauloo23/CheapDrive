@@ -53,9 +53,7 @@
                     </li>
                     <h3 class="menu-title">Vista Geral</h3>
                     <!-- /.menu-title -->
-                    <li class="active">
-                        <a href="ADMIN.html"> <i class="menu-icon fa fa-bar-chart-o"> </i>Analytics </a>
-                    </li>
+
 
                     <li class="active">
                         <a href="tables-basic.html"> <i class="menu-icon fa fa-user"> </i>Lista Utilizadores</a>
@@ -138,6 +136,8 @@
 
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
                     <script>
+                      //  let a = 0;
+
                         window.onload = function() {
                             fetch('http://localhost:8080/users/', {
                                 headers: { 'Content-Type': 'application/json' },
@@ -151,6 +151,8 @@
                                 const tabela = $(".table-striped tbody");
                                 for (row in result) {
                                     const valor = result[row];
+                                 //   a++;
+                                //    console.log(a);
 
                                         $(tabela).append("<tr>" +
                                             "<td>" + valor.id + "</td>" +
