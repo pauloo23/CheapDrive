@@ -4,7 +4,6 @@ const host = process.env.HOST || '127.0.0.1';
 
 
 
-
 //carregar bibliotecas globais
 const cors = require('cors');
 const bodyParser = require('body-parser');
@@ -18,7 +17,7 @@ const expressValidator = require('express-validator');
 //iniciar a aplicação
 var app = express();
 
-app.use(bodyParser.json(), bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json({type:'application/json'}), bodyParser.urlencoded({ extended: true }));
 app.use(expressSanitizer());
 app.use(expressValidator());
 
@@ -33,7 +32,10 @@ app.listen(port, function(err) {
 app.use(cors());
 
 //colocar aqui código para express-sessions
+
 module.exports = app;
+
+
 require('./loader.js');
 
 //firebase
