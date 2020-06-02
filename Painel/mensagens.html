@@ -1,0 +1,210 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="pt">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Mensagens</title>
+    <meta name="description" content="Sufee Admin - HTML5 Admin Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" type="image/png" sizes="16x16" href="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Future_Gadget_Lab_logo.png/499px-Future_Gadget_Lab_logo.png">
+    <link rel="manifest" href="/manifest.json">
+
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/flag-icon.min.css">
+    <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
+    <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
+    <link rel="stylesheet" href="assets/scss/style.css">
+    <script src="jquery-3.5.1.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
+    <!-- Added link to the jQuery Library -->
+    <script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
+
+</head>
+
+<body onload="update()">
+    <!-- Left Panel -->
+
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+            <br>
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="ADMIN.html">CheapDrive</a>
+                <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a>
+            </div>
+            <br>
+
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="ADMIN.html"> <i class="menu-icon fa fa-dashboard"></i>Página Inicial </a>
+                    </li>
+                    <h3 class="menu-title">Vista Geral</h3>
+                    <!-- /.menu-title -->
+                    <li class="active">
+                        <a href="ADMIN.html"> <i class="menu-icon fa fa-bar-chart-o"> </i>Analytics </a>
+                    </li>
+
+                    <li class="active">
+                        <a href="tables-basic.html"> <i class="menu-icon fa fa-user"> </i>Lista Utilizadores</a>
+                    </li>
+
+
+
+
+
+                    <li class="active">
+                        <a href="RegAdmin.html"> <i class="menu-icon fa fa-user"> </i>Registar Administrador</a>
+                    </li>
+
+                    <li class="active">
+                        <a href="index.html"> <i class="menu-icon fa fa-user"> </i>Terminar Sessão</a>
+                    </li>
+
+
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+    </aside>
+    <!-- /#left-panel -->
+    <!-- Left Panel -->
+    <!-- Right Panel -->
+
+    <div id="right-panel" class="right-panel">
+
+        <!-- Header-->
+        </header>
+        <!-- /header -->
+        <!-- Header-->
+
+        <div class="breadcrumbs">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1></h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="page-header float-right">
+                    <div class="page-title">
+                        <button class="btn btn" background-color:#D76A29;  id="getmessages" data-scroll>
+                            Atualizar
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+
+
+            <div class="panel panel-info">
+                <div class="panel-heading">Mensagens</div>
+
+                <div class="panel-body">
+                    <table id="messages" class="table">
+                        <thead>
+                            <tr>
+                                <th id="name">Nome</th>
+                                <th id="phone">Telemóvel</th>
+                                <th id="mail">Email</th>
+                                <th id="subject">Assunto</th>
+                                <th id="message">Mensagem</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            </div>
+
+
+
+
+
+            <!-- Right Panel -->
+
+
+            <script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
+            <script src="assets/js/popper.min.js"></script>
+            <script src="assets/js/plugins.js"></script>
+            <script src="assets/js/main.js"></script>    
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+            <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
+            <script src="js/jquery.js"></script>
+
+            <script>
+                // Initialize Firebase
+                // The copied and pasted code from the app page
+                // Initialize Firebase
+                var firebaseConfig = {
+                    apiKey: "AIzaSyDJ3aem6_QfiasT1NLr4ZQhiHpBL6hmYIs",
+                    authDomain: "cheapdrive-e23d8.firebaseapp.com",
+                    databaseURL: "https://cheapdrive-e23d8.firebaseio.com/",
+                    projectId: "cheapdrive-e23d8",
+                    storageBucket: "cheapdrive-e23d8.appspot.com",
+                    messagingSenderId: "816831106715",
+                    appId: "1:816831106715:web:879056942248b0f2ec803e",
+                    measurementId: "G-P636VZKVLD"
+                };
+
+                firebase.initializeApp(firebaseConfig);
+
+                // references the database
+                var database = firebase.database();
+                document.getElementById("getmessages").addEventListener("click", update);
+
+                function update() {
+                    database.ref('messages').on("child_added", function (childSnapshot, prevChildKey) {
+
+                        // console.log the value of snapshot
+                        console.log(childSnapshot.val());
+
+                        // change the html associated with the number.
+                        var name = childSnapshot.val().name;
+                        var phone = childSnapshot.val().phone;
+                        var mail = childSnapshot.val().mail;
+                        var subject = childSnapshot.val().subject;
+                        var message = childSnapshot.val().message;
+
+
+                        console.log(name);
+                        console.log(phone);
+                        console.log(mail);
+                        console.log(subject);
+                        console.log(message);
+
+                        
+
+                        // update the clickCounter variable with data from the database.
+                        $("#messages > tbody").append("<tr><td>" + name + "</td><td>" + phone + "</td><td>" +
+                            mail + "</td><td>" + subject + "</td><td>" + message + "</td><tr>");
+                    });
+
+                }
+
+
+
+
+            </script>
+</body>
+
+</html>
