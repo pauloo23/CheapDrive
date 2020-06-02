@@ -14,7 +14,7 @@ var _price = 38.10;
 
 
 function initMap() {
-
+    document.getElementById("calculate").addEventListener("click", initMap);
     var locatorSection = document.getElementById("locator-input-section")
     var input = document.getElementById("start");
     var inputdest = document.getElementById("end");
@@ -106,7 +106,7 @@ function initMap() {
 
 
     }
-
+    
     function computeTotalDistance(result) {
             var x = document.getElementById("precos");
             var myroute = result.routes[0];
