@@ -61,7 +61,7 @@
             var newMessageRef = messagesRef.push();
             newMessageRef.set({
 
-        name: name,
+                 name: name,
                 subject: subject,
                 mail: mail,
                 phone: phone,

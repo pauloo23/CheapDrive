@@ -121,7 +121,7 @@ function initMap() {
             }
             total = total / 1000;
             _distance = total;
-    var t = total.toString();
+            var t = total.toString();
             duration = duration / 60;
             var oldDateObj = new Date();
             var chegada = new Date();
