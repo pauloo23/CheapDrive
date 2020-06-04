@@ -460,7 +460,7 @@
                 }
 
             }).catch(error => {
-                swal({ title: `${result.value.err_message}` })
+                alert(error);
             }).catch(error => {
                 alert("Erro ao fazer login!");
             });
@@ -477,16 +477,16 @@
             return response.json();
         }).then(result => {
             var y = parseInt(localStorage.getItem("total"));
-            $(".kapten .condutor").html(result.data[0].name);
-            $(".kapten .marca").html(result.data[0].description);
-            $(".kapten .modelo").html(result.data[0].unit);
-            $(".kapten .matricula").html(result.data[0].code);
-            $(".kapten .preco").html(result.data[0].prices[0].price + "€");
-            $(".kapten .precof").html((result.data[0].prices[0].price * y).toFixed(2) + "€" );
+            $(".kapten .condutor").html(result[0].name);
+            $(".kapten .marca").html(result[0].description);
+            $(".kapten .modelo").html(result[0].unit);
+            $(".kapten .matricula").html(result[0].code);
+            $(".kapten .preco").html(result[0].prices[0].price + "€");
+            $(".kapten .precof").html((result[0].prices[0].price * y).toFixed(2) + "€" );
         }).catch(error => {
-            swal({ title: `${result.value.err_message}` })
+            alert(error);
         }).catch(error => {
-            alert("Erro a pedir dados do Kapten!");
+            alert("Erro a pedir dados do Kapten!" + error);
         });
 
 
@@ -509,7 +509,7 @@
             $(".uber .precof").html((result.pacotes[0].description * y).toFixed(2) + "€" );
 
         }).catch(error => {
-            swal({ title: `${result.value.err_message}` })
+            alert(error);
         }).catch(error => {
             alert("Erro a pedir dados do uber!");
         });
@@ -534,7 +534,7 @@
             $(".bolt .preco").html(result.packages[0].price + "€");
             $(".bolt .precof").html((result.packages[0].price * y).toFixed(2) + "€" );
         }).catch(error => {
-            swal({ title: `${result.value.err_message}` })
+           alert(error);
         }).catch(error => {
             alert("Erro a pedir dados do Bolt!");
         });
