@@ -23,6 +23,11 @@ connect.getConnection(function (err, conn) {
     })
 });}
 
+
+
+
+
+
 module.exports = {
     read : read
 };

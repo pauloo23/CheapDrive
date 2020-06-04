@@ -144,29 +144,7 @@
 
                                 </div><!-- /.input-holder -->
                             </div><!-- /.col-lg-6 -->
-                            <div class="col-lg-6">
-                                <div class="input-holder">
-                                    <input placeholder="Data de Nascimento" id="datefield" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" readonly />
-                                   
-                                    <script>
-                                        //funcao para declarar a data minima a data do dia em questao
-                                        var today = new Date();
-                                        var dd = today.getDate();
-                                        var mm = today.getMonth() + 1;
-                                        var yyyy = today.getFullYear();
-                                        if (dd < 10) {
-                                            dd = '0' + dd
-                                        }
-                                        if (mm < 10) {
-                                            mm = '0' + mm
-                                        }
 
-                                        today = yyyy + '-' + mm + '-' + dd;
-                                        document.getElementById("datefield").setAttribute("min", today);
-                                    </script>
-                                    <i class="conexi-icon-small-calendar"></i>
-                                </div><!-- /.input-holder -->
-                            </div><!-- /.col-lg-6 -->
                             <div class="col-lg-6">
                                   <div class="input-holder">
                                     <input type="password" id="confirm_password" name="name" placeholder="Repetir Password" required>

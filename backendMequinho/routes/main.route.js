@@ -27,8 +27,7 @@ router.get('/cancel/', controllerPaypal.getCancel);
 
 //Rota Users
 router.get('/users/', controllerUser.read);
-
-
+router.put('/users/:id',controllerUser)
 
 
 module.exports = router;
