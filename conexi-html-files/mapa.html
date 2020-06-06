@@ -186,6 +186,7 @@
                                     </div><!-- /.block-title -->
                                     <div class="row">
                                         <div class="col-lg-6 bolt">
+                                            <div class="id-condutor" style="display: none"></div>
                                             <div class="single-taxi-fare-one thm-base-bg hvr-float-shadow">
                                                 <div class="top-block">
                                                     <div class="icon-block">
@@ -228,6 +229,7 @@
                                             </div><!-- /.single-taxi-fare-one -->
                                         </div>
                                         <div class="col-lg-6 uber">
+                                            <div class="id-condutor" style="display: none"></div>
                                             <div style="" class="single-taxi-fare-one thm-base-bg hvr-float-shadow">
                                                 <div class="top-block">
                                                     <div class="icon-block">
@@ -270,6 +272,7 @@
                                             </div><!-- /.single-taxi-fare-one -->
                                         </div>
                                         <div class="col-lg-6 kapten" style=" margin-right: auto; margin-left: auto;">
+                                            <div class="id-condutor" style="display: none"></div>
                                             <div class="single-taxi-fare-one thm-base-bg hvr-float-shadow">
                                                 <div class="top-block">
                                                     <div class="icon-block">
@@ -317,16 +320,7 @@
                             </section><!-- /.taxi-fare-one -->
 
                         </div>
-
-
-
-
-
-
                     </section>
-
-
-
                 </div>
             </div>
         </div>
@@ -423,7 +417,8 @@
 
         function reservar(empresa) {
            const precof = $("." + empresa + " .precof").text();
-           location.href='http://localhost:8080/paypal?preco=' + precof.replace('€', '');
+           const idCondutor = $("." + empresa + " .id-condutor").text();
+           location.href='http://localhost:8080/paypal?preco=' + precof.replace('€', '') + "&companhia=" + empresa + "&idCondutor=" + idCondutor;
            return;
 		}
 
@@ -477,6 +472,7 @@
             return response.json();
         }).then(result => {
             var y = parseInt(localStorage.getItem("total"));
+            $(".kapten .id-condutor").html(result[0].id);
             $(".kapten .condutor").html(result[0].name);
             $(".kapten .marca").html(result[0].description);
             $(".kapten .modelo").html(result[0].unit);
@@ -501,6 +497,7 @@
             return response.json();
         }).then(result => {
             var y = parseInt(localStorage.getItem("total"));
+            $(".uber .id-condutor").html(result.pacotes[0].itemKey);
             $(".uber .condutor").html(result.pacotes[0].itemKey);
             $(".uber .marca").html(result.pacotes[0].brand);
             $(".uber .modelo").html(result.pacotes[0].brandModel);
@@ -527,6 +524,7 @@
         }).then(result => {
             console.log(result);
             var y = parseInt(localStorage.getItem("total"));
+            $(".bolt .id-condutor").html(result.packages[0].product_id);
             $(".bolt .condutor").html(result.packages[0].name);
             $(".bolt .marca").html(result.packages[0].reference);
             $(".bolt .modelo").html(result.packages[0].ean);

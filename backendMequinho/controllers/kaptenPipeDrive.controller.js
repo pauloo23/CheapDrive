@@ -14,11 +14,31 @@ function getPackages(req, res) {
         const disponiveis = data.filter(condutor => condutor.selectable);
         res.end(JSON.stringify(disponiveis));
     });
+    
+    updatePackage(3, false);
+}
 
-
+function updatePackage(id, active) {
+    console.log("Init updatePackage function...")
+    var options = {
+        method: 'PUT',
+        url:'https://api.pipedrive.com/v1/products/' + id + '?api_token=c8b64dfd1d3cc8e532203f76ff81055eac5de6e1',
+        json: {
+            "selectable": "0",
+            "active_flag": "1"
+        },
+        headers: {     
+            "Accept": "application/json",
+            "Content-Type": "application/json" },
+    };
+    request(options, function (error, response, body) {
+        if (error) throw new Error(error);
+        console.log(body);
+    });
 }
 
 //exportar as funções
 module.exports = {
-    getPackages: getPackages
+    getPackages: getPackages,
+    updatePackage: updatePackage
 };

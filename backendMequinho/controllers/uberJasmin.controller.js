@@ -1,6 +1,5 @@
 var request = require('request');
 var token_jasmin;
-var pacotes = [];
 var dados_pacotes;
 var preco;
 var description;
@@ -52,8 +51,9 @@ function getPacotes(req, res) {
             request(options, function (error, response, body) {
                 if (error) throw new Error(error);
                 var dados_pacotes = JSON.parse(response.body);
+                var pacotes = [];
                 for (var i = 0; i < dados_pacotes.length; i++) {
-                    if(dados_pacotes[i].complementaryDescription && dados_pacotes[i].complementaryDescription.length > 0){
+                    if(dados_pacotes[i].itemSubtype){
                         pacotes.push(dados_pacotes[i]);           
 					}
                 }
@@ -76,7 +76,29 @@ function getPacotes(req, res) {
     }, 2000);
 }
 
+function updatePackage(idCondutor, active) {
+    getTokenJasmin();
+    setTimeout(function () {
+        var options = {
+            method: 'PUT',
+            url: 'https://my.jasminsoftware.com/api/235684/235684-0001/materialsCore/materialsItems/' + idCondutor + '/itemSubtype',
+            headers: {
+                'content-type': 'application/json',
+                'Authorization': 'bearer ' + token_jasmin
+            },
+            data: active ? '1' : '0',
+        };
+
+        var data = {};
+            request(options, function (error, response, body) {
+                if (error) throw new Error(error);
+                console.log(body);
+            });
+    }, 2000);
+}
+
 //exportar as funções
 module.exports = {
-    getPacotes: getPacotes
+    getPacotes: getPacotes,
+    updatePackage: updatePackage
 };

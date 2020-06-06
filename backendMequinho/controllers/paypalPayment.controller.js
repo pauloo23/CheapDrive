@@ -1,5 +1,8 @@
 const ejs = require('ejs');
 const paypal = require('paypal-rest-sdk');
+const controllerKapten = require('./kaptenPipeDrive.controller.js');
+const controllerBolt = require('./boltMoloni.controller.js');
+const controllerUber = require('./uberJasmin.controller.js');
 
 paypal.configure({
     'mode': 'sandbox', //sandbox or live
@@ -7,8 +10,16 @@ paypal.configure({
     'client_secret': 'EEBeh4eLSfaMine3ZyeWoKCQd5JnziTtO4ymZWh31xBbvHyi2FC5z6igtH76Svsogkdu5YUDexiC_v65'
 });
 
+let preco = 0;
+let companhia = "";
+let idCondutor;
+
 function getPay(req, res) {
-    const preco = req.query.preco;
+    preco = req.query.preco;
+    idCondutor = req.query.idCondutor;
+    companhia = req.query.companhia;
+
+    console.log(req.headers);
 
     var create_payment_json = {
         "intent": "sale",
@@ -42,6 +53,7 @@ function getPay(req, res) {
             throw error;
         } else {
             for (let i = 0; i < payment.links.length; i++) {
+                console.log(payment.links[i]);
                 if (payment.links[i].rel === 'approval_url') {
                     res.redirect(payment.links[i].href);
                 }
@@ -51,7 +63,6 @@ function getPay(req, res) {
 }
 
 function getParameters(req, res) {
-
     const payerId = req.query.PayerID;
     const paymentId = req.query.paymentId;
 
@@ -61,19 +72,31 @@ function getParameters(req, res) {
         "transactions": [{
             "amount": {
                 "currency": "EUR",
-                "total": "25.00"
+                "total": preco
             }
         }]
     };
     paypal.payment.execute(paymentId, execute_payment_json, function(error, payment) {
-
         if (error) {
             console.log(error.response);
             throw error;
         } else {
+            switch(companhia){
+                case 'kapten':
+                    controllerKapten.updatePackage(idCondutor, false);
+                    break;
+                case 'bolt':
+                    controllerBolt.updatePackage(idCondutor, false);
+                    break;
+                case 'uber':
+                    controllerUber.updatePackage(idCondutor, false);
+                    break;
+                default:
+                    console.log('Empresa não suportada: ' + companhia);
+			}
 
             console.log(JSON.stringify(payment));
-            res.send("success");
+            res.send('success');
         }
     });
 }
