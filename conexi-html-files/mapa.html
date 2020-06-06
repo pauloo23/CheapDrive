@@ -186,6 +186,7 @@
                                     </div><!-- /.block-title -->
                                     <div class="row">
                                         <div class="col-lg-6 bolt">
+                                            <div class="id-condutor" style="display: none"></div>
                                             <div class="single-taxi-fare-one thm-base-bg hvr-float-shadow">
                                                 <div class="top-block">
                                                     <div class="icon-block">
@@ -223,14 +224,12 @@
                                                     </li>
                                                 </ul><!-- /.features-list -->
                                                 <div class="button-block">
-                                                    <form action="" method="">
-                                                        <input class="fare-btn" value="Reservar Viagem" type="submit" id="submitReser">
-                                                    </form>
-
+                                                    <input class="fare-btn" value="Reservar Viagem" type="button" id="submitReser" onClick="reservar('bolt');">
                                                 </div><!-- /.button-block -->
                                             </div><!-- /.single-taxi-fare-one -->
                                         </div>
                                         <div class="col-lg-6 uber">
+                                            <div class="id-condutor" style="display: none"></div>
                                             <div style="" class="single-taxi-fare-one thm-base-bg hvr-float-shadow">
                                                 <div class="top-block">
                                                     <div class="icon-block">
@@ -268,11 +267,12 @@
                                                     </li>
                                                 </ul><!-- /.features-list -->
                                                 <div class="button-block">
-                                                    <a href="#" class="fare-btn">Reservar Viagem</a>
+                                                    <input class="fare-btn" value="Reservar Viagem" type="button" id="submitReser" onClick="reservar('uber');">
                                                 </div><!-- /.button-block -->
                                             </div><!-- /.single-taxi-fare-one -->
                                         </div>
                                         <div class="col-lg-6 kapten" style=" margin-right: auto; margin-left: auto;">
+                                            <div class="id-condutor" style="display: none"></div>
                                             <div class="single-taxi-fare-one thm-base-bg hvr-float-shadow">
                                                 <div class="top-block">
                                                     <div class="icon-block">
@@ -310,7 +310,7 @@
                                                     </li>
                                                 </ul><!-- /.features-list -->
                                                 <div class="button-block">
-                                                    <a href="#" class="fare-btn">Reservar Viagem</a>
+                                                    <input class="fare-btn" value="Reservar Viagem" type="button" id="submitReser" onClick="reservar('kapten');">
                                                 </div><!-- /.button-block -->
                                             </div><!-- /.single-taxi-fare-one -->
                                         </div><!-- /.col-lg-6 -->
@@ -320,16 +320,7 @@
                             </section><!-- /.taxi-fare-one -->
 
                         </div>
-
-
-
-
-
-
                     </section>
-
-
-
                 </div>
             </div>
         </div>
@@ -424,8 +415,14 @@
 
     <script>
 
+        function reservar(empresa) {
+           const precof = $("." + empresa + " .precof").text();
+           const idCondutor = $("." + empresa + " .id-condutor").text();
+           location.href='http://localhost:8080/paypal?preco=' + precof.replace('€', '') + "&companhia=" + empresa + "&idCondutor=" + idCondutor;
+           return;
+		}
+
         console.log("Script");
-        var y = parseInt(localStorage.getItem("total"));
         const btnLogin = document.getElementById("btnLog")
         $(".modal-backdrop").remove();
         $("#btnLog").on("click", function () {
@@ -458,7 +455,7 @@
                 }
 
             }).catch(error => {
-                swal({ title: `${result.value.err_message}` })
+                alert(error);
             }).catch(error => {
                 alert("Erro ao fazer login!");
             });
@@ -474,16 +471,18 @@
             }
             return response.json();
         }).then(result => {
-            $(".kapten .condutor").html(result.data[0].name);
-            $(".kapten .marca").html(result.data[0].description);
-            $(".kapten .modelo").html(result.data[0].unit);
-            $(".kapten .matricula").html(result.data[0].code);
-            $(".kapten .preco").html(result.data[0].prices[0].price + "€");
-            $(".kapten .precof").html(result.data[0].prices[0].price * y + "€" );
+            var y = parseInt(localStorage.getItem("total"));
+            $(".kapten .id-condutor").html(result[0].id);
+            $(".kapten .condutor").html(result[0].name);
+            $(".kapten .marca").html(result[0].description);
+            $(".kapten .modelo").html(result[0].unit);
+            $(".kapten .matricula").html(result[0].code);
+            $(".kapten .preco").html(result[0].prices[0].price + "€");
+            $(".kapten .precof").html((result[0].prices[0].price * y).toFixed(2) + "€" );
         }).catch(error => {
-            swal({ title: `${result.value.err_message}` })
+            alert(error);
         }).catch(error => {
-            alert("Erro a pedir dados do Kapten!");
+            alert("Erro a pedir dados do Kapten!" + error);
         });
 
 
@@ -497,15 +496,17 @@
             }
             return response.json();
         }).then(result => {
+            var y = parseInt(localStorage.getItem("total"));
+            $(".uber .id-condutor").html(result.pacotes[0].itemKey);
             $(".uber .condutor").html(result.pacotes[0].itemKey);
             $(".uber .marca").html(result.pacotes[0].brand);
             $(".uber .modelo").html(result.pacotes[0].brandModel);
             $(".uber .matricula").html(result.pacotes[0].barcode);
             $(".uber .preco").html(result.pacotes[0].description + "€");
-            $(".uber .precof").html(result.pacotes[0].description * y + "€" );
+            $(".uber .precof").html((result.pacotes[0].description * y).toFixed(2) + "€" );
 
         }).catch(error => {
-            swal({ title: `${result.value.err_message}` })
+            alert(error);
         }).catch(error => {
             alert("Erro a pedir dados do uber!");
         });
@@ -522,14 +523,16 @@
             return response.json();
         }).then(result => {
             console.log(result);
+            var y = parseInt(localStorage.getItem("total"));
+            $(".bolt .id-condutor").html(result.packages[0].product_id);
             $(".bolt .condutor").html(result.packages[0].name);
             $(".bolt .marca").html(result.packages[0].reference);
             $(".bolt .modelo").html(result.packages[0].ean);
             $(".bolt .matricula").html(result.packages[0].summary);
             $(".bolt .preco").html(result.packages[0].price + "€");
-            $(".bolt .precof").html(result.packages[0].price * y + "€" );
+            $(".bolt .precof").html((result.packages[0].price * y).toFixed(2) + "€" );
         }).catch(error => {
-            swal({ title: `${result.value.err_message}` })
+           alert(error);
         }).catch(error => {
             alert("Erro a pedir dados do Bolt!");
         });

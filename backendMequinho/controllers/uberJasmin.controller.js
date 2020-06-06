@@ -1,6 +1,5 @@
 var request = require('request');
 var token_jasmin;
-var pacotes = [];
 var dados_pacotes;
 var preco;
 var description;
@@ -49,49 +48,57 @@ function getPacotes(req, res) {
         console.log(token_jasmin);
 
         var data = {};
-
-
             request(options, function (error, response, body) {
                 if (error) throw new Error(error);
                 var dados_pacotes = JSON.parse(response.body);
+                var pacotes = [];
                 for (var i = 0; i < dados_pacotes.length; i++) {
-                    pacotes.push(dados_pacotes[i].itemKey);
+                    if(dados_pacotes[i].itemSubtype){
+                        pacotes.push(dados_pacotes[i]);           
+					}
                 }
-                console.log("ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ");
-                console.log(dados_pacotes);
-                console.log(pacotes);
-                var ola = JSON.parse(response.body);
-                console.log(ola);
-                var dados = ola;
+                
                 var barCode = [];
                 var itemKey = [];
                 var description = [];
-                for (var i = 0; i < dados.length; i++) {
-                    itemKey.push(dados[i].itemKey);
-                    console.log(itemKey);
-                    barCode.push(dados[i].barcode);
-                    description.push(dados[i].description);
-
-
+                for (var i = 0; i < pacotes.length; i++) {
+                    itemKey.push(pacotes[i].itemKey);
+                    barCode.push(pacotes[i].barcode);
+                    description.push(pacotes[i].description);
                 }
                 var data = {};
                 data.itemKey = itemKey;
                 data.description = description;
                 data.barCode = barCode;
-                data.pacotes = {};
-                data.pacotes = dados_pacotes;
+                data.pacotes = pacotes;
                 res.end(JSON.stringify(data));
-                console.log(data);
-                console.log(dados_pacotes);
-                console.log(description);
-console.log("YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY");
-               // res.end(JSON.stringify(data));
-                //console.log(data);
+            });
+    }, 2000);
+}
+
+function updatePackage(idCondutor, active) {
+    getTokenJasmin();
+    setTimeout(function () {
+        var options = {
+            method: 'PUT',
+            url: 'https://my.jasminsoftware.com/api/235684/235684-0001/materialsCore/materialsItems/' + idCondutor + '/itemSubtype',
+            headers: {
+                'content-type': 'application/json',
+                'Authorization': 'bearer ' + token_jasmin
+            },
+            data: active ? '1' : '0',
+        };
+
+        var data = {};
+            request(options, function (error, response, body) {
+                if (error) throw new Error(error);
+                console.log(body);
             });
     }, 2000);
 }
 
 //exportar as funções
 module.exports = {
-    getPacotes: getPacotes
+    getPacotes: getPacotes,
+    updatePackage: updatePackage
 };
