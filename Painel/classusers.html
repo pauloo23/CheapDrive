@@ -9,13 +9,13 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Mensagens</title>
+    <title>Classificação dos utilizadores</title>
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="icon" type="image/png" sizes="16x16" href="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Future_Gadget_Lab_logo.png/499px-Future_Gadget_Lab_logo.png">
     <link rel="manifest" href="/manifest.json">
-
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
@@ -31,9 +31,10 @@
     <!-- Added link to the jQuery Library -->
     <script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
 
+
 </head>
 
-<body onload="update()">
+<body>
     <!-- Left Panel -->
 
     <aside id="left-panel" class="left-panel">
@@ -95,46 +96,11 @@
         <!-- /header -->
         <!-- Header-->
 
-        <div class="breadcrumbs">
-            <div class="col-sm-4">
-                <div class="page-header float-left">
-                    <div class="page-title">
-                        <h1></h1>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-8">
-                <div class="page-header float-right">
-                    <div class="page-title">
-                        <button class="btn btn" background-color:#D76A29; id="getmessages" data-scroll>
-                            Atualizar
-                    </div>
-                </div>
-            </div>
-        </div>
+        <br />
 
-        <div class="container">
+        <div id="divRender" class="container" style="padding-left: 50px;">
 
 
-            <div class="panel panel-info">
-                <div class="panel-heading">Mensagens</div>
-
-                <div class="panel-body">
-                    <table id="messages" class="table">
-                        <thead>
-                            <tr>
-                                <th id="name">Nome</th>
-                                <th id="phone">Telem�vel</th>
-                                <th id="mail">Email</th>
-                                <th id="subject">Assunto</th>
-                                <th id="message">Mensagem</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
         </div>
 
 
@@ -158,50 +124,72 @@
             // The copied and pasted code from the app page
             // Initialize Firebase
             var firebaseConfig = {
-                apiKey: "AIzaSyDJ3aem6_QfiasT1NLr4ZQhiHpBL6hmYIs",
-                authDomain: "cheapdrive-e23d8.firebaseapp.com",
-                databaseURL: "https://cheapdrive-e23d8.firebaseio.com/",
-                projectId: "cheapdrive-e23d8",
-                storageBucket: "cheapdrive-e23d8.appspot.com",
-                messagingSenderId: "816831106715",
-                appId: "1:816831106715:web:879056942248b0f2ec803e",
-                measurementId: "G-P636VZKVLD"
+                apiKey: "AIzaSyB9WHw-FNVOUFVPglCO8daD32E6LVKWxEs",
+                authDomain: "cheapdrive-c9dc6.firebaseapp.com",
+                databaseURL: "https://cheapdrive-c9dc6.firebaseio.com",
+                projectId: "cheapdrive-c9dc6",
+                storageBucket: "cheapdrive-c9dc6.appspot.com",
+                messagingSenderId: "619802521881",
+                appId: "1:619802521881:web:ea7dcb7445f6e4cdd91588",
+                measurementId: "G-JX23V0SNJ0"
             };
 
             firebase.initializeApp(firebaseConfig);
 
             // references the database
             var database = firebase.database();
-            document.getElementById("getmessages").addEventListener("click", update);
+            var stars = [false, false, false, false, false];
 
-            function update() {
-                database.ref('messages').on("child_added", function (childSnapshot, prevChildKey) {
+            (() => {
+                firebase.database().ref('classificacao').on('value', function (data) {
+                    var classificacao = data.val();
+                    document.getElementById('divRender').innerHTML = '';
+                    for (const key in classificacao) {
+                        if (classificacao[key].rating[0]) {
+                            document.getElementById('divRender').innerHTML += `
+                        <div class="row" id="${key}">
+                                    <h6>Nome do cliente: ${classificacao[key].name} <br>
 
-                    // console.log the value of snapshot
-                    console.log(childSnapshot.val());
+                                    <div Rating: <br> ‎</div>
 
-                    // change the html associated with the number.
-                    var name = childSnapshot.val().name;
-                    var phone = childSnapshot.val().phone;
-                    var mail = childSnapshot.val().mail;
-                    var subject = childSnapshot.val().subject;
-                    var message = childSnapshot.val().message;
+                                    <div id="starsR${key}"></div>
+                        </div>
+                        <hr>
+                        `;
+                            for (let index = 0; index < classificacao[key].rating.length; index++) {
+                                if (classificacao[key].rating[index]) {
+                                    document.getElementById('starsR' + key).innerHTML += `
 
+                                <i style="color:orange" class="material-icons iconstar">star</i>
 
-                    console.log(name);
-                    console.log(phone);
-                    console.log(mail);
-                    console.log(subject);
-                    console.log(message);
+                                `;
+                                } else {
+                                    document.getElementById('starsR' + key).innerHTML += `
+                                <i style="color:initial" class="material-icons iconstar">star</i>
 
+                                `;
+                                }
+                            }
+                        } else {
+                            document.getElementById('divRender').innerHTML += `
+                                     <div class="row" id="${key}">
 
-
-                    // update the clickCounter variable with data from the database.
-                    $("#messages > tbody").append("<tr><td>" + name + "</td><td>" + phone + "</td><td>" +
-                        mail + "</td><td>" + subject + "</td><td>" + message + "</td><tr>");
+                                    <h6><br>Classificação: </h6>
+                                    <i onmouseover="color('${key}','0')" onclick="mark('${classificacao[key].name}','${key}','0')" onmouseleave="nocolor('${key}')" id='${'star' + key + 0}' class="material-icons iconstar">star</i>
+                                    <i onmouseover="color('${key}','1')" onclick="mark('${classificacao[key].name}','${key}','1')" onmouseleave="nocolor('${key}')" id='${'star' + key + 1}' class="material-icons iconstar">star</i>
+                                    <i onmouseover="color('${key}','2')" onclick="mark('${classificacao[key].name}','${key}','2')" onmouseleave="nocolor('${key}')" id='${'star' + key + 2}' class="material-icons iconstar">star</i>
+                                    <i onmouseover="color('${key}','3')" onclick="mark('${classificacao[key].name}','${key}','3')" onmouseleave="nocolor('${key}')" id='${'star' + key + 3}' class="material-icons iconstar">star</i>
+                                    <i onmouseover="color('${key}','4')" onclick="mark('${classificacao[key].name}','${key}','4')" onmouseleave="nocolor('${key}')" id='${'star' + key + 4}' class="material-icons iconstar">star</i>
+                        </div>
+                        <hr>
+                        `;
+                        }
+                    }
                 });
 
-            }
+
+
+            })();
 
 
 
