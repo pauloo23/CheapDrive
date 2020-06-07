@@ -2,9 +2,7 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js" lang="">
- <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,112 +29,106 @@
 
 </head>
 <body>
-    <script>
-        let janeiro = 0;
-        let fevereiro = 0;
-        let marco = 0;
-        var abril = 0;
-        let maio = 0;
-        let junho = 0;
-        let julho = 0;
-        let agosto = 0;
-        let setembro = 0;
-        let outubro = 0;
-        let novembro = 0;
-        let dezembro = 0;
+<script>
+    let janeiro = 0;
+    let fevereiro = 0;
+    let marco = 0;
+    var abril = 0;
+    let maio = 0;
+    let junho = 0;
+    let julho = 0;
+    let agosto = 0;
+    let setembro = 0;
+    let outubro = 0;
+    let novembro = 0;
+    let dezembro = 0;
 
-
-        var uber = 0;
-        var bolt = 0;
-        var kapten = 0;
-
-
-
-
-        window.onload = function () {
-
-            fetch('http://localhost:8080/users/', {
-
-                headers: { 'Content-Type': 'application/json' },
-                method: 'GET',
-            }).then(response => {
-                if (!response.ok) {
-                    throw new Error(response.statusText);
-
-                }
-                return response.json();
-            }).then(result => {
-
-                for (row in result) {
-                    const valor = result[row];
-                    var date = valor.createdAt;
-                    console.log(date);
-
-
-                    const b = date.slice(5, 7);
-                    console.log(b);
+    var uber = 0;
+    var bolt = 0;
+    var kapten = 0;
 
 
 
-                    if (b === "01") {
-                        janeiro++;
-                    } else if (b === "02") {
-                        fevereiro++;
-                    } else if (b === "03") {
-                        marco++;
-                    } else if (b === "04") {
-                        abril++;
+    window.onload = function() {
 
-                        //   console.log(abril);
-                    } else if (b === "05") {
-                        maio++;
-                    } else if (b === "06") {
-                        junho++;
-                    } else if (b === "07") {
-                        julho++;
-                    } else if (b === "08") {
-                        agosto++;
-                    } else if (b === "09") {
-                        setembro++;
-                    } else if (b === "10") {
-                        outubro++;
-                    } else if (b === "11") {
-                        novembro++;
-                    } else if (b === "12") {
-                        dezembro++;
-                    } else {
+        fetch('http://localhost:8080/users/', {
 
-                        console.log("Deu erro!")
-                    }
+            headers: { 'Content-Type': 'application/json' },
+            method: 'GET',
+        }).then(response => {
+            if (!response.ok) {
+                throw new Error(response.statusText);
+
+            }
+            return response.json();
+        }).then(result => {
+
+            for (row in result) {
+                const valor = result[row];
+                var date = valor.createdAt;
+                console.log(date);
+
+
+                const b = date.slice(5,7);
+                console.log(b);
 
 
 
-                    localStorage.setItem("Janeiro", janeiro.toString());
-                    localStorage.setItem("Feveiro", fevereiro.toString());
-                    localStorage.setItem("Março", marco.toString());
-                    localStorage.setItem("Abril", abril.toString());
-                    localStorage.setItem("Maio", maio.toString());
-                    localStorage.setItem("Junho", junho.toString());
-                    localStorage.setItem("Julho", julho.toString());
-                    localStorage.setItem("Agosto", agosto.toString());
-                    localStorage.setItem("Setembro", setembro.toString());
-                    localStorage.setItem("Outubro", outubro.toString());
-                    localStorage.setItem("Novembro", novembro.toString());
-                    localStorage.setItem("Dezembro", dezembro.toString());
+                if (b === "01"){
+                    janeiro++;
+                }else if(b === "02"){
+                    fevereiro++;
+                }else if(b === "03"){
+                    marco++;
+                }else if(b === "04"){
+                    abril++;
 
+                    //   console.log(abril);
+                }else if(b === "05"){
+                    maio++;
+                }else if(b === "06"){
+                    junho++;
+                }else if(b === "07"){
+                    julho++;
+                }else if(b === "08"){
+                    agosto++;
+                }else if(b === "09"){
+                    setembro++;
+                }else if(b === "10"){
+                    outubro++;
+                }else if(b === "11"){
+                    novembro++;
+                }else if(b === "12"){
+                    dezembro++;
+                } else {
 
-
+                    console.log("Deu erro!")
                 }
 
-            }).catch(error => {
-                swal({ title: `${result.value.err_message}` })
-            }).catch(error => {
-                alert("Erro a obter registos!");
-            });
+
+
+                localStorage.setItem("Janeiro", janeiro.toString());
+                localStorage.setItem("Feveiro", fevereiro.toString());
+                localStorage.setItem("Março", marco.toString());
+                localStorage.setItem("Abril", abril.toString());
+                localStorage.setItem("Maio", maio.toString());
+                localStorage.setItem("Junho", junho.toString());
+                localStorage.setItem("Julho", julho.toString());
+                localStorage.setItem("Agosto", agosto.toString());
+                localStorage.setItem("Setembro", setembro.toString());
+                localStorage.setItem("Outubro", outubro.toString());
+                localStorage.setItem("Novembro", novembro.toString());
+                localStorage.setItem("Dezembro", dezembro.toString());
 
 
 
-        };
+            }
+
+        }).catch(error => {
+            swal({ title: `${result.value.err_message}` })
+        }).catch(error => {
+            alert("Erro a obter utilizadores");
+        });
 
 
 
@@ -189,190 +181,189 @@
 
 
 
+    };
+
+
+</script>
+<script src="https://www.gstatic.com/charts/loader.js"></script>
+<script>
+    google.charts.load('current', { packages: [ 'corechart', 'map' ] });
+    google.charts.setOnLoadCallback(drawChart);
+    google.charts.setOnLoadCallback(drawMap);
+
+    function drawChart() {
+        // const container = document.querySelector('#chart')
+
+
+//DATA
+
+
+
+        var a = parseInt(localStorage.getItem("Janeiro"));
+        var b = parseInt(localStorage.getItem("Fevereiro"));
+        var c = parseInt(localStorage.getItem("Março"));
+        var d = parseInt(localStorage.getItem("Abril"));
+        var e = parseInt(localStorage.getItem("Maio"));
+        var f = parseInt(localStorage.getItem("Junho"));
+        var g = parseInt(localStorage.getItem("Julho"));
+        var h = parseInt(localStorage.getItem("Agosto"));
+        var i = parseInt(localStorage.getItem("Setembro"));
+        var j = parseInt(localStorage.getItem("Outubro"));
+        var k = parseInt(localStorage.getItem("Novembro"));
+        var l = parseInt(localStorage.getItem("Dezembro"));
+
+
+        var m = parseInt(localStorage.getItem("Uber"));
+        var n = parseInt(localStorage.getItem("Bolt"));
+        var o = parseInt(localStorage.getItem("Kapten"));
+
+
+        const data = new google.visualization.arrayToDataTable([
+            [ 'Meses', 'Número de registos' ],
+            [ 'Janeiro', a ],
+            [ 'Fevereiro', b ],
+            [ 'Março', c ],
+            [ 'Abril', d ],
+            [ 'Maio', e ],
+            [ 'Junho', f ],
+            [ 'Julho', g ],
+            [ 'Agosto', g ],
+            [ 'Setembro', i ],
+            [ 'Outubro', j ],
+            [ 'Novembro', k ],
+            [ 'Dezembro', l ]
+        ]);
+
+
+        const data2 = new google.visualization.arrayToDataTable([
+            [ 'Empresa', 'Número Total de Cliques' ],
+            [ 'Uber', m ],
+            [ 'Bolt', n ],
+            [ 'Kapten', o ]
+
+        ]);
+
+
+
+
+        //OPTIONS
+
+        const options = {
+            title: 'Número de Clientes por Mês',
+            height: 500,
+            width: 1000,
+            colors: ['#84c4e6', '#84c4e6', '#84c4e6']
+        };
+
+        const options2 = {
+            title: 'Número Total de Cliques Por Empresa',
+            height: 400,
+            width: 720,
+            colors: ['#51b6e0']
         };
 
 
-    </script>
-    <script src="https://www.gstatic.com/charts/loader.js"></script>
-    <script>
-        google.charts.load('current', { packages: ['corechart', 'map'] });
-        google.charts.setOnLoadCallback(drawChart);
-        google.charts.setOnLoadCallback(drawMap);
 
-        function drawChart() {
-            // const container = document.querySelector('#chart')
-
-
-            //DATA
+        const chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+        // const chart = new google.visualization.BarChart(container)
+        const chart2 = new google.visualization.ColumnChart(document.getElementById('chart_div2'));
+        //const chart = new google.visualization.PieChart(document.getElementById('chart_div'));
 
 
 
-            var a = parseInt(localStorage.getItem("Janeiro"));
-            var b = parseInt(localStorage.getItem("Fevereiro"));
-            var c = parseInt(localStorage.getItem("Março"));
-            var d = parseInt(localStorage.getItem("Abril"));
-            var e = parseInt(localStorage.getItem("Maio"));
-            var f = parseInt(localStorage.getItem("Junho"));
-            var g = parseInt(localStorage.getItem("Julho"));
-            var h = parseInt(localStorage.getItem("Agosto"));
-            var i = parseInt(localStorage.getItem("Setembro"));
-            var j = parseInt(localStorage.getItem("Outubro"));
-            var k = parseInt(localStorage.getItem("Novembro"));
-            var l = parseInt(localStorage.getItem("Dezembro"));
+        chart.draw(data, options);
+        chart2.draw(data2, options2);
+
+
+
+    }
+
+</script>
 
 
 
 
-            var m = parseInt(localStorage.getItem("Uber"));
-            var n = parseInt(localStorage.getItem("Bolt"));
-            var o = parseInt(localStorage.getItem("Kapten"));
+<!-- Left Panel -->
 
+<aside id="left-panel" class="left-panel">
+    <nav class="navbar navbar-expand-sm navbar-default">
+        <br>
+        <div class="navbar-header">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand" href="ADMIN.html">CheapDrive</a>
+            <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a>
+        </div>
+        <br>
+        <div id="main-menu" class="main-menu collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="ADMIN.html"> <i class="menu-icon fa fa-dashboard"></i>Página Inicial</a>
+                </li>
+                <h3 class="menu-title">Vista Geral</h3><!-- /.menu-title -->
+                <li class="active">
+                    <a href="ADMIN.html"> <i class="menu-icon fa fa-bar-chart-o"> </i>Analytics </a>
+                </li>
 
-            const data = new google.visualization.arrayToDataTable([
-                ['Meses', 'Número de registos'],
-                ['Janeiro', a],
-                ['Fevereiro', b],
-                ['Março', c],
-                ['Abril', d],
-                ['Maio', e],
-                ['Junho', f],
-                ['Julho', g],
-                ['Agosto', g],
-                ['Setembro', i],
-                ['Outubro', j],
-                ['Novembro', k],
-                ['Dezembro', l]
-            ]);
+                <li class="active">
+                    <a href="tables-basic.html"> <i class="menu-icon fa fa-user"> </i>Lista Utilizadores</a>
+                </li>
 
+                <li class="active">
+                    <a href="RegAdmin.html"> <i class="menu-icon fa fa-user"> </i>Registar Administrador</a>
+                </li>
+                <li class="active">
+                    <a href="mensagens.html"> <i class="menu-icon fa fa-user"> </i>Mensagens</a>
+                </li>
+                <li class="active">
+                    <a href="classusers.html"> <i class="menu-icon fa fa-user"> </i>Classificações</a>
+                </li>
 
-            const data2 = new google.visualization.arrayToDataTable([
-                [ 'Empresa', 'Número Total de Cliques' ],
-                [ 'Uber', m ],
-                [ 'Bolt', n ],
-                [ 'Kapten', o ]
-
-            ]);
-
-
-
-
-
-            //OPTIONS
-
-            const options = {
-                title: 'Número de Clientes por Trimestre',
-                height: 500,
-                width: 1000,
-                colors: ['#84c4e6', '#84c4e6', '#84c4e6']
-            };
-
-            const options2 = {
-                title: 'Número Total de Cliques Por Empresa',
-                height: 400,
-                width: 720,
-                colors: ['#140de0']
-            };
-
-
-
-            const chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
-            // const chart = new google.visualization.BarChart(container)
-            const chart2 = new google.visualization.ColumnChart(document.getElementById('chart_div2'));
-            //const chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-
-
-
-            chart.draw(data, options);
-            chart2.draw(data2, options2);
-
-
-
-        }
-
-    </script>
-
-
-
-
-    <!-- Left Panel -->
-
-    <aside id="left-panel" class="left-panel">
-        <nav class="navbar navbar-expand-sm navbar-default">
-            <br>
-            <div class="navbar-header">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand" href="ADMIN.html">CheapDrive</a>
-                <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a>
-            </div>
-            <br>
-            <div id="main-menu" class="main-menu collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active">
-                        <a href="ADMIN.html"> <i class="menu-icon fa fa-dashboard"></i>Página Inicial</a>
-                    </li>
-                    <h3 class="menu-title">Vista Geral</h3><!-- /.menu-title -->
-                    <li class="active">
-                        <a href="ADMIN.html"> <i class="menu-icon fa fa-bar-chart-o"> </i>Analytics </a>
-                    </li>
-
-                    <li class="active">
-                        <a href="tables-basic.html"> <i class="menu-icon fa fa-user"> </i>Lista Utilizadores</a>
-                    </li>
-
-                    <li class="active">
-                        <a href="RegAdmin.html"> <i class="menu-icon fa fa-user"> </i>Registar Administrador</a>
-                    </li>
-                    <li class="active">
-                        <a href="mensagens.html"> <i class="menu-icon fa fa-user"> </i>Mensagens</a>
-                    </li>
-                    <li class="active">
-                        <a href="classusers.html"> <i class="menu-icon fa fa-user"> </i>Classificações</a>
-                    </li>
-
-                    <li class="active">
-                        <a href="index.html"> <i class="menu-icon fa fa-user"> </i>Terminar Sessão</a>
-                    </li>
+                <li class="active">
+                    <a href="index.html"> <i class="menu-icon fa fa-user"> </i>Terminar Sessão</a>
+                </li>
 
 
 
 
 
 
-                </ul>
-            </div><!-- /.navbar-collapse -->
-        </nav>
-    </aside><!-- /#left-panel -->
-    <!-- Left Panel -->
-    <!-- Right Panel -->
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </nav>
+</aside><!-- /#left-panel -->
 
-    <div id="right-panel" class="right-panel">
+<!-- Left Panel -->
 
-        <!-- Header-->
+<!-- Right Panel -->
+
+<div id="right-panel" class="right-panel">
+
+    <!-- Header-->
 
 
-        <div class="breadcrumbs">
-            <div class="col-sm-4">
-                <div class="page-header float-left">
-                    <div class="page-title">
-                        <h1>Página Inicial</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-8">
-                <div class="page-header float-right">
-                    <div class="page-title">
-                        <ol class="breadcrumb text-right">
-                            <li class="active"></li>
-                        </ol>
-                    </div>
+    <div class="breadcrumbs">
+        <div class="col-sm-4">
+            <div class="page-header float-left">
+                <div class="page-title">
+                    <h1>Página Inicial</h1>
                 </div>
             </div>
         </div>
-        <div id="chart_div"></div>
-        <div id="chart_div2"></div>
-        <div id="chart_div3"></div>
+        <div class="col-sm-8">
+            <div class="page-header float-right">
+                <div class="page-title">
+                    <ol class="breadcrumb text-right">
+                        <li class="active"></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="chart_div"></div>
+    <div id="chart_div2"></div>
+    <div id="chart_div3"></div>
 
 
 
@@ -381,41 +372,42 @@
 
 
 
-    </div><!-- /#right-panel -->
-    <!-- Right Panel -->
+</div><!-- /#right-panel -->
+
+<!-- Right Panel -->
 
 
-    <script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
-    <script src="assets/js/plugins.js"></script>
-    <script src="assets/js/main.js"></script>
+<script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+<script src="assets/js/plugins.js"></script>
+<script src="assets/js/main.js"></script>
 
 
-    <script src="assets/js/lib/chart-js/Chart.bundle.js"></script>
-    <script src="assets/js/dashboard.js"></script>
-    <script src="assets/js/widgets.js"></script>
-    <script src="assets/js/lib/vector-map/jquery.vmap.js"></script>
-    <script src="assets/js/lib/vector-map/jquery.vmap.min.js"></script>
-    <script src="assets/js/lib/vector-map/jquery.vmap.sampledata.js"></script>
-    <script src="assets/js/lib/vector-map/country/jquery.vmap.world.js"></script>
-    <script>
-        (function ($) {
-            "use strict";
+<script src="assets/js/lib/chart-js/Chart.bundle.js"></script>
+<script src="assets/js/dashboard.js"></script>
+<script src="assets/js/widgets.js"></script>
+<script src="assets/js/lib/vector-map/jquery.vmap.js"></script>
+<script src="assets/js/lib/vector-map/jquery.vmap.min.js"></script>
+<script src="assets/js/lib/vector-map/jquery.vmap.sampledata.js"></script>
+<script src="assets/js/lib/vector-map/country/jquery.vmap.world.js"></script>
+<script>
+    ( function ( $ ) {
+        "use strict";
 
-            jQuery('#vmap').vectorMap({
-                map: 'world_en',
-                backgroundColor: null,
-                color: "#ffffff",
-                hoverOpacity: 0.7,
-                selectedColor: '#1de9b6',
-                enableZoom: true,
-                showTooltip: true,
-                values: sample_data,
-                scaleColors: ['#1de9b6', '#03a9f5'],
-                normalizeFunction: 'polynomial'
-            });
-        })(jQuery);
-    </script>
+        jQuery( '#vmap' ).vectorMap( {
+            map: 'world_en',
+            backgroundColor: null,
+            color: "#ffffff",
+            hoverOpacity: 0.7,
+            selectedColor: '#1de9b6',
+            enableZoom: true,
+            showTooltip: true,
+            values: sample_data,
+            scaleColors: [ '#1de9b6', '#03a9f5' ],
+            normalizeFunction: 'polynomial'
+        } );
+    } )( jQuery );
+</script>
 
 
 </body>
