@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -224,7 +224,7 @@
                                                     </li>
                                                 </ul><!-- /.features-list -->
                                                 <div class="button-block">
-                                                    <input class="fare-btn" value="Reservar Viagem" type="button" id="submitReser" onClick="reservar('bolt');">
+                                                    <input class="fare-btn" value="Reservar Viagem" type="button" id="submitReser1" onClick="reservar('bolt');">
                                                 </div><!-- /.button-block -->
                                             </div><!-- /.single-taxi-fare-one -->
                                         </div>
@@ -267,7 +267,7 @@
                                                     </li>
                                                 </ul><!-- /.features-list -->
                                                 <div class="button-block">
-                                                    <input class="fare-btn" value="Reservar Viagem" type="button" id="submitReser" onClick="reservar('uber');">
+                                                    <input class="fare-btn" value="Reservar Viagem" type="button" id="submitReser2" onClick="reservar('uber');">
                                                 </div><!-- /.button-block -->
                                             </div><!-- /.single-taxi-fare-one -->
                                         </div>
@@ -310,7 +310,7 @@
                                                     </li>
                                                 </ul><!-- /.features-list -->
                                                 <div class="button-block">
-                                                    <input class="fare-btn" value="Reservar Viagem" type="button" id="submitReser" onClick="reservar('kapten');">
+                                                    <input class="fare-btn" value="Reservar Viagem" type="button" id="submitReser3" onClick="reservar('kapten');">
                                                 </div><!-- /.button-block -->
                                             </div><!-- /.single-taxi-fare-one -->
                                         </div><!-- /.col-lg-6 -->
@@ -589,15 +589,74 @@
 }, '#paypal-button');
     </script>
 
-    <script>
-        var cnt=0;
-        function CountFun(){
-            cnt = parseInt(cnt)+parseInt(1);
-            var divData= document.getElementsByClassName("fare-btn");
-            //divData.innerHTML="Número de Cliques: ("+cnt +")";//this part has been edited
 
-        }
+    <script type="text/javascript">
+
+
+        const btnRegisto1 = document.getElementById("submitReser1")
+
+        btnRegisto1.addEventListener('click', function(){
+
+            fetch('http://localhost:8080/cliquesB', {
+                headers: { 'Content-Type': 'application/json' },
+                method: 'POST',
+
+            }).then(response => {
+                if (!response.ok) {
+                    throw new Error(response.statusText);
+                }
+                return response.json();
+            })
+                .catch(error => {
+                    swal({title: `${result.value.err_message}`})
+                });
+
+        });
+
+        const btnRegisto2 = document.getElementById("submitReser2")
+
+        btnRegisto2.addEventListener('click', function(){
+
+            fetch('http://localhost:8080/cliquesU', {
+                headers: { 'Content-Type': 'application/json' },
+                method: 'POST',
+
+            }).then(response => {
+                if (!response.ok) {
+                    throw new Error(response.statusText);
+                }
+                return response.json();
+            })
+                .catch(error => {
+                    swal({title: `${result.value.err_message}`})
+                });
+
+        });
+
+
+
+        const btnRegisto3 = document.getElementById("submitReser3")
+
+        btnRegisto3.addEventListener('click', function(){
+
+            fetch('http://localhost:8080/cliquesK', {
+                headers: { 'Content-Type': 'application/json' },
+                method: 'POST',
+
+            }).then(response => {
+                if (!response.ok) {
+                    throw new Error(response.statusText);
+                }
+                return response.json();
+            })
+                .catch(error => {
+                    swal({title: `${result.value.err_message}`})
+                });
+
+        });
     </script>
+
+
 
 
     <script src="js/jquery.js"></script>
