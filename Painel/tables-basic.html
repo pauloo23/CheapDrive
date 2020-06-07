@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
@@ -45,49 +45,50 @@
                 <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a>
             </div>
             <br>
-
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li>
-                        <a href="ADMIN.html"> <i class="menu-icon fa fa-dashboard"></i>Página Inicial </a>
+                    <li class="active">
+                        <a href="ADMIN.html"> <i class="menu-icon fa fa-dashboard"></i>Página Inicial</a>
                     </li>
-                    <h3 class="menu-title">Vista Geral</h3>
-                    <!-- /.menu-title -->
-
+                    <h3 class="menu-title">Vista Geral</h3><!-- /.menu-title -->
+                    <li class="active">
+                        <a href="ADMIN.html"> <i class="menu-icon fa fa-bar-chart-o"> </i>Analytics </a>
+                    </li>
 
                     <li class="active">
                         <a href="tables-basic.html"> <i class="menu-icon fa fa-user"> </i>Lista Utilizadores</a>
                     </li>
 
-                  
-
-
-
                     <li class="active">
                         <a href="RegAdmin.html"> <i class="menu-icon fa fa-user"> </i>Registar Administrador</a>
                     </li>
-                    
+                    <li class="active">
+                        <a href="mensagens.html"> <i class="menu-icon fa fa-user"> </i>Mensagens</a>
+                    </li>
+                    <li class="active">
+                        <a href="classusers.html"> <i class="menu-icon fa fa-user"> </i>Classificações</a>
+                    </li>
+
                     <li class="active">
                         <a href="index.html"> <i class="menu-icon fa fa-user"> </i>Terminar Sessão</a>
                     </li>
 
 
 
+
+
+
                 </ul>
-            </div>
-            <!-- /.navbar-collapse -->
+            </div><!-- /.navbar-collapse -->
         </nav>
-    </aside>
+    </aside><!-- /#left-panel -->
     <!-- /#left-panel -->
-
     <!-- Left Panel -->
-
     <!-- Right Panel -->
 
     <div id="right-panel" class="right-panel">
 
         <!-- Header-->
-
         </header>
         <!-- /header -->
         <!-- Header-->
@@ -122,13 +123,13 @@
                 <div class="card-body">
                     <table class="table table-striped">
                         <thead>
-                        <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Nome</th>
-                            <th scope="col">Apelido</th>
-                            <th scope="col">Tipo</th>
-                            <th scope="col">Email</th>
-                        </tr>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Apelido</th>
+                                <th scope="col">Tipo</th>
+                                <th scope="col">Email</th>
+                            </tr>
                         </thead>
                         <tbody>
                         </tbody>
@@ -136,9 +137,9 @@
 
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
                     <script>
-                      //  let a = 0;
+                        //  let a = 0;
 
-                        window.onload = function() {
+                        window.onload = function () {
                             fetch('http://localhost:8080/users/', {
                                 headers: { 'Content-Type': 'application/json' },
                                 method: 'GET',
@@ -151,18 +152,18 @@
                                 const tabela = $(".table-striped tbody");
                                 for (row in result) {
                                     const valor = result[row];
-                                 //   a++;
-                                //    console.log(a);
+                                    //   a++;
+                                    //    console.log(a);
 
-                                        $(tabela).append("<tr>" +
-                                            "<td>" + valor.id + "</td>" +
-                                            "<td>" + valor.nome + "</td>" +
-                                            "<td>" + valor.apelido + "</td>" +
-                                            "<td>" + valor.tipo + "</td>" +
-                                            "<td>" + valor.email + "</td>" +
+                                    $(tabela).append("<tr>" +
+                                        "<td>" + valor.id + "</td>" +
+                                        "<td>" + valor.nome + "</td>" +
+                                        "<td>" + valor.apelido + "</td>" +
+                                        "<td>" + valor.tipo + "</td>" +
+                                        "<td>" + valor.email + "</td>" +
 
-                                            "<tr>");
-                                    }
+                                        "<tr>");
+                                }
 
                             }).catch(error => {
                                 swal({ title: `${result.value.err_message}` })
@@ -182,11 +183,8 @@
     <!-- .animated -->
     </div>
     <!-- .content -->
-
-
     </div>
     <!-- /#right-panel -->
-
     <!-- Right Panel -->
 
 

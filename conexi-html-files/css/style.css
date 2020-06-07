@@ -2655,15 +2655,7 @@ hr.style-one {
     padding-top: 120px;
 }
 
-    .book-ride-one:after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        left: 0;
-        height: 38px;
-        background-color: #D76A29;
-        background-repeat: repeat-x;
-    }
+    
 
     .book-ride-one:after {
         background-image: url(../images/resources/zigzag-box-2.png);

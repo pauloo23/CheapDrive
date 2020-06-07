@@ -2,10 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\backendMequinho",
-    "\\backendMequinho\\controllers",
     "\\conexi-html-files",
-    "\\conexi-html-files\\js"
+    "\\conexi-html-files\\css",
+    "\\conexi-html-files\\js",
+    "\\Painel",
+    "\\Painel\\images"
   ],
-  "SelectedNode": "\\conexi-html-files\\reservaconfirmada.html",
+  "SelectedNode": "\\backendMequinho\\server.js",
   "PreviewInSolutionExplorer": false
 }
