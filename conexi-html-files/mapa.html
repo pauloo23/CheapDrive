@@ -419,6 +419,14 @@
            const precof = $("." + empresa + " .precof").text();
            const idCondutor = $("." + empresa + " .id-condutor").text();
            location.href='http://localhost:8080/paypal?preco=' + precof.replace('€', '') + "&companhia=" + empresa + "&idCondutor=" + idCondutor;
+
+           localStorage.setItem("precof",precof);
+           localStorage.setItem("idCondutor",$("." + empresa + " .idCondutor").text());
+           localStorage.setItem("condutor",$("." + empresa + " .condutor").text());
+           localStorage.setItem("marca",$("." + empresa + " .marca").text());
+           localStorage.setItem("modelo",$("." + empresa + " .modelo").text());
+           localStorage.setItem("matricula",$("." + empresa + " .matricula").text());
+           localStorage.setItem("preco",$("." + empresa + " .preco").text());
            return;
 		}
 
@@ -445,10 +453,10 @@
                 alert("login efetuado com sucesso");
                 switch (result.tipo) {
                     case "Administrador":
-                        window.location.replace("../Painel/ADMIN.html");
+                        window.location.replace("/ADMIN.html");
                         break;
                     case "Utilizador":
-                        window.location.replace("../conexi-html-files/about.html");
+                        window.location.replace("/about.html");
                         break;
                     default:
                         alert("Tipo de utilizador inválido");

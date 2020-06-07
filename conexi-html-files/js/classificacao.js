@@ -60,7 +60,7 @@ function mark(name, key, star) {
             if (classificacao[key].rating[0]) {
                 document.getElementById('divRender').innerHTML += `
                 <div class="row" id="${key}">
-                            <h6>Nome do cliente: ${classificacao[key].name} <br>  
+                            <h6>${classificacao[key].name} <br>  
                                 
                             <div Rating: <br> ‎</div> 
                               

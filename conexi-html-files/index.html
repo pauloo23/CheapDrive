@@ -370,10 +370,10 @@
                 alert("login efetuado com sucesso");
                 switch (result.tipo) {
                     case "Administrador":
-                        window.location.replace("../Painel/ADMIN.html");
+                        window.location.replace("/ADMIN.html");
                         break;
                     case "Utilizador":
-                        window.location.replace("../conexi-html-files/mapa.html");
+                        window.location.replace("/mapa.html");
                         break;
                     default:
                         alert("Tipo de utilizador inválido");
@@ -385,76 +385,6 @@
                 alert("Erro ao fazer login!");
             });
         });
-
-        // Pedir dados ao Kapten
-        fetch('http://localhost:8080/kapten', {
-                headers: { 'Content-Type': 'application/json' },
-                method: 'GET',
-            }).then(response => {
-                if (!response.ok) {
-                    throw new Error(response.statusText);
-                }
-                return response.json();
-            }).then(result => {
-                $(".kapten .condutor").html(result.data[0].name);
-                $(".kapten .marca").html(result.data[0].description);
-                $(".kapten .modelo").html(result.data[0].unit);
-                $(".kapten .matricula").html(result.data[0].code);
-                $(".kapten .preco").html(result.data[0].prices[0].price + "€");
-            }).catch(error => {
-                swal({ title: `${result.value.err_message}` })
-            }).catch(error => {
-                alert("Erro a pedir dados do Kapten!");
-            });
-    
-
-        // Pedir dados ao uber
-            fetch('http://localhost:8080/uber', {
-                    headers: { 'Content-Type': 'application/json' },
-                    method: 'GET',
-                }).then(response => {
-                    if (!response.ok) {
-                        throw new Error(response.statusText);
-                    }
-                    return response.json();
-                }).then(result => {
-                    $(".uber .condutor").html(result.pacotes[0].itemKey);
-                    $(".uber .marca").html(result.pacotes[0].brand);
-                    $(".uber .modelo").html(result.pacotes[0].brandModel);
-                    $(".uber .matricula").html(result.pacotes[0].barcode);
-                    $(".uber .preco").html(result.pacotes[0].description + "€");
-                    
-                }).catch(error => {
-                    swal({ title: `${result.value.err_message}` })
-                }).catch(error => {
-                    alert("Erro a pedir dados do uber!");
-                });
-
-
-                // Pedir dados ao bolt
-            fetch('http://localhost:8080/bolt', {
-                    headers: { 'Content-Type': 'application/json' },
-                    method: 'GET',
-                }).then(response => {
-                    if (!response.ok) {
-                        throw new Error(response.statusText);
-                    }
-                    return response.json();
-                }).then(result => {
-                console.log(result);
-                    $(".bolt .condutor").html(result.packages[0].name);
-                    $(".bolt .marca").html(result.packages[0].reference);
-                    $(".bolt .modelo").html(result.packages[0].ean);
-                    $(".bolt .matricula").html(result.packages[0].summary);
-                    $(".bolt .preco").html(result.packages[0].price + "€");
-                    
-                }).catch(error => {
-                    swal({ title: `${result.value.err_message}` })
-                }).catch(error => {
-                    alert("Erro a pedir dados do Bolt!");
-                });
-
-
        
         </script>
 

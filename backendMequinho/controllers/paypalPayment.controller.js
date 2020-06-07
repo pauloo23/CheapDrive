@@ -96,7 +96,7 @@ function getParameters(req, res) {
 			}
 
             console.log(JSON.stringify(payment));
-            res.send('success');
+            res.redirect('/reservaconfirmada.html');
         }
     });
 }

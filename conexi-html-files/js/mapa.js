@@ -129,7 +129,12 @@ function initMap() {
             duration = Math.round(duration);
             localStorage.setItem("total",t);
 
-            document.getElementById('total').innerHTML = "<h3> <i class='fa fa-play'></i> Origem: <br>" + start + "</h3> <h3><i class='fa fa-stop'></i> Destino: <br>" + end + "</h3> <h3><i class='fa fa-clipboard-check'></i> Distancia Total: <br>" + total + ' Km </h3>' + "<h3><i class='fa fa-clock'></i> Tempo estimado da viagem: <br>" + duration + " Minutos</h3>" + "<h3><i class='fa fa-clock'></i> Chegada Prevista: <br>" + chegada;
+            localStorage.setItem("start", start);
+            localStorage.setItem("end", end);
+            localStorage.setItem("duration", duration);
+            localStorage.setItem("chegada", chegada.toISOString().slice(0, 16).replace("T", " "));
+
+            document.getElementById('total').innerHTML = "<h3> <i class='fa fa-play'></i> Origem: <br>" + start + "</h3> <h3><i class='fa fa-stop'></i> Destino: <br>" + end + "</h3> <h3><i class='fa fa-clipboard-check'></i> Distancia Total: <br>" + total + ' Km </h3>' + "<h3><i class='fa fa-clock'></i> Tempo estimado da viagem: <br>" + duration + " Minutos</h3>" + "<h3><i class='fa fa-clock'></i> Chegada Prevista: <br>" + chegada.toISOString().slice(0, 16).replace("T", " ");
             x.style.display = "block";
 
         }

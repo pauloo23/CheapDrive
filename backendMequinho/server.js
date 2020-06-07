@@ -10,16 +10,16 @@ const bodyParser = require('body-parser');
 const expressSanitizer = require('express-sanitizer');
 const expressValidator = require('express-validator');
 
-
-
-
-
 //iniciar a aplicação
 var app = express();
 
 app.use(bodyParser.json({type:'application/json'}), bodyParser.urlencoded({ extended: true }));
 app.use(expressSanitizer());
 app.use(expressValidator());
+
+// servir front-end
+app.use(express.static('../conexi-html-files'))
+app.use(express.static('../Painel'))
 
 app.listen(port, function(err) {
     if (!err) {

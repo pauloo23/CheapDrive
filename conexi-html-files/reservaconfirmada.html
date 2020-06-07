@@ -126,6 +126,8 @@
                             </div><!-- /.block-title text-center -->
                             <p> Tudo começa num clique para obter a viagem que pretende, após uma escolha ponderada das opções que lhe oferecemos. Pode deslocar-se de várias formas para todos os tipos de locais com a ajuda da nossa tecnologia.</p>
 
+                            <p class="nome-condutor"></p>
+
                         </div><!-- /.content-block -->
                     </div><!-- /.col-lg-6 -->
                     <div class="col-lg-6">
@@ -149,6 +151,7 @@
                     <div class="dot-line"></div><!-- /.dot-line -->
                     <h5>A sua opinião é muito importante para nós! </h5>
                     <h6>Quando a sua viagem terminar classifique-a e ajude-nos a melhorar os nossos serviços</h6>
+
                 </div>
                 <div class="row">
                     <div class="col s5">
@@ -271,6 +274,8 @@
     </div><!-- /.page-wrapper -->
     <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
     <!-- /.scroll-to-top -->
+
+
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
@@ -284,6 +289,26 @@
     <script src="https://www.gstatic.com/firebasejs/6.3.0/firebase.js"></script>
     <script src="js/classificacao.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+
+     <script>
+
+        var precof = parseFloat(localStorage.getItem("precof"));
+        var start = localStorage.getItem("start");
+        var end = localStorage.getItem("end");
+        var duration = localStorage.getItem("duration");
+        var chegada = localStorage.getItem("chegada"); // duraçao da viagem
+        var total = localStorage.getItem("total");
+        var idCondutor = localStorage.getItem("idCondutor");
+        var condutor = localStorage.getItem("condutor");
+        var marca = localStorage.getItem("marca");
+        var modelo = localStorage.getItem("modelo");
+        var matricula = localStorage.getItem("matricula");
+
+        $(".nome-condutor").text(condutor);
+        
+
+    </script>
 </body>
 
 </html>
