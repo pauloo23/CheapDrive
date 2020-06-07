@@ -121,13 +121,33 @@
                         <div class="content-block">
                             <div class="block-title">
                                 <div class="dot-line"></div><!-- /.dot-line -->
-                                <p>Algumas palavras sobre Cheap Drive</p>
-                                <h2>DIVERSAS OPORTUNIDADES <br /> DE MOVIMENTO</h2>
+                                <h5>Poderá agora consultar os dados da sua viagem com mais detalhe:</h5>
                             </div><!-- /.block-title text-center -->
-                            <p> Tudo começa num clique para obter a viagem que pretende, após uma escolha ponderada das opções que lhe oferecemos. Pode deslocar-se de várias formas para todos os tipos de locais com a ajuda da nossa tecnologia.</p>
-
-                            <p class="nome-condutor"></p>
-
+                             <ul class="features-list">
+                              <li>
+                                  <div class="name-line">Distância Prevista: <span class="tempo-total"></span></div>
+                              </li>
+                              <li>
+                                  <div class="name-line">Tempo Estimado de Viagem: <span class="tempo-duration"></span></div>
+                              </li>
+                              <li>
+                                  <div class="name-line">Chegada Prevista: <span class="tempo-chegada"></span></div>
+                              </li>
+                              <li>
+                                  <div class="name-line">Nome do Condutor: <span class="nome-condutor"></span></div>
+                              </li>
+                              <li>
+                                  <div class="name-line">Marca do Veículo: <span class="nome-marca"></span></div>
+                              </li>
+                              <li>
+                                  <div class="name-line">Modelo do Veículo: <span class="nome-modelo"></span></div>
+                              </li>
+                              <li>
+                                  <div class="name-line">Matrícula: <span class="nome-matricula"></span></div>
+                              </li>
+                              </ul><!-- /.features-list -->
+                                                   
+                             
                         </div><!-- /.content-block -->
                     </div><!-- /.col-lg-6 -->
                     <div class="col-lg-6">
@@ -305,8 +325,13 @@
         var modelo = localStorage.getItem("modelo");
         var matricula = localStorage.getItem("matricula");
 
+        $(".tempo-total").text(total + " " + "Km");
+        $(".tempo-duration").text(duration + " " + "Minutos");
+        $(".tempo-chegada").text(chegada);
         $(".nome-condutor").text(condutor);
-        
+        $(".nome-marca").text(marca);
+        $(".nome-modelo").text(modelo);
+        $(".nome-matricula").text(matricula);
 
     </script>
 </body>
