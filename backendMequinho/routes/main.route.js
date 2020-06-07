@@ -27,6 +27,10 @@ router.get('/cancel/', controllerPaypal.getCancel);
 
 //Rota Users
 router.get('/users/', controllerUser.read);
+router.get('/cliques/', controllerUser.readC);
+router.post('/cliquesU/',controllerUser.saveU);
+router.post('/cliquesK/',controllerUser.saveK);
+router.post('/cliquesB/',controllerUser.saveB);
 
 
 
