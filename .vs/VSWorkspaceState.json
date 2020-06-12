@@ -2,10 +2,13 @@
   "ExpandedNodes": [
     "",
     "\\backendMequinho",
+    "\\backendMequinho\\config\\passport",
+    "\\backendMequinho\\routes",
     "\\conexi-html-files",
     "\\conexi-html-files\\css",
-    "\\conexi-html-files\\js"
+    "\\conexi-html-files\\js",
+    "\\Painel"
   ],
-  "SelectedNode": "\\backendMequinho\\package.json",
+  "SelectedNode": "\\backendMequinho\\server.js",
   "PreviewInSolutionExplorer": false
 }

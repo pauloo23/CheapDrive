@@ -1,6 +1,6 @@
 const express = require('express');
 app.get('/', function (req, res) {
-    res.send('/conexi-html-files/index.html');
+    res.sendFile(path.join(__dirname,'/conexi-html-files/index.html'));
 const port = process.env.PORT || 8080;
 const host = process.env.HOST || '127.0.0.1';
 
