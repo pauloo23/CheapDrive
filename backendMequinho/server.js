@@ -1,6 +1,4 @@
 const express = require('express');
-app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname,'/conexi-html-files/index.html'));
 const port = process.env.PORT || 8080;
 const host = process.env.HOST || '127.0.0.1';
 
@@ -15,15 +13,15 @@ const expressValidator = require('express-validator');
 //iniciar a aplicação
 var app = express();
 
-app.use(bodyParser.json({type:'application/json'}), bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json({ type: 'application/json' }), bodyParser.urlencoded({ extended: true }));
 app.use(expressSanitizer());
 app.use(expressValidator());
 
 // servir front-end
-app.use(express.static('../conexi-html-files/index.html'))
-app.use(express.static('../Painel/ADMIN.html'))
+app.use(express.static('../conexi-html-files'))
+app.use(express.static('../Painel'))
 
-app.listen(port, function(err) {
+app.listen(port, function (err) {
     if (!err) {
         console.log('Your app is listening on ' + host + ' and port ' + port);
     }
