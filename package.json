@@ -1,0 +1,19 @@
+{
+  "name": "cheapdrive",
+  "version": "1.0.0",
+  "description": "ISI Project\r -> Trabalho realizado no âmbito da Unidade Curricular de Implementação de Sistemas Integrados.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Skillfun8/CheapDrive.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Skillfun8/CheapDrive/issues"
+  },
+  "homepage": "https://github.com/Skillfun8/CheapDrive#readme"
+}

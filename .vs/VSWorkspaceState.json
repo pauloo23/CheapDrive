@@ -4,10 +4,8 @@
     "\\backendMequinho",
     "\\conexi-html-files",
     "\\conexi-html-files\\css",
-    "\\conexi-html-files\\js",
-    "\\Painel",
-    "\\Painel\\images"
+    "\\conexi-html-files\\js"
   ],
-  "SelectedNode": "\\backendMequinho\\server.js",
+  "SelectedNode": "\\backendMequinho\\package.json",
   "PreviewInSolutionExplorer": false
 }
