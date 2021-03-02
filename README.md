@@ -1,5 +1,4 @@
 # CheapDrive
-ISI Project
--> Trabalho realizado no âmbito da Unidade Curricular de Implementação de Sistemas Integrados.
--->teste
--->teste2
+<br>ISI Project
+<br>NodeJS web app 
+<br> Integrating paypal api, google maps api, Firebase, Moloni, Kapten and Jasmin 
